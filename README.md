@@ -1,12 +1,17 @@
-# Pi Skill Collection (converted from claude-skills)
+# Pi Skill Collection (converted from Claude Code skills)
 
-394 [Agent Skills](https://agentskills.io/specification) for [Pi](https://github.com/badlogic/pi-mono), converted from
-[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) (MIT, commit `4680893`).
+395 [Agent Skills](https://agentskills.io/specification) for [Pi](https://github.com/badlogic/pi-mono),
+converted from two upstream repos:
 
-Upstream targets Claude Code. The skills load in Pi as they are, because `SKILL.md` is the same
+| Upstream | Skills | License |
+|---|---|---|
+| [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) at `4680893` | 394 | MIT, Alireza Rezvani |
+| [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill) at `9c35169` | 1 (`asd-ste100`) | MIT, Dustin Yuchen Teng |
+
+Both upstreams target Claude Code. The skills load in Pi as they are, because `SKILL.md` is the same
 standard, but their instructions point at the wrong host: `.claude/` paths, `CLAUDE.md`,
-`/plugin install`, plugin-namespaced commands, Claude tool names. This repo rewrites those and drops
-23 duplicate mirror copies.
+`/plugin install`, plugin-namespaced commands, Claude tool names. This repo rewrites those, drops 23
+duplicate mirror copies, and leaves out the Claude plugin packaging (`.claude-plugin/`).
 
 ## Install
 
@@ -34,7 +39,7 @@ Add the directory to `~/.pi/agent/settings.json`:
 { "skills": ["<path-to-this-clone>/skills"] }
 ```
 
-Pi inlines every skill's name, description and path into the system prompt, so all 394 add about
+Pi inlines every skill's name, description and path into the system prompt, so all 395 add about
 154 KB (roughly 38k tokens) to every session. Install the ones you use. `settings.json` resource
 arrays also accept `!pattern` exclusions, in case you want one directory to hold more skills than
 you want Pi to see.
@@ -70,7 +75,7 @@ Code samples keep their Claude references. `claude --print` or a Python parser t
 example. That covers 91 occurrences.
 
 Scripts and configs inside each skill (`.py`, `.json`, `.sh`) were not rewritten either, which
-leaves 462.
+leaves 442.
 
 Upstream attribution and URLs (`claude-skills`, `code.claude.com`, `docs.claude.com`) stay because
 MIT requires it, and a link to the real docs beats a dead one. Model IDs such as `claude-sonnet-5`
@@ -87,17 +92,22 @@ duplicates.
 
 ```bash
 git clone --depth 1 https://github.com/alirezarezvani/claude-skills.git .upstream
-python3 scripts/convert.py           # .upstream -> skills/ + conversion-report.md
+mkdir -p .upstream-extra/asd-ste100
+git clone --depth 1 https://github.com/danyuchn/asd-ste100-skill.git .upstream-extra/asd-ste100
+python3 scripts/convert.py --src .upstream --src .upstream-extra
 python3 scripts/convert.py --check   # name, description and duplicate gate
 python3 scripts/convert.py --audit   # residual `claude` references, allowlisted
 ```
+
+`--src` is repeatable and every source converts into the same flat `skills/` tree, so a third repo
+needs one more `--src` and nothing else.
 
 Both gates exit non-zero on failure and use only the standard library.
 
 ## Layout
 
 ```
-skills/<name>/SKILL.md    394 skills, each with its own scripts/, references/, templates/, assets/
+skills/<name>/SKILL.md    395 skills, each with its own scripts/, references/, templates/, assets/
 scripts/convert.py        the converter and its two gates
 conversion-report.md      per-skill changes, duplicates, residual references
 ATTRIBUTION.md            upstream source, commit and license
@@ -106,9 +116,9 @@ LICENSE                   MIT, upstream copyright
 
 ## Verification
 
-On the committed tree, `--check` reports 394 skills and no problems, and `--audit` reports no
+On the committed tree, `--check` reports 395 skills and no problems, and `--audit` reports no
 unexpected references and no description that mentions Claude. Loading the same tree through Pi's
-own `loadSkills` gives 394 skills, no diagnostics and no name collisions.
+own `loadSkills` gives 395 skills, no diagnostics and no name collisions.
 
 ## License
 

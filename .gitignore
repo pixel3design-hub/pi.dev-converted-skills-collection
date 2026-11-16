@@ -1,5 +1,6 @@
 # upstream clone used as conversion input, not part of this repo
 .upstream/
+.upstream-extra/
 __pycache__/
 *.pyc
 

@@ -230,7 +230,7 @@ def discover(src):
     return sorted(found)
 
 
-def planned_names(dirs, src):
+def planned_names(dirs):
     names = set()
     for d in dirs:
         fm, _ = split_frontmatter(open(os.path.join(d, "SKILL.md"), encoding="utf-8", errors="replace").read())
@@ -239,33 +239,38 @@ def planned_names(dirs, src):
     return names
 
 
-def convert(src, out):
-    dirs = discover(src)
-    SKILL_NAMES.update(planned_names(dirs, src))
+def convert(srcs, out):
+    """srcs: list of source roots; several repos convert into one flat tree."""
+    dirs = [(src, d) for src in srcs for d in discover(src)]
+    SKILL_NAMES.update(planned_names([d for _, d in dirs]))
     skills, report, seen = [], [], {}
-    for skill_dir in dirs:
+    for src, skill_dir in dirs:
+        rel = os.path.relpath(skill_dir, src)
         hits, notes = {}, []
         name, text, notes = convert_skill(skill_dir, hits)
         digest = hashlib.sha256(text.encode()).hexdigest()[:12]
         if name in seen:
             kind = "identical mirror" if seen[name] == digest else "CONFLICT (different content)"
-            report.append(f"- `{os.path.relpath(skill_dir, src)}` → skipped, duplicate of "
-                          f"`{seen[name + '/src']}` ({kind})")
+            report.append(f"- `{src}/{rel}` -> skipped, duplicate of `{seen[name + '/src']}` ({kind})")
             continue
         seen[name] = digest
-        seen[name + "/src"] = os.path.relpath(skill_dir, src)
+        seen[name + "/src"] = f"{src}/{rel}"
 
         dst = os.path.join(out, name)
         os.makedirs(dst, exist_ok=True)
         open(os.path.join(dst, "SKILL.md"), "w", encoding="utf-8").write(text)
         extra = 0
-        for dirpath, _, filenames in os.walk(skill_dir):
+        for dirpath, dirnames, filenames in os.walk(skill_dir):
+            # Claude packaging (.claude-plugin/, .gitignore) is not skill content.
+            dirnames[:] = [d for d in dirnames if not d.startswith(".")]
             for fn in filenames:
+                if fn.startswith("."):
+                    continue
                 s = os.path.join(dirpath, fn)
                 if s == os.path.join(skill_dir, "SKILL.md"):
                     continue
-                rel = os.path.relpath(s, skill_dir)
-                d = os.path.join(dst, rel)
+                frel = os.path.relpath(s, skill_dir)
+                d = os.path.join(dst, frel)
                 os.makedirs(os.path.dirname(d), exist_ok=True)
                 if fn.endswith((".md", ".txt")):
                     sub_hits = {}
@@ -277,7 +282,7 @@ def convert(src, out):
                 else:
                     shutil.copy2(s, d)
                 extra += 1
-        skills.append((name, os.path.relpath(skill_dir, src), hits, notes, extra))
+        skills.append((name, f"{src}/{rel}", hits, notes, extra))
     return skills, report
 
 
@@ -361,7 +366,8 @@ def audit(out):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--src", default=".upstream")
+    ap.add_argument("--src", action="append", metavar="DIR",
+                    help="repo root to convert; repeat for several sources (default .upstream)")
     ap.add_argument("--out", default="skills")
     ap.add_argument("--report", default="conversion-report.md")
     ap.add_argument("--check", action="store_true")
@@ -390,14 +396,16 @@ def main():
     if os.path.isdir(args.out):
         shutil.rmtree(args.out)
     os.makedirs(args.out)
-    skills, dups = convert(args.src, args.out)
+    srcs = args.src or [".upstream"]
+    skills, dups = convert(srcs, args.out)
 
     totals = {}
     for _, _, hits, _, _ in skills:
         for k, v in hits.items():
             totals[k] = totals.get(k, 0) + v
+    src_list = ", ".join("`%s`" % src for src in srcs)
     lines = ["# Conversion report", "",
-             f"Source: `{args.src}` · skills converted: {len(skills)} · "
+             f"Sources: {src_list} · skills converted: {len(skills)} · "
              f"duplicates skipped: {len(dups)}", "", "## Rule hits", "",
              "| rule | occurrences |", "|---|---|"]
     lines += [f"| `{k}` | {v} |" for k, v in sorted(totals.items(), key=lambda kv: -kv[1])]
@@ -405,7 +413,7 @@ def main():
         "", "## Per skill", "", "| skill | source | files | rules applied | notes |",
         "|---|---|---|---|---|"]
     for name, src, hits, notes, extra in skills:
-        applied = ", ".join(f"{k}×{v}" for k, v in sorted(hits.items())) or "—"
+        applied = ", ".join(f"{k}×{v}" for k, v in sorted(hits.items()) if v) or "—"
         lines.append(f"| `{name}` | `{src}` | {extra} | {applied} | {'; '.join(notes) or '—'} |")
     counts, unexpected, flagged, unsafe_desc = audit(args.out)
     lines += ["", "## Residual `claude` references", "",

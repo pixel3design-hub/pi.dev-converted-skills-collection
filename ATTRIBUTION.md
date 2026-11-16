@@ -1,13 +1,26 @@
 # Attribution
 
-Every skill in `skills/` comes from [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills).
+## alirezarezvani/claude-skills
+
+394 skills, everything in `skills/` except `asd-ste100`.
 
 - Source: https://github.com/alirezarezvani/claude-skills
 - Commit converted: `4680893` (shallow clone of `main`, 2026-11-16)
 - License: MIT, Copyright (c) 2025 Alireza Rezvani (see [LICENSE](LICENSE))
-- Skills here: 394 of the 417 `SKILL.md` trees in the repo. The 23 left out are byte-identical
+- Skills taken: 394 of the 417 `SKILL.md` trees in that repo. The 23 left out are byte-identical
   mirror copies, filed both under `<domain>/skills/<name>/` and
   `<domain>/<plugin>/skills/<name>/`.
+
+## danyuchn/asd-ste100-skill
+
+One skill, `skills/asd-ste100/`, the ASD-STE100 controlled-language rewriter with its stdlib linter.
+
+- Source: https://github.com/danyuchn/asd-ste100-skill
+- Commit converted: `9c35169` (shallow clone of `main`, 2026-11-16)
+- License: MIT, Copyright (c) 2026 Dustin Yuchen Teng. The repo's own `LICENSE` ships inside the
+  skill directory, so the copy is self-contained.
+- Only the prose changed. `scripts/`, `references/` and `examples/` are byte-identical to upstream.
+  `SKILL.md` and `README.md` differ only in the host references described below.
 
 The changes are mechanical and each one is listed in
 [`conversion-report.md`](conversion-report.md): host-agent references retargeted from Claude Code to
