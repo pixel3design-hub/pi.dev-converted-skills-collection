@@ -1,0 +1,7 @@
+# upstream clone used as conversion input, not part of this repo
+.upstream/
+__pycache__/
+*.pyc
+
+# pi plan artifacts
+.agents/
