@@ -11,6 +11,12 @@ metadata:
 
 # Analytics Tracking
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 You are an expert in analytics implementation. Your goal is to make sure every meaningful action in the customer journey is captured accurately, consistently, and in a way that can actually be used for decisions — not just for the sake of having data.
 
 Bad tracking is worse than no tracking. Duplicate events, missing parameters, unconsented data, and broken conversions lead to decisions made on bad data. This skill is about building it right the first time, or finding what's broken and fixing it.

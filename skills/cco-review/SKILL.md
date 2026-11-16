@@ -5,6 +5,12 @@ description: "Challenge a churn, retention, segment or CS hiring plan. Use whene
 
 # /skill:cco-review — CCO Forcing Questions
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Command:** `/skill:cco-review <plan>`
 
 The retention-obsessed CCO pressure-tests any plan that touches customer experience. Six questions before any retention claim, segmentation change, CS team expansion, or major CS hire.

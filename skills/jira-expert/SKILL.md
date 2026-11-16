@@ -5,6 +5,12 @@ description: "Jira setup and queries: JQL, workflows, custom fields, automation,
 
 # Atlassian Jira Expert
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Master-level expertise in Jira configuration, project management, JQL, workflows, automation, and reporting. Handles all technical and operational aspects of Jira.
 
 ## Quick Start — Most Common Operations

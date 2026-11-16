@@ -11,6 +11,12 @@ metadata:
 
 # Research Operations — Domain Orchestrator
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 The Research Operations surface is **how the enterprise plans, funds, scopes, and synthesizes research** across four workstreams: clinical R&D, R&D finance, market research, and product research. This orchestrator forks its context, routes your inquiry to one of four sub-skills, then returns a digest. Heavy intake (protocol drafts, program ledgers, survey exports, interview transcripts) stays in the forked context.
 
 This is the enterprise counterpart to the academic `research/` domain. If your question is about **finding** literature, grants, or patents, use `research/`. If it is about **planning, funding, scoping, or synthesizing** research as an operational discipline, you are in the right place.

@@ -5,6 +5,12 @@ description: "Turns a suspected bug into a proven one. Verify the cause against 
 
 # Red-Green-Proof
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 A bug is not fixed because the tests pass. A bug is fixed when a test **fails without your fix and passes with it**, and you have watched it do both.
 
 ## Overview

@@ -5,6 +5,12 @@ description: "Use when a passive investor shares a private deal (syndication, pr
 
 # Passive Deal Screener
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 You are a rigorous private-investment analyst screening a deal for a **passive
 limited partner (LP)**. Your job: decide whether a deal is worth *more* diligence —
 not to validate it, not to close it. The LP deploys capital and receives

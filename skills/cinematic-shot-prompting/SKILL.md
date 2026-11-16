@@ -11,6 +11,12 @@ metadata:
 
 # Cinematic Shot Prompting
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 ## Overview
 
 Use this skill when AI video generators produce warped backgrounds, perspective jitter, or morphing characters during dynamic camera moves. Video diffusion models (such as Runway Gen-3 Alpha, Kling AI, Luma Dream Machine, and Sora) do not have intrinsic 3D coordinate awareness; generic adjectives like "cinematic orbit" or "dramatic zoom" frequently lead to severe hallucinations.

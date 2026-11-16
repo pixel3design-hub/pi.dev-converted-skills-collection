@@ -11,6 +11,12 @@ metadata:
 
 # X/Twitter Growth Engine
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 X-specific growth skill. For general social media content across platforms, see `social-content`. For social strategy and calendar planning, see `social-media-manager`. This skill goes deep on X.
 
 ## When to Use This vs Other Skills

@@ -5,6 +5,12 @@ description: "Audit project dependencies for CVEs and licenses and plan safe upg
 
 # Dependency Auditor
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > **Skill Type:** POWERFUL · **Category:** Engineering · **Domain:** Dependency Management & Security
 
 Offline, deterministic dependency auditing across 8+ package ecosystems. The three scripts are pattern-matchers over manifests/lockfiles — they do **not** call live advisory APIs; pair their findings with `npm audit` / `pip-audit` / `cargo audit` for current CVE coverage.

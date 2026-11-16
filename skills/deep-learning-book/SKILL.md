@@ -11,6 +11,12 @@ metadata:
 
 # Deep Learning — Study Companion
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Source book**: *Deep Learning*, Ian Goodfellow, Yoshua Bengio & Aaron Courville
 (MIT Press, 2016) · 20 chapters, 3 parts · read free at
 [deeplearningbook.org](https://www.deeplearningbook.org/) · companion compiled 2026-08-25.

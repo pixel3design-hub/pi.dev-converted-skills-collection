@@ -5,6 +5,12 @@ description: "Use when assessing an AI/ML system or LLM agent for prompt injecti
 
 # AI Security
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 AI and LLM security assessment skill for detecting prompt injection, jailbreak vulnerabilities, model inversion risk, data poisoning exposure, and agent tool abuse. This is NOT general application security (see security-pen-testing) or behavioral anomaly detection in infrastructure (see threat-detection) — this is about security assessment of AI/ML systems and LLM-based agents specifically.
 
 ---

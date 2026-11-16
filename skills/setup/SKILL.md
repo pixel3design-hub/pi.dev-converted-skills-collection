@@ -7,6 +7,12 @@ metadata:
 
 # /skill:setup — Create New Experiment
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Set up a new autoresearch experiment with all required configuration.
 
 ## Usage
@@ -25,7 +31,7 @@ Set up a new autoresearch experiment with all required configuration.
 Pass them directly to the setup script:
 
 ```bash
-python scripts/setup_experiment.py \
+python ../autoresearch-agent/scripts/setup_experiment.py \
   --domain {domain} --name {name} \
   --target {target} --eval "{eval_cmd}" \
   --metric {metric} --direction {direction} \
@@ -51,10 +57,10 @@ Then run `setup_experiment.py` with the collected parameters.
 
 ```bash
 # Show existing experiments
-python scripts/setup_experiment.py --list
+python ../autoresearch-agent/scripts/setup_experiment.py --list
 
 # Show available evaluators
-python scripts/setup_experiment.py --list-evaluators
+python ../autoresearch-agent/scripts/setup_experiment.py --list-evaluators
 ```
 
 ## Built-in Evaluators

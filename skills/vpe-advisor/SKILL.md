@@ -14,6 +14,12 @@ metadata:
 
 # VP of Engineering Advisor
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Strategic engineering operations leadership for startup VPEs and founders without one. **Four decisions, no generic engineering survey:**
 
 1. **Are we delivering at the right throughput?** — DORA 4 metrics + bottleneck identification (where work waits)

@@ -60,10 +60,15 @@ After a `/reload`, each installed skill answers to `/skill:<name>`.
 | `$ARGUMENTS` | "the user's request" |
 | `Read`, `Write`, `Edit`, `Bash`, `Grep`, `Glob` | `read`, `write`, `edit`, `bash`, `grep`, `find` |
 | `Task`, `WebFetch`, `WebSearch`, `AskUserQuestion` | `Agent`, `ninerouter_web_fetch`, `ninerouter_web_search`, `ask_user_question` |
-| `{skill_path}/scripts/x.py` | `scripts/x.py` |
+| `{skill_path}/scripts/x.py` | `scripts/x.py`, or `../<sibling>/scripts/x.py` when the file ships in another skill |
 | `${CLAUDE_PLUGIN_ROOT}/vendor/<skill>/x` | `../<skill>/x` |
 | `tools:`, `context:` (Claude agent fields) | dropped |
 | `version:`, `domain:`, `model:` and other scalars | moved into `metadata:` |
+
+Each of the 301 skills that runs Python also gets a short "Running the Python tools" section at
+the top of its `SKILL.md`: run the tool with `python3`, and if `python` is blocked in the
+environment, put the same arguments after `uv run --no-project python`. If `uv` is missing or
+blocked too, the skill tells the agent to stop and ask you to install it.
 
 Frontmatter comes out with the Agent Skills fields plus `metadata`. Names are lowercase with
 hyphens, directories match names, descriptions are one line of at most 1024 characters.
@@ -102,7 +107,9 @@ python3 scripts/convert.py --audit   # residual `claude` references, allowlisted
 `--src` is repeatable and every source converts into the same flat `skills/` tree, so a third repo
 needs one more `--src` and nothing else.
 
-Both gates exit non-zero on failure and use only the standard library.
+Both gates exit non-zero on failure and use only the standard library. The converter itself is a
+plain script, so `uv run --no-project python scripts/convert.py ...` works the same way if your
+environment blocks `python`.
 
 ## Layout
 

@@ -5,6 +5,12 @@ description: "Challenge a plan touching customer data, compliance or prod access
 
 # /skill:ciso-review — CISO Forcing Questions
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Command:** `/skill:ciso-review <plan>`
 
 The risk-paranoid threat-modeler. Six questions before any production change that touches customer data or compliance scope.

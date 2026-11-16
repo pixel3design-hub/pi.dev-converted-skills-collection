@@ -11,6 +11,12 @@ metadata:
 
 # Phase 1 — Interview → Plan
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Open warmly with one or two examples from
 [`../../references/examples-bank.md`](../../references/examples-bank.md), then interview
 the founder into a **build sheet**. No API key needed in this phase — the output

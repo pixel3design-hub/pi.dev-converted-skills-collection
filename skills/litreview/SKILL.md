@@ -11,6 +11,12 @@ metadata:
 
 # Litreview — Academic Literature Orientation
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > **Portability:** Works anywhere with outbound HTTPS — the default search lane is **free keyless APIs** (PubMed E-utilities + OpenAlex, no account, no key, no MCP). The **Consensus MCP is an optional enhancement lane** used only when connected in this session. Node.js with `docx` package is required for document generation, and (in CLI) `bash_tool`. Works in Pi CLI natively and in Pi.ai with Code Execution.
 
 Produce a **launching pad** — not a finished literature review, but an orientation document that gives a researcher entering an unfamiliar field everything they need to start reading and searching with confidence. Think: what a generous colleague who knows the field would tell you over coffee.

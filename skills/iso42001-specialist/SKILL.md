@@ -14,6 +14,12 @@ metadata:
 
 # ISO/IEC 42001 AI Management System Specialist
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Internal-audit-grade operating skill for ISO/IEC 42001:2023. **Three decisions, no executive AI strategy:**
 
 1. **Where are the AIMS gaps against Clauses 4–10?** — coverage scoring per clause + remediation priority

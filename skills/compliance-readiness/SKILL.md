@@ -5,6 +5,12 @@ description: "Use for /skill:compliance-readiness, or before adding a framework 
 
 # /skill:compliance-readiness — Compliance Officer Forcing Questions
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Command:** `/skill:compliance-readiness <program>`
 
 The multi-framework compliance officer pressure-tests any compliance program. Six questions before any new-framework commitment, audit cycle planning, or certification readiness sign-off.

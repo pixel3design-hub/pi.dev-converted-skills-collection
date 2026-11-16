@@ -5,6 +5,12 @@ description: "Use for /skill:gdpr-audit-prep, or before a GDPR review, post-brea
 
 # /skill:gdpr-audit-prep — GDPR DPO Forcing Questions
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Command:** `/skill:gdpr-audit-prep <scope>`
 
 The GDPR DPO auditor pressure-tests any privacy compliance work. Six Article-cited questions before any internal audit, breach response, DPA investigation, or acquisition due diligence.

@@ -7,6 +7,12 @@ metadata:
 
 # /skill:eval — Evaluate Agent Results
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Rank all agent results for a session. Supports metric-based evaluation (run a command), LLM judge (compare diffs), or hybrid.
 
 ## Usage
@@ -24,7 +30,7 @@ Rank all agent results for a session. Supports metric-based evaluation (run a co
 Run the evaluation command in each agent's worktree:
 
 ```bash
-python scripts/result_ranker.py \
+python ../agenthub/scripts/result_ranker.py \
   --session {session-id} \
   --eval-cmd "{eval_cmd}" \
   --metric {metric} --direction {direction}
@@ -72,7 +78,7 @@ Winner: agent-1 (strongest narrative arc and call-to-action)
 
 1. Update session state:
 ```bash
-python scripts/session_manager.py --update {session-id} --state evaluating
+python ../agenthub/scripts/session_manager.py --update {session-id} --state evaluating
 ```
 
 2. Tell the user:

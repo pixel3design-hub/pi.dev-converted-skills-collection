@@ -11,6 +11,12 @@ metadata:
 
 # Patent — Prior-Art + Landscape Intelligence
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > **Portability:** Requires `web_fetch` (Google Patents, Espacenet, USPTO), `ninerouter_web_search` (adjacent academic art), Node.js with `docx` package, and optionally Lens.org API key for citation-graph signals. Works in Pi CLI natively. In Pi.ai with web tools + Code Execution + BYOK Lens.org, the workflow is supported.
 
 > **Out of scope:** trademark, copyright, trade-secret. These are flagged at intake. Use a different skill or qualified counsel.

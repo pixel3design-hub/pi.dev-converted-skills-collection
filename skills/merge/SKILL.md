@@ -7,6 +7,12 @@ metadata:
 
 # /skill:merge — Merge Winner
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Merge the best agent's branch into the base branch, archive losing branches via git tags, and clean up worktrees.
 
 ## Usage
@@ -50,7 +56,7 @@ git branch -D hub/{session-id}/{agent-id}/attempt-1
 ### 4. Clean Up Worktrees
 
 ```bash
-python scripts/session_manager.py --cleanup {session-id}
+python ../agenthub/scripts/session_manager.py --cleanup {session-id}
 ```
 
 ### 5. Post Merge Summary
@@ -76,7 +82,7 @@ channel: results
 ### 6. Update State
 
 ```bash
-python scripts/session_manager.py --update {session-id} --state merged
+python ../agenthub/scripts/session_manager.py --update {session-id} --state merged
 ```
 
 ## Safety

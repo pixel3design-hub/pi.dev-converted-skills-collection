@@ -5,6 +5,12 @@ description: "ISO 42001 AI readiness check. Use before a stage 1 or internal aud
 
 # /skill:aims-audit — AIMS ISO 42001 Forcing Questions
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Command:** `/skill:aims-audit <scope>`
 
 The ISO 42001 AIMS specialist pressure-tests any AI Management System work. Six questions before any certification commitment, internal audit cycle, or new-system onboarding.

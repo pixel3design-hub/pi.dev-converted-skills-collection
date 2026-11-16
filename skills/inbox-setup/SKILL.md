@@ -11,6 +11,12 @@ metadata:
 
 # Inbox-Setup — Email Triage Onboarding
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > **Paired with `inbox-triage`.** This skill writes the 7-file knowledge base at `${WORKSPACE}/Email/` that `inbox-triage` reads on every run. The file contracts (names, sections, fields) MUST match between the two skills exactly. See [`references/kb_file_contract.md`](references/kb_file_contract.md).
 
 Run once (or re-run when business/priorities change). Interview the user about their email patterns, business context, reply style, and priorities. Generate the structured knowledge base in `${WORKSPACE}/Email/` that captures everything `inbox-triage` needs to process the inbox effectively.

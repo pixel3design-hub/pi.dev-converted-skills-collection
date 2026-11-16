@@ -7,6 +7,12 @@ metadata:
 
 # /skill:spawn — Launch Parallel Agents
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Spawn N subagents that work on the same task in parallel, each in an isolated git worktree.
 
 ## Usage
@@ -65,7 +71,7 @@ Constraints:
 
 4. Update session state to `running` via:
 ```bash
-python scripts/session_manager.py --update {session-id} --state running
+python ../agenthub/scripts/session_manager.py --update {session-id} --state running
 ```
 
 ## Critical Rules

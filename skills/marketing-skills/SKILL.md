@@ -17,6 +17,12 @@ metadata:
 
 # Marketing Skills — Directory + Router
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 This is the index skill for the marketing plugin. It does one job: route you to the right specialist skill, then get out of the way. For request-by-request routing logic, [../marketing-ops/SKILL.md](../marketing-ops/SKILL.md) is the canonical router — this file is the map.
 
 **Counts (kept honest):** 44 specialist skills in `skills/` (plus this index and the deprecated `content-creator` redirect), 1 video skill in `video-content-strategist/`, 59 stdlib-only Python tools. No pip installs needed.

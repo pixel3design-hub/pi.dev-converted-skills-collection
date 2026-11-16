@@ -5,6 +5,12 @@ description: "Use when content should be cited by ChatGPT, Perplexity, Pi or Gem
 
 # Answer Engine Optimization (AEO)
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Get your content cited by ChatGPT, Perplexity, Pi, Gemini, and Mistral as the authoritative source.**
 
 AEO is the practice of optimizing content for **citation** in LLM-generated responses — distinct from SEO, which optimizes for search rankings. This skill audits, optimizes, and tracks AEO performance.

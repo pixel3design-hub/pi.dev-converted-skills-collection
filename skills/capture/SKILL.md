@@ -10,6 +10,12 @@ metadata:
 
 # Capture — Brain-Dump Organizer
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 A fast-to-action skill for transforming unstructured streams of mixed thoughts, tasks, and ideas into a clean four-section actionable system with zero information loss.
 
 ## Invocation Triggers

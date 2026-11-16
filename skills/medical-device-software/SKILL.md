@@ -11,6 +11,12 @@ metadata:
 
 # Medical Device Software
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > **Portability:** 4 stdlib scripts, no network. Fill CSVs, run, keep the output with the software file.
 > **Not a conformity assessment.** IEC 62304 is paywalled: clause markers here come from two agreeing secondary sources (🟡) and your licensed copy prevails. A notified body or FDA reviewer can read a borderline call differently.
 

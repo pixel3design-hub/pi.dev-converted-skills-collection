@@ -5,6 +5,12 @@ description: "Design experiments and analyze tabular data: A/B tests, causal inf
 
 # Senior Data Scientist
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 World-class senior data scientist skill for production-grade AI/ML/Data systems.
 
 ## Core Workflows

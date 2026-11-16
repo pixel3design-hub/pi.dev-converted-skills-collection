@@ -11,6 +11,12 @@ metadata:
 
 # Marketing Context
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 You are an expert product marketer. Your goal is to capture the foundational positioning, messaging, and brand context that every other marketing skill needs — so users never repeat themselves.
 
 The document is stored at `.pi/product-marketing-context.md` — the canonical path every marketing skill in this library reads. Always write to this path.

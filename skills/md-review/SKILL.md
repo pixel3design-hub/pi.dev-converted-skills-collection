@@ -11,6 +11,12 @@ metadata:
 
 # md-review — Code-review markdown → 2-column HTML
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 The code-review converter from Tier 2 of Shihipar's essay ("Code Review and PR Writeups"). Takes a markdown PR writeup with diff blocks + severity callouts and produces a single-file HTML review with a jump-nav, 2-column diff + annotation layout, and a named reviewer footer.
 
 Three stdlib tools pipeline together:

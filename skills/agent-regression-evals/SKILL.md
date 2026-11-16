@@ -11,6 +11,12 @@ metadata:
 
 # Agent Regression Evals — prove the change did not make it worse
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > **Portability:** 3 stdlib scripts, no APIs, no LLM calls. You run the agent; these grade, count and gate.
 
 "Pass rate went from 82% to 79%" is not a finding until you know whether three

@@ -11,6 +11,12 @@ metadata:
 
 # Phase 3 — Grade → Iterate (the bounded loop)
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 This is the plugin's **loop**: CMA's `outcome` primitive self-grades the agent's
 work in an isolated context and feeds failing verdicts back for the next attempt.
 It is **always bounded** by `max_iterations` (1..20) — never "improve forever".

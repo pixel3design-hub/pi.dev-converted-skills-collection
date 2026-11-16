@@ -11,6 +11,12 @@ metadata:
 
 # Meetings — Cost Gate → Timeboxed Agenda → Owned Actions
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > **Portability:** Reasoning-led skill with 3 stdlib Python scripts. No external APIs, no LLM calls
 > in scripts, nothing auto-sent. The scripts fix the discipline; the user runs the meeting.
 

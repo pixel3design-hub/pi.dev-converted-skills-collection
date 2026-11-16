@@ -7,6 +7,12 @@ metadata:
 
 # /hub-status — Session Status
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Display the current state of an AgentHub session: agent branches, commit counts, frontier status, and board updates.
 
 ## Usage
@@ -20,17 +26,17 @@ Display the current state of an AgentHub session: agent branches, commit counts,
 
 1. Run session overview:
 ```bash
-python scripts/session_manager.py --status {session-id}
+python ../agenthub/scripts/session_manager.py --status {session-id}
 ```
 
 2. Run DAG analysis:
 ```bash
-python scripts/dag_analyzer.py --status --session {session-id}
+python ../agenthub/scripts/dag_analyzer.py --status --session {session-id}
 ```
 
 3. Read recent board updates:
 ```bash
-python scripts/board_manager.py --read progress
+python ../agenthub/scripts/board_manager.py --read progress
 ```
 
 ## Output Format

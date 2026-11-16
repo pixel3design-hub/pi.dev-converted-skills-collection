@@ -7,6 +7,12 @@ metadata:
 
 # /hub-init — Create New Session
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Initialize an AgentHub collaboration session. Creates the `.agenthub/` directory structure, generates a session ID, and configures evaluation criteria.
 
 ## Usage
@@ -24,7 +30,7 @@ Initialize an AgentHub collaboration session. Creates the `.agenthub/` directory
 Pass them to the init script:
 
 ```bash
-python scripts/hub_init.py \
+python ../agenthub/scripts/hub_init.py \
   --task "{task}" --agents {N} \
   [--eval "{eval_cmd}"] [--metric {metric}] [--direction {direction}] \
   [--base-branch {branch}]

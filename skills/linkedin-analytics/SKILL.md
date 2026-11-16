@@ -11,6 +11,12 @@ metadata:
 
 # LinkedIn Analytics — describe honestly, then refuse to over-conclude
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 The characteristic sentence of LinkedIn analytics is "carousels do 3x better for me", built
 on four posts. With engagement as heavy-tailed as it is, four posts will show a 3x difference
 between almost any two groups you care to define. These three scripts stop that sentence

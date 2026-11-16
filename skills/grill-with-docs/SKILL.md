@@ -12,6 +12,12 @@ metadata:
 
 # Grill with Docs
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > Derived from [Matt Pocock's grill-with-docs](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs) (MIT, © 2026 Matt Pocock). Matt's interview discipline + docs-anchored grilling rules preserved verbatim under MIT. Additions in this repo: 3 stdlib validators (CONTEXT.md linter, ADR scanner, glossary↔code consistency check), 3 in-depth references each citing 7+ authoritative sources, `cs-grill-with-docs` agent, `/cs-grill-with-docs` command. See [Wrapper additions](#wrapper-additions) below.
 
 <what-to-do>

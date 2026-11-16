@@ -11,6 +11,12 @@ metadata:
 
 # product-research
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Product / user research as an operational discipline: choosing the right method, sizing it honestly, and synthesizing findings into governed insights. The core rule: **method must match the goal**, and **an insight requires recurrence across independent participants** — a single quote is an anecdote.
 
 ## Purpose

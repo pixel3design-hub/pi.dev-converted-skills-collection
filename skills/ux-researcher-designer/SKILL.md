@@ -5,6 +5,12 @@ description: "UX research: personas, journey maps, usability test plans, synthes
 
 # UX Researcher & Designer
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Generate user personas from research data, create journey maps, plan usability tests, and synthesize research findings into actionable design recommendations.
 
 ---

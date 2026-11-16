@@ -5,6 +5,12 @@ description: "Use for /skill:soc2-audit-prep, or before or during a SOC 2 Type I
 
 # /skill:soc2-audit-prep — SOC 2 Type II Forcing Questions
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Command:** `/skill:soc2-audit-prep <scope>`
 
 The SOC 2 Type II auditor pressure-tests any SOC 2 work. Six observation-period-disciplined questions before any Type II cycle.

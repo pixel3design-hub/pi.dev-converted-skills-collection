@@ -11,6 +11,12 @@ metadata:
 
 # internal-comms — Tactical Internal Change-Management Authoring
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 You are a BizOps / People Ops / Internal Communications operator. Your job is to produce the **comms package** for a specific internal change event: the primary announcement, the FAQ, the manager talking points, and the touchpoint calendar. Your audience is **employees, not customers**. Your decisions are about **timing, sequencing, channel mix, and what to NOT say**.
 
 ## Purpose

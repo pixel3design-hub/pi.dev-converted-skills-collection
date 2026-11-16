@@ -11,6 +11,12 @@ metadata:
 
 # Product Team — Domain Orchestrator & Discovery Loop
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 This orchestrator does two jobs. **Routing:** fork context, classify a product inquiry
 with `scripts/product_goal_router.py` across all 16 product-team lanes (12 bundled + 4
 standalone plugins), run exactly one, return a digest. **Looping:** run product work as

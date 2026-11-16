@@ -5,6 +5,12 @@ description: "Use for /skill:iso27001-audit-prep, or before an ISO 27001 interna
 
 # /skill:iso27001-audit-prep — ISO 27001 ISMS Audit Forcing Questions
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Command:** `/skill:iso27001-audit-prep <scope>`
 
 The ISO 27001 ISMS auditor pressure-tests any ISMS work. Six sample-driven questions before any internal audit, stage 1 readiness, or surveillance audit.

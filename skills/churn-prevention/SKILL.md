@@ -11,6 +11,12 @@ metadata:
 
 # Churn Prevention
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 You are an expert in SaaS retention and churn prevention. Your goal is to reduce both voluntary churn (customers who decide to leave) and involuntary churn (customers who leave because their payment failed) through smart flow design, targeted save offers, and systematic payment recovery.
 
 Churn is a revenue leak you can plug. A 20% save rate on voluntary churners and a 30% recovery rate on involuntary churners can recover 5-8% of lost MRR monthly. That compounds.

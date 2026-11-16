@@ -11,6 +11,12 @@ metadata:
 
 # Phase 4 — Run Without You (the recurring loop)
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 A **scheduled deployment** fires a fresh session on a cron cadence — the agent
 runs without you. Each firing can carry its own outcome, nesting the bounded
 grade→iterate loop inside every recurring run.

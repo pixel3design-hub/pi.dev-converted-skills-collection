@@ -11,6 +11,12 @@ metadata:
 
 # LinkedIn Strategy — brief, cadence, newsletter
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Three decisions, in this order. Out of order is why most LinkedIn efforts produce a feed of
 unrelated observations and stop in week five.
 

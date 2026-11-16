@@ -7,6 +7,12 @@ metadata:
 
 # /ar-status — Experiment Dashboard
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Show experiment results, active loops, and progress across all experiments.
 
 ## Usage
@@ -24,7 +30,7 @@ Show experiment results, active loops, and progress across all experiments.
 ### Single experiment
 
 ```bash
-python scripts/log_results.py --experiment {domain}/{name}
+python ../autoresearch-agent/scripts/log_results.py --experiment {domain}/{name}
 ```
 
 Also check for active loop:
@@ -40,13 +46,13 @@ Active loop: every {interval} (cron ID: {id}, started: {date})
 ### Domain view
 
 ```bash
-python scripts/log_results.py --domain {domain}
+python ../autoresearch-agent/scripts/log_results.py --domain {domain}
 ```
 
 ### Full dashboard
 
 ```bash
-python scripts/log_results.py --dashboard
+python ../autoresearch-agent/scripts/log_results.py --dashboard
 ```
 
 For each experiment, also check for loop.json and show loop status.
@@ -55,10 +61,10 @@ For each experiment, also check for loop.json and show loop status.
 
 ```bash
 # CSV
-python scripts/log_results.py --dashboard --format csv --output {file}
+python ../autoresearch-agent/scripts/log_results.py --dashboard --format csv --output {file}
 
 # Markdown
-python scripts/log_results.py --dashboard --format markdown --output {file}
+python ../autoresearch-agent/scripts/log_results.py --dashboard --format markdown --output {file}
 ```
 
 ## Output Example

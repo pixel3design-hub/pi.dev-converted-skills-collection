@@ -5,6 +5,12 @@ description: "Analyze, research or value a listed stock or company (US, global, 
 
 # Stock Analysis
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Produce an evidence-backed fundamental analysis of one company, benchmarked against the right peers, and delivered as a written report plus a sector-relative scorecard.
 
 ## The principle that governs everything here

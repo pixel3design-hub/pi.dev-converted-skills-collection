@@ -7,6 +7,12 @@ metadata:
 
 # /ar-run — Single Experiment Iteration
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Run exactly ONE experiment iteration: review history, decide a change, edit, commit, evaluate.
 
 ## Usage
@@ -20,7 +26,7 @@ Run exactly ONE experiment iteration: review history, decide a change, edit, com
 
 ### Step 1: Resolve experiment
 
-If no experiment specified, run `python scripts/setup_experiment.py --list` and ask the user to pick.
+If no experiment specified, run `python ../autoresearch-agent/scripts/setup_experiment.py --list` and ask the user to pick.
 
 ### Step 2: Load context
 
@@ -62,7 +68,7 @@ Edit only the target file specified in config.cfg. Change one thing. Keep it sim
 git add {target}
 git commit -m "experiment: {short description of what changed}"
 
-python scripts/run_experiment.py \
+python ../autoresearch-agent/scripts/run_experiment.py \
   --experiment {domain}/{name} --single
 ```
 

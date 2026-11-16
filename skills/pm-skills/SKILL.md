@@ -11,6 +11,12 @@ metadata:
 
 # Project Management — Domain Orchestrator & Delivery Loop
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 This orchestrator does two jobs. **Routing:** fork context, classify a PM inquiry with
 `scripts/pm_goal_router.py`, run exactly one of the 8 sub-skills, return a digest.
 **Looping:** turn a delivery goal into a bounded agentic loop — pull live Jira data via the

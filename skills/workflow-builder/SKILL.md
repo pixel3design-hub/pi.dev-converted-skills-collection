@@ -10,6 +10,12 @@ metadata:
 
 # Workflow Builder
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Author runnable workflow scripts for Pi's Workflow tool: deterministic multi-agent orchestration files (`.js`) that fan work out to fresh-context sub-agents under plain JavaScript control flow. Only leaf `agent()` calls spend tokens, so the main session stays clean and the whole run is resumable.
 
 ## ALWAYS start every session with intake (non-negotiable)

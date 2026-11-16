@@ -5,6 +5,12 @@ description: "Use when the user wants a /goal prompt rather than the build itsel
 
 # Fable Goal Prompt Writer
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Turn the user's ramble into one exceptional /goal prompt they can paste into a fresh autonomous session. You are not building the thing. You are designing the prompt that builds the thing.
 
 **Wrong-tool check first.** If the user actually wants the deliverable built now, say so in one line and offer to build it — don't write a prompt nobody will paste.

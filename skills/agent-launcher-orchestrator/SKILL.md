@@ -11,6 +11,12 @@ metadata:
 
 # agent-launcher — Domain Orchestrator
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Every session starts with a **goal** — one sentence for one CMA. This orchestrator
 reads that goal, routes to the right phase, and compiles the goal into a **loop or
 a workflow**. Heavy intake stays in the forked context; the parent gets a digest.

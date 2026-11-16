@@ -5,6 +5,12 @@ description: "Computer vision models: object detection, segmentation, training a
 
 # Senior Computer Vision Engineer
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Production computer vision engineering skill for object detection, image segmentation, and visual AI system deployment.
 
 ## Table of Contents

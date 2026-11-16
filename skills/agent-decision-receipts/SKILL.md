@@ -5,6 +5,12 @@ description: "Use when an autonomous agent takes a side-effecting action (deploy
 
 # Agent Decision Receipts
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 ## Overview
 
 A log says an action happened. A **receipt is tamper-evident**: it records who, what, and under which policy, and it is signed, so any later edit breaks the signature. This skill mints one for a consequential agent action and verifies it later from the certificate alone: no database, no network, no trusting the issuer.

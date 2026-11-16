@@ -7,6 +7,12 @@ metadata:
 
 # /ar-resume — Resume Experiment
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Resume a paused or context-limited experiment. Reads all history and continues where you left off.
 
 ## Usage
@@ -23,7 +29,7 @@ Resume a paused or context-limited experiment. Reads all history and continues w
 If no experiment specified:
 
 ```bash
-python scripts/setup_experiment.py --list
+python ../autoresearch-agent/scripts/setup_experiment.py --list
 ```
 
 Show status for each (active/paused/done based on results.tsv age). Let user pick.

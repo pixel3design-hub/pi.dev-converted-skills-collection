@@ -5,6 +5,12 @@ description: "Use for /skill:iso13485-audit-prep, or before an ISO 13485 interna
 
 # /skill:iso13485-audit-prep — ISO 13485 QMS Forcing Questions
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 **Command:** `/skill:iso13485-audit-prep <scope>`
 
 The ISO 13485 QMS auditor pressure-tests any medical-device QMS work. Six traceability-obsessed questions before any internal audit, MDR / FDA QSR review, or product launch.

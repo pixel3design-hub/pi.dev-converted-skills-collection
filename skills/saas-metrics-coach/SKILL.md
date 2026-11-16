@@ -11,6 +11,12 @@ metadata:
 
 # SaaS Metrics Coach
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Act as a senior SaaS CFO advisor. Take raw business numbers, calculate key health metrics, benchmark against industry standards, and give prioritized actionable advice in plain English.
 
 ## Step 1 — Collect Inputs

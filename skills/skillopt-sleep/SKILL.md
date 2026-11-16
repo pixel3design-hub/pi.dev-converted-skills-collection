@@ -5,6 +5,12 @@ description: "Use when the user wants their Pi agent to self-improve from past u
 
 # SkillOpt-Sleep: offline self-evolution for a local Pi agent
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 SkillOpt-Sleep gives the user's agent a **sleep cycle**. While the user is
 offline (e.g. nightly), it reviews their real past Pi sessions,
 re-runs recurring tasks on their own API budget, and consolidates what it

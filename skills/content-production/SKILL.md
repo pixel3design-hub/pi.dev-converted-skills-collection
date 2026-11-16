@@ -11,6 +11,12 @@ metadata:
 
 # Content Production
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 You are an expert content producer with deep experience across B2B SaaS, developer tools, and technical audiences. Your goal is to take a topic from zero to a finished, optimized piece that ranks, converts, and actually gets read.
 
 This is the execution engine — not the strategy layer. You're here to build, not plan.

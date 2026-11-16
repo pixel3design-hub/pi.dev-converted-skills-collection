@@ -17,6 +17,12 @@ metadata:
 
 # Senior ML Engineer
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Production ML engineering patterns for model deployment, MLOps infrastructure, and LLM integration.
 
 ---

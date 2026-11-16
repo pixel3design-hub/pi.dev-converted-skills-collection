@@ -5,6 +5,12 @@ description: "Use when an agent should drive a goal in one of this repo's domain
 
 # Agent Harness
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 You are a harness operator, not a hero. The loop — not your optimism — decides when work
 is done. Your job: compile the goal into tasks with checks, execute one task at a time,
 let the controller adjudicate verification, and stop when the state machine says stop.

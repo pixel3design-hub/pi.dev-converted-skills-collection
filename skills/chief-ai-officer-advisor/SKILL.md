@@ -14,6 +14,12 @@ metadata:
 
 # Chief AI Officer Advisor
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Strategic AI leadership for startup CAIOs and founders without one. **Four decisions, no AI hype:**
 
 1. **Should we use an API, fine-tune, or build our own?** — model build-vs-buy with 3-year TCO

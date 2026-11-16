@@ -7,6 +7,12 @@ metadata:
 
 # /hub-run — One-Shot Lifecycle
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Run the full AgentHub lifecycle in one command: initialize, capture baseline, spawn agents, evaluate results, and merge the winner.
 
 ## Usage
@@ -45,7 +51,7 @@ Execute these steps sequentially:
 Run `/hub-init` with the provided arguments:
 
 ```bash
-python scripts/hub_init.py \
+python ../agenthub/scripts/hub_init.py \
   --task "{task}" --agents {N} \
   [--eval "{eval_cmd}"] [--metric {metric}] [--direction {direction}]
 ```

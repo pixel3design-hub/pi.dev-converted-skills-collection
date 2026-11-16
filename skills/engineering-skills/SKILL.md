@@ -21,6 +21,12 @@ metadata:
 
 # Engineering Team Skills
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 32 production-ready engineering skills organized into core engineering, security, AI/ML/Data, and specialized tools.
 
 ## Quick Start

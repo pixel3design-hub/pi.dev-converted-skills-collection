@@ -11,6 +11,12 @@ metadata:
 
 # Inbox-Triage — Recurring Email Triage
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > **Paired with `inbox-setup`.** This skill consumes the 7-file knowledge base that `inbox-setup` writes at `${WORKSPACE}/Email/`. The file contracts MUST match exactly. See [`references/kb_file_contract.md`](references/kb_file_contract.md) — this is the mirror of the setup-side contract, viewed from the read side.
 
 Run on a recurring schedule (1–3x daily) or on demand. Classify recent emails, research new senders, generate decision recommendations, draft replies (**NEVER SEND**), deliver a clean report, and update the knowledge base with what was learned this run.

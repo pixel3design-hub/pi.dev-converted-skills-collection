@@ -12,6 +12,12 @@ metadata:
 
 # Caveman Mode
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > Derived from [Matt Pocock's caveman](https://github.com/mattpocock/skills/tree/main/skills/productivity/caveman) (MIT). Matt's voice preserved verbatim. Additions: compression tools + references + cs-* wrapper (see [references/companion_tooling.md](references/companion_tooling.md)).
 
 Respond terse like smart caveman. All technical substance stay. Only fluff die.

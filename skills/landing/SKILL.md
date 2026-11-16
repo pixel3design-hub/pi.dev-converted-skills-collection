@@ -11,6 +11,12 @@ metadata:
 
 # Landing — Premium HTML Landing Page Generator
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 > **Distinct from `product-team/skills/landing-page-generator/`.** That skill outputs Next.js TSX components optimized for conversion / lead-gen. THIS skill outputs a single self-contained `.html` file optimized for premium visual experience with GSAP animations. Pick by use case.
 
 Generate a polished, self-contained `.html` landing page from a text prompt or brief. The output is ONE HTML file: all CSS inline in `<style>`, all JS inline in `<script>`, only external dependencies being Google Fonts + GSAP via CDN. The page is visually distinctive, animated, and production-quality.

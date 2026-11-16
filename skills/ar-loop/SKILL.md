@@ -7,6 +7,12 @@ metadata:
 
 # /ar-loop — Autonomous Experiment Loop
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 Start a recurring experiment loop that runs at a user-selected interval.
 
 ## Usage
@@ -66,7 +72,7 @@ Then do exactly ONE iteration:
 - Review results.tsv: what worked, what failed, what hasn't been tried
 - Edit the target file with ONE change (strategy escalation based on run count)
 - Commit: git add {target} && git commit -m "experiment: {description}"
-- Evaluate: python scripts/run_experiment.py --experiment {domain}/{name} --single
+- Evaluate: python ../autoresearch-agent/scripts/run_experiment.py --experiment {domain}/{name} --single
 - Read the output (KEEP/DISCARD/CRASH)
 
 Rules:

@@ -5,6 +5,12 @@ description: "Reference BASIC-tier skill used as a fixture by skill-tester. Coun
 
 # Sample Text Processor
 
+## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/.
+
 This file is the fixture skill_validator.py and script_tester.py run against.
 It is deliberately minimal. Keep its frontmatter valid YAML and limited to the
 fields Pi reads: anything else here gets copied into new skills by

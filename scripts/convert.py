@@ -61,9 +61,25 @@ PLUGIN_PATH = re.compile(
     r"\$\{CLAUDE_PLUGIN_ROOT\}/(?:vendor/[A-Za-z0-9._-]+/|skills/)?"
     r"([A-Za-z0-9._-]+)((?:/[^\s)`\"'\],]*)?)")
 SKILL_NAMES = set()
+SCRIPT_OWNER = {}  # basename.py -> skill that ships it, only when unambiguous
+
+SKILL_PATH = re.compile(r"\{skill_path\}/scripts/([A-Za-z0-9_.-]+\.py)")
 
 
 def rewrite_plugin_paths(text, current, hits):
+    def localise(m):
+        basename = m.group(1)
+        owner = SCRIPT_OWNER.get(basename)
+        if owner is None:
+            return f"scripts/{basename}"
+        if owner == current:
+            hits["path:skill_path"] = hits.get("path:skill_path", 0) + 1
+            return f"scripts/{basename}"
+        hits["path:skill_path-xref"] = hits.get("path:skill_path-xref", 0) + 1
+        return f"../{owner}/scripts/{basename}"
+
+    text = SKILL_PATH.sub(localise, text)
+
     def swap(m):
         ident, rest = m.group(1), m.group(2) or ""
         if ident == current:
@@ -85,6 +101,30 @@ RULES_PROSE = [
     (r"`(%s)`" % "|".join(k for k in PI_TOOL if k not in ("Task", "Skill")),
      lambda m: f"`{PI_TOOL[m.group(1)]}`", "tool:backtick"),
 ]
+
+# Skills that run bundled Python tools get a fallback note: some environments
+# block bare `python`, and `uv run --no-project python` is the drop-in they do allow.
+PY_RUN = re.compile(r"(?<![\w-])python3?[ \t]+(?:-m\b|\S*\.py\b|scripts?/)")
+PY_NOTE = """## Running the Python tools
+
+Run a tool with `python3 scripts/<tool>.py`. If `python` is blocked in this environment, put the same
+arguments after `uv run --no-project python`. If `uv` is missing or blocked as well, stop and ask the
+user to install it from https://docs.astral.sh/uv/getting-started/installation/."""
+
+
+def ships_python(skill_dir, body):
+    """Does this skill run Python: a bundled .py file, or a python command in its text?"""
+    if PY_RUN.search(body):
+        return True
+    return any(f.endswith(".py") for _, _, fns in os.walk(skill_dir) for f in fns)
+
+
+def insert_python_note(body, hits):
+    hits["note:python-fallback"] = hits.get("note:python-fallback", 0) + 1
+    m = re.search(r"^# .*$", body, re.M)
+    at = m.end() if m else 0
+    return body[:at] + "\n\n" + PY_NOTE + "\n\n" + body[at:].lstrip("\n")
+
 
 # Claude plugin install instructions have no Pi equivalent.
 PLUGIN_LINE = re.compile(r"^\s*(?:[-*]\s*)?(?:\*\*)?`?/plugin (?:install|marketplace)\b.*$", re.M)
@@ -203,6 +243,8 @@ def convert_skill(skill_dir, hits):
 
     body = rewrite_plugin_paths(body, name, hits)
     body = PLUGIN_LINE.sub("", convert_body(body, hits))
+    if ships_python(skill_dir, body + "\n" + desc):
+        body = insert_python_note(body, hits)
 
     head = [f"name: {quote(name)}", f"description: {quote(desc)}"]
     for key in ("license", "compatibility"):
@@ -243,6 +285,13 @@ def convert(srcs, out):
     """srcs: list of source roots; several repos convert into one flat tree."""
     dirs = [(src, d) for src in srcs for d in discover(src)]
     SKILL_NAMES.update(planned_names([d for _, d in dirs]))
+    owners = {}
+    for _, d in dirs:
+        for _, _, fns in os.walk(d):
+            for f in fns:
+                if f.endswith(".py"):
+                    owners.setdefault(f, set()).add(os.path.basename(d))
+    SCRIPT_OWNER.update({f: next(iter(o)) for f, o in owners.items() if len(o) == 1})
     skills, report, seen = [], [], {}
     for src, skill_dir in dirs:
         rel = os.path.relpath(skill_dir, src)
