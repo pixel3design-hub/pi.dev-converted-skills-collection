@@ -28,8 +28,8 @@ CISO, security strategy, risk quantification, ALE, SLE, ARO, security posture, c
 ## Quick Start
 
 ```bash
-python scripts/risk_quantifier.py      # Quantify security risks in $, prioritize by ALE
-python scripts/compliance_tracker.py   # Map framework overlaps, estimate effort and cost
+python3 scripts/risk_quantifier.py      # Quantify security risks in $, prioritize by ALE
+python3 scripts/compliance_tracker.py   # Map framework overlaps, estimate effort and cost
 ```
 
 ## Core Responsibilities

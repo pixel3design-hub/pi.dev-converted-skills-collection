@@ -16,7 +16,7 @@ Day: 08:30 hard start, 17:00 hard stop, lunch 12:30.
 ## Step 1 — Shallow audit
 
 ```bash
-python scripts/shallow_work_auditor.py \
+python3 scripts/shallow_work_auditor.py \
   --task "Write Q3 product spec:120" \
   --task "Design onboarding flow:90" \
   --task "Email sweep:30" \
@@ -33,7 +33,7 @@ item confirmed none of them deserves a promotion to deep. Proceed.
 ## Step 2 — The plan
 
 ```bash
-python scripts/time_block_planner.py --start 08:30 --end 17:00 --lunch 12:30 \
+python3 scripts/time_block_planner.py --start 08:30 --end 17:00 --lunch 12:30 \
   --task "Write Q3 product spec:120:deep" \
   --task "Design onboarding flow:90:deep" \
   --task "Email sweep:30:shallow" \
@@ -65,7 +65,7 @@ At 10:15 an incident call ate the rest of the spec block. The rule: **revise, do
 At 11:00, re-plan the remaining day with what actually survives:
 
 ```bash
-python scripts/time_block_planner.py --start 11:00 --end 17:00 --lunch 12:30 \
+python3 scripts/time_block_planner.py --start 11:00 --end 17:00 --lunch 12:30 \
   --task "Finish Q3 product spec:90:deep" \
   --task "Email sweep:30:shallow" \
   --task "Team status update:20:shallow" \
@@ -79,9 +79,9 @@ hard stop did not move.
 ## Step 3 — Log what actually happened
 
 ```bash
-python scripts/focus_session_logger.py log --minutes 75 --label "Q3 product spec (pre-incident)"
-python scripts/focus_session_logger.py log --minutes 90 --label "Q3 product spec (finish)"
-python scripts/focus_session_logger.py status --target 15
+python3 scripts/focus_session_logger.py log --minutes 75 --label "Q3 product spec (pre-incident)"
+python3 scripts/focus_session_logger.py log --minutes 90 --label "Q3 product spec (finish)"
+python3 scripts/focus_session_logger.py status --target 15
 ```
 
 2h45 banked today. The week's ledger, not memory, decides whether the 15-hour target is on track.

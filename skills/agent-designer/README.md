@@ -20,7 +20,7 @@ The Agent Designer skill includes three core components:
 
 ```bash
 # Use sample requirements or create your own
-python agent_planner.py assets/sample_system_requirements.json -o my_architecture
+python3 agent_planner.py assets/sample_system_requirements.json -o my_architecture
 
 # This generates:
 # - my_architecture.json (complete architecture)
@@ -32,7 +32,7 @@ python agent_planner.py assets/sample_system_requirements.json -o my_architectur
 
 ```bash
 # Use sample tool descriptions or create your own
-python tool_schema_generator.py assets/sample_tool_descriptions.json -o my_tools
+python3 tool_schema_generator.py assets/sample_tool_descriptions.json -o my_tools
 
 # This generates:
 # - my_tools.json (complete schemas)
@@ -46,7 +46,7 @@ python tool_schema_generator.py assets/sample_tool_descriptions.json -o my_tools
 
 ```bash
 # Use sample execution logs or your own
-python agent_evaluator.py assets/sample_execution_logs.json -o evaluation
+python3 agent_evaluator.py assets/sample_execution_logs.json -o evaluation
 
 # This generates:
 # - evaluation.json (complete report)
@@ -91,7 +91,7 @@ Create a JSON file with system requirements:
 #### Command Line Options
 
 ```bash
-python agent_planner.py <input_file> [OPTIONS]
+python3 agent_planner.py <input_file> [OPTIONS]
 
 Options:
   -o, --output PREFIX    Output file prefix (default: agent_architecture)
@@ -159,7 +159,7 @@ Create a JSON file with tool descriptions:
 #### Command Line Options
 
 ```bash
-python tool_schema_generator.py <input_file> [OPTIONS]
+python3 tool_schema_generator.py <input_file> [OPTIONS]
 
 Options:
   -o, --output PREFIX    Output file prefix (default: tool_schemas)
@@ -231,7 +231,7 @@ Create a JSON file with execution logs:
 #### Command Line Options
 
 ```bash
-python agent_evaluator.py <input_file> [OPTIONS]
+python3 agent_evaluator.py <input_file> [OPTIONS]
 
 Options:
   -o, --output PREFIX    Output file prefix (default: evaluation_report)

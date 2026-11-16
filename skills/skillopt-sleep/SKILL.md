@@ -115,7 +115,7 @@ Both are gated by the same held-out validation score. Set `evolve_memory: false`
 - Always show the user the **held-out baseline → candidate** score and the
   exact proposed edits before suggesting adoption. Evidence before adoption.
 - If asked whether it really helps, run
-  `python -m skillopt_sleep.experiments.run_experiment --persona researcher --json`
+  `python3 -m skillopt_sleep.experiments.run_experiment --persona researcher --json`
   — a deterministic demo that proves held-out lift and that the gate blocks
   harmful edits.
 
@@ -123,8 +123,8 @@ Both are gated by the same held-out validation score. Set `evolve_memory: false`
 
 ```bash
 # deterministic proof (no API): held-out score rises, gate blocks regressions
-python -m skillopt_sleep.experiments.run_experiment --persona researcher --assert-improves
-python -m skillopt_sleep.experiments.run_experiment --persona programmer  --assert-improves
+python3 -m skillopt_sleep.experiments.run_experiment --persona researcher --assert-improves
+python3 -m skillopt_sleep.experiments.run_experiment --persona programmer  --assert-improves
 ```
 
 See the upstream SkillOpt-Sleep guide section

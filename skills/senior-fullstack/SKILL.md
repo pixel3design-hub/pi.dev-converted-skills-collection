@@ -48,18 +48,18 @@ Deterministic profile picker. Given four assumptions (team-size, cadence, user-f
 
 ```bash
 # See all options
-python scripts/fullstack_decision_engine.py --help
+python3 scripts/fullstack_decision_engine.py --help
 
 # Run against a sample input
-python scripts/fullstack_decision_engine.py --sample
+python3 scripts/fullstack_decision_engine.py --sample
 
 # Pick a profile from real inputs
-python scripts/fullstack_decision_engine.py \
+python3 scripts/fullstack_decision_engine.py \
     --team-size-12mo 8 --cadence daily --user-facing true --budget 5000 \
     --traffic-p99-rps 50 --data-sensitivity pii-only
 
 # JSON output for downstream tools
-python scripts/fullstack_decision_engine.py --sample --output json
+python3 scripts/fullstack_decision_engine.py --sample --output json
 ```
 
 Returns: matched profile name, score, matched/violated constraints, stack recommendation, anti-recommendations, SLO floor, named-approver chain, and canon references.
@@ -82,25 +82,25 @@ Generates fullstack project structures with boilerplate code.
 
 ```bash
 # List available templates
-python scripts/project_scaffolder.py --list-templates
+python3 scripts/project_scaffolder.py --list-templates
 
 # Create Next.js project
-python scripts/project_scaffolder.py nextjs my-app
+python3 scripts/project_scaffolder.py nextjs my-app
 
 # Create FastAPI + React project
-python scripts/project_scaffolder.py fastapi-react my-api
+python3 scripts/project_scaffolder.py fastapi-react my-api
 
 # Create MERN stack project
-python scripts/project_scaffolder.py mern my-project
+python3 scripts/project_scaffolder.py mern my-project
 
 # Create Django + React project
-python scripts/project_scaffolder.py django-react my-app
+python3 scripts/project_scaffolder.py django-react my-app
 
 # Specify output directory
-python scripts/project_scaffolder.py nextjs my-app --output ./projects
+python3 scripts/project_scaffolder.py nextjs my-app --output ./projects
 
 # JSON output
-python scripts/project_scaffolder.py nextjs my-app --json
+python3 scripts/project_scaffolder.py nextjs my-app --json
 ```
 
 **Parameters:**
@@ -138,19 +138,19 @@ Analyzes fullstack codebases for quality issues.
 
 ```bash
 # Analyze current directory
-python scripts/code_quality_analyzer.py .
+python3 scripts/code_quality_analyzer.py .
 
 # Analyze specific project
-python scripts/code_quality_analyzer.py /path/to/project
+python3 scripts/code_quality_analyzer.py /path/to/project
 
 # Verbose output with detailed findings
-python scripts/code_quality_analyzer.py . --verbose
+python3 scripts/code_quality_analyzer.py . --verbose
 
 # JSON output
-python scripts/code_quality_analyzer.py . --json
+python3 scripts/code_quality_analyzer.py . --json
 
 # Save report to file
-python scripts/code_quality_analyzer.py . --output report.json
+python3 scripts/code_quality_analyzer.py . --output report.json
 ```
 
 **Parameters:**
@@ -211,7 +211,7 @@ Total Lines: 12,500
 
 ```bash
 # 1. Scaffold project
-python scripts/project_scaffolder.py nextjs my-saas-app
+python3 scripts/project_scaffolder.py nextjs my-saas-app
 
 # 2. Verify scaffold succeeded
 ls my-saas-app/package.json
@@ -224,7 +224,7 @@ npm install
 cp .env.example .env.local
 
 # 5. Run quality check
-python scripts/code_quality_analyzer.py .
+python3 scripts/code_quality_analyzer.py .
 
 # 6. Start development
 npm run dev
@@ -239,13 +239,13 @@ npm run dev
 
 ```bash
 # 1. Full analysis
-python scripts/code_quality_analyzer.py /path/to/project --verbose
+python3 scripts/code_quality_analyzer.py /path/to/project --verbose
 
 # 2. Generate detailed report
-python scripts/code_quality_analyzer.py /path/to/project --json --output audit.json
+python3 scripts/code_quality_analyzer.py /path/to/project --json --output audit.json
 
 # 3. After fixing P0 issues, re-run to verify
-python scripts/code_quality_analyzer.py /path/to/project --verbose
+python3 scripts/code_quality_analyzer.py /path/to/project --verbose
 ```
 
 ### Workflow 3: Stack Selection
@@ -355,7 +355,7 @@ Four built-in profiles in `profiles/` calibrate every recommendation:
 Pick a profile via:
 
 ```bash
-python scripts/fullstack_decision_engine.py \
+python3 scripts/fullstack_decision_engine.py \
   --team-size 6 --team-size-12mo 12 \
   --cadence daily --user-facing true --budget 5000 \
   --traffic-p99-rps 45 --data-sensitivity pii-only
@@ -413,6 +413,6 @@ This skill is invokable by any other agent or skill via three surfaces:
 
 1. **Slash command:** `/cs-fullstack-review <prompt>` — runs the full grill + decision engine + composition routing.
 2. **Agent subagent:** `Agent({subagent_type: "cs-fullstack-engineer", prompt: "..."})` — forks context, returns ≤ 200-word digest.
-3. **Direct tool call:** `python scripts/fullstack_decision_engine.py ...` — deterministic profile match without the conversational grill (use when inputs are already known).
+3. **Direct tool call:** `python3 scripts/fullstack_decision_engine.py ...` — deterministic profile match without the conversational grill (use when inputs are already known).
 
 See `agents/engineering/cs-fullstack-engineer.md` for the full invocation contract.

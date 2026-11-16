@@ -72,13 +72,13 @@ Analyzes git diff between branches to assess review complexity and identify risk
 
 ```bash
 # Analyze current branch against main
-python scripts/pr_analyzer.py /path/to/repo
+python3 scripts/pr_analyzer.py /path/to/repo
 
 # Compare specific branches
-python scripts/pr_analyzer.py . --base main --head feature-branch
+python3 scripts/pr_analyzer.py . --base main --head feature-branch
 
 # JSON output for integration
-python scripts/pr_analyzer.py /path/to/repo --json
+python3 scripts/pr_analyzer.py /path/to/repo --json
 ```
 
 **What it detects (universal — see also language file for language-specific signals):**
@@ -104,14 +104,14 @@ Analyzes source code for structural issues, code smells, and SOLID violations.
 
 ```bash
 # Analyze a directory
-python scripts/code_quality_checker.py /path/to/code
+python3 scripts/code_quality_checker.py /path/to/code
 
 # Analyze specific language
 # Valid values: python, typescript, javascript, go, swift, kotlin, csharp, java, c, cpp, rust, ruby, php, dart
-python scripts/code_quality_checker.py . --language java
+python3 scripts/code_quality_checker.py . --language java
 
 # JSON output
-python scripts/code_quality_checker.py /path/to/code --json
+python3 scripts/code_quality_checker.py /path/to/code --json
 ```
 
 **Universal thresholds:**
@@ -135,13 +135,13 @@ Combines PR analysis and code quality findings into structured review reports.
 
 ```bash
 # Generate report for current repo
-python scripts/review_report_generator.py /path/to/repo
+python3 scripts/review_report_generator.py /path/to/repo
 
 # Markdown output
-python scripts/review_report_generator.py . --format markdown --output review.md
+python3 scripts/review_report_generator.py . --format markdown --output review.md
 
 # Use pre-computed analyses
-python scripts/review_report_generator.py . \
+python3 scripts/review_report_generator.py . \
   --pr-analysis pr_results.json \
   --quality-analysis quality_results.json
 ```
@@ -184,6 +184,6 @@ Labelled fixtures live in `assets/` with their committed `--json` output in
 behaviour change in the analyzer:
 
 ```bash
-python scripts/code_quality_checker.py assets/sample_java_smells.java --json \
+python3 scripts/code_quality_checker.py assets/sample_java_smells.java --json \
   | diff - expected_outputs/sample_java_smells_quality.json
 ```

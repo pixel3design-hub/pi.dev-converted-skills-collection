@@ -28,7 +28,7 @@ strategic alignment, strategy cascade, OKR alignment, orphan OKRs, conflicting g
 ## Quick Start
 
 ```bash
-python scripts/alignment_checker.py    # Check OKR alignment: orphans, conflicts, coverage gaps
+python3 scripts/alignment_checker.py    # Check OKR alignment: orphans, conflicts, coverage gaps
 ```
 
 ## Core Framework

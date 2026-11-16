@@ -16,13 +16,13 @@ Production-ready quality assurance and test automation skill for React/Next.js a
 
 ```bash
 # Generate component tests
-python scripts/test_suite_generator.py src/components --include-a11y
+python3 scripts/test_suite_generator.py src/components --include-a11y
 
 # Analyze coverage gaps
-python scripts/coverage_analyzer.py coverage/coverage-final.json --threshold 80 --strict
+python3 scripts/coverage_analyzer.py coverage/coverage-final.json --threshold 80 --strict
 
 # Scaffold E2E tests for Next.js
-python scripts/e2e_test_scaffolder.py src/app --page-objects
+python3 scripts/e2e_test_scaffolder.py src/app --page-objects
 ```
 
 ## Scripts
@@ -39,7 +39,7 @@ Scans React/TypeScript components and generates Jest + React Testing Library tes
 
 **Usage:**
 ```bash
-python scripts/test_suite_generator.py <component-dir> [options]
+python3 scripts/test_suite_generator.py <component-dir> [options]
 
 Options:
   --scan-only       List components without generating tests
@@ -59,7 +59,7 @@ Parses Istanbul JSON or LCOV coverage reports and identifies testing gaps.
 
 **Usage:**
 ```bash
-python scripts/coverage_analyzer.py <coverage-file> [options]
+python3 scripts/coverage_analyzer.py <coverage-file> [options]
 
 Options:
   --threshold N     Minimum coverage percentage (default: 80)
@@ -80,7 +80,7 @@ Scans Next.js App Router or Pages Router directories and generates Playwright te
 
 **Usage:**
 ```bash
-python scripts/e2e_test_scaffolder.py <app-dir> [options]
+python3 scripts/e2e_test_scaffolder.py <app-dir> [options]
 
 Options:
   --page-objects    Generate Page Object Model classes

@@ -28,8 +28,8 @@ COO, chief operating officer, operations, operational excellence, process improv
 ## Quick Start
 
 ```bash
-python scripts/ops_efficiency_analyzer.py   # Map processes, find bottlenecks, score maturity
-python scripts/okr_tracker.py               # Cascade OKRs, track progress, flag at-risk items
+python3 scripts/ops_efficiency_analyzer.py   # Map processes, find bottlenecks, score maturity
+python3 scripts/okr_tracker.py               # Cascade OKRs, track progress, flag at-risk items
 ```
 
 ## Core Responsibilities

@@ -16,7 +16,7 @@ Dark Mode,8000,medium,high,s
 
 **Command:**
 ```bash
-python scripts/rice_prioritizer.py features.csv --capacity 15
+python3 scripts/rice_prioritizer.py features.csv --capacity 15
 ```
 
 **Output:**
@@ -100,7 +100,7 @@ back-and-forth messages. It's my biggest pain point right now.
 
 **Command:**
 ```bash
-python scripts/customer_interview_analyzer.py interview.txt
+python3 scripts/customer_interview_analyzer.py interview.txt
 ```
 
 **Output:**

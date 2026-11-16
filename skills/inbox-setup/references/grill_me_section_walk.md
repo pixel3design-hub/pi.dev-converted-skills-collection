@@ -94,7 +94,7 @@ These skips ALSO commit to the file (with empty section) so triage knows the sec
 3. Write file(s) at ${WORKSPACE}/Email/{filename}
 4. Confirm to user: "✓ Section N complete. {file(s)} committed."
 5. Record in session tracker:
-     python scripts/section_progress_tracker.py \
+     python3 scripts/section_progress_tracker.py \
        --action record_section_done --session NAME \
        --section N --files "{filename}"
 6. Move to Section N+1's first question.

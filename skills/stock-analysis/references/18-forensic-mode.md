@@ -48,7 +48,7 @@ Say so plainly rather than producing a weak forensic report:
 
 ## Stage F1 — The one-hour triage
 
-These six tests are cheap, quantitative, and catch the large majority of distortion cases. Run all six before going deeper. Run `python scripts/ratios.py <input.json>` — it computes most of them and raises the warnings automatically.
+These six tests are cheap, quantitative, and catch the large majority of distortion cases. Run all six before going deeper. Run `python3 scripts/ratios.py <input.json>` — it computes most of them and raises the warnings automatically.
 
 | # | Test | Compute | What it means |
 |---|---|---|---|

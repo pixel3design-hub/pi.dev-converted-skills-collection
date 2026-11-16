@@ -52,6 +52,7 @@ RULES_ANY = [
     (r"CLAUDE\.md", "AGENTS.md", "file:CLAUDE.md"),
     (r"CLAUDE_CONFIG_DIR", "PI_CODING_AGENT_DIR", "env:config-dir"),
     NS_RULE,
+    (r"(?<![\w-])python(?=[ \t]+(?:-m\b|\S*\.py\b|scripts/))", "python3", "cmd:python3"),
     (r"\$ARGUMENTS", "the user's request", "arg:ARGUMENTS"),
 ]
 
@@ -101,6 +102,27 @@ RULES_PROSE = [
     (r"`(%s)`" % "|".join(k for k in PI_TOOL if k not in ("Task", "Skill")),
      lambda m: f"`{PI_TOOL[m.group(1)]}`", "tool:backtick"),
 ]
+
+# Per-skill READMEs carry upstream's install instructions (npx, plugin marketplace,
+# `cp -R engineering/<skill> ...`). In this collection the install route is different.
+INSTALL_SECTION = re.compile(r"(^## Installation[ \t]*\n)(.*?)(?=^## |\Z)", re.M | re.S)
+INSTALL_TEXT = """## Installation
+
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/{name}` from a clone of that repo, or copy this directory into
+`~/.agents/skills/{name}` to have it available in every project. The collection README lists the
+other routes.
+
+"""
+
+
+def rewrite_install_section(text, name, hits):
+    if not INSTALL_SECTION.search(text):
+        return text
+    hits["doc:install-section"] = hits.get("doc:install-section", 0) + 1
+    return INSTALL_SECTION.sub(lambda m: INSTALL_TEXT.format(name=name), text, count=1)
+
 
 # Skills that run bundled Python tools get a fallback note: some environments
 # block bare `python`, and `uv run --no-project python` is the drop-in they do allow.
@@ -325,6 +347,8 @@ def convert(srcs, out):
                     sub_hits = {}
                     txt = convert_body(open(s, encoding="utf-8", errors="replace").read(), sub_hits)
                     txt = rewrite_plugin_paths(txt, name, hits)
+                    if fn == "README.md":
+                        txt = rewrite_install_section(txt, name, hits)
                     open(d, "w", encoding="utf-8").write(PLUGIN_LINE.sub("", txt))
                     for k, v in sub_hits.items():
                         hits[k] = hits.get(k, 0) + v

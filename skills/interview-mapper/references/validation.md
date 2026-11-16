@@ -13,7 +13,7 @@ The only threshold documented in the primary sources is difflib 0.6; the rest is
    - true: the quote is really in the source (including with ASR noise).
    - false: a fabrication OR a heavy "regeneration" (words removed such that the meaning shifted).
    - **The most valuable are near-misses**: real quotes with fillers/punctuation removed (regenerations). On easy fabrications any threshold gives F1=1.0 and calibrates nothing.
-2. `python scripts/calibrate_threshold.py --transcript T.txt --gold gold.json [--prefer-precision]`
+2. `python3 scripts/calibrate_threshold.py --transcript T.txt --gold gold.json [--prefer-precision]`
 3. Take the recommended threshold. For mapping, **precision** usually matters more (fewer false "verified" quotes) → `--prefer-precision`.
 
 ## Mini-eval skill vs baseline (qualitative)

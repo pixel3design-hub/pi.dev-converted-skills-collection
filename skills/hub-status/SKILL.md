@@ -26,17 +26,17 @@ Display the current state of an AgentHub session: agent branches, commit counts,
 
 1. Run session overview:
 ```bash
-python ../agenthub/scripts/session_manager.py --status {session-id}
+python3 ../agenthub/scripts/session_manager.py --status {session-id}
 ```
 
 2. Run DAG analysis:
 ```bash
-python ../agenthub/scripts/dag_analyzer.py --status --session {session-id}
+python3 ../agenthub/scripts/dag_analyzer.py --status --session {session-id}
 ```
 
 3. Read recent board updates:
 ```bash
-python ../agenthub/scripts/board_manager.py --read progress
+python3 ../agenthub/scripts/board_manager.py --read progress
 ```
 
 ## Output Format

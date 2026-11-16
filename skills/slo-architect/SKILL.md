@@ -59,18 +59,18 @@ The 3 tools below catch each of these.
 SKILL=engineering/slo-architect/skills/slo-architect
 
 # 1. Design an SLO
-python "$SKILL/scripts/slo_designer.py" \
+python3 "$SKILL/scripts/slo_designer.py" \
   --service checkout-svc \
   --sli-type request-success-rate \
   --target 99.9 \
   --window-days 30
 
 # 2. Compute error budget + multi-window burn-rate alerts
-python "$SKILL/scripts/error_budget_calculator.py" \
+python3 "$SKILL/scripts/error_budget_calculator.py" \
   --target 99.9 --window-days 30
 
 # 3. Review existing SLO definitions for common bugs
-python "$SKILL/scripts/slo_review.py" --slo-doc docs/slos/
+python3 "$SKILL/scripts/slo_review.py" --slo-doc docs/slos/
 ```
 
 ## The 3 Python tools
@@ -82,7 +82,7 @@ All stdlib-only.
 Generates a structured SLO definition with required fields. Refuses to render if any required field is missing (`exit 1`).
 
 ```bash
-python scripts/slo_designer.py \
+python3 scripts/slo_designer.py \
   --service checkout-svc \
   --sli-type request-success-rate \
   --target 99.9 \
@@ -109,8 +109,8 @@ Given target availability + window, computes:
 - Recommended alerting rules (PromQL-shaped output)
 
 ```bash
-python scripts/error_budget_calculator.py --target 99.9 --window-days 30
-python scripts/error_budget_calculator.py --target 99.95 --window-days 7 --format json
+python3 scripts/error_budget_calculator.py --target 99.9 --window-days 30
+python3 scripts/error_budget_calculator.py --target 99.95 --window-days 7 --format json
 ```
 
 ### `slo_review.py`
@@ -118,7 +118,7 @@ python scripts/error_budget_calculator.py --target 99.95 --window-days 7 --forma
 Audits a directory of SLO definitions (markdown or JSON) for the common bugs.
 
 ```bash
-python scripts/slo_review.py --slo-doc docs/slos/
+python3 scripts/slo_review.py --slo-doc docs/slos/
 ```
 
 **Checks:**

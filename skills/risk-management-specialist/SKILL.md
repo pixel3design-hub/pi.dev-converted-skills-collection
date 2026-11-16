@@ -422,7 +422,7 @@ What is the risk level?
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
-| [risk_matrix_calculator.py](scripts/risk_matrix_calculator.py) | Calculate risk levels and FMEA RPN | `python risk_matrix_calculator.py --help` |
+| [risk_matrix_calculator.py](scripts/risk_matrix_calculator.py) | Calculate risk levels and FMEA RPN | `python3 risk_matrix_calculator.py --help` |
 
 **Risk Matrix Calculator Features:**
 - ISO 14971 5x5 risk matrix calculation

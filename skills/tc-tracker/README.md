@@ -59,14 +59,9 @@ When installed with the rest of this repo, the `/tc <subcommand>` slash command 
 
 ## Installation
 
-### Pi
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/tc-tracker` from a clone of that repo, or copy this directory into
+`~/.agents/skills/tc-tracker` to have it available in every project. The collection README lists the
+other routes.
 
-```bash
-cp -R engineering/tc-tracker ~/.agents/skills/tc-tracker
-```
-
-### OpenAI Codex
-
-```bash
-cp -R engineering/tc-tracker ~/.codex/skills/tc-tracker
-```

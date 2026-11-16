@@ -209,7 +209,7 @@ apps/<name>/urls.py       — App URL config
 tests/test_*.py
 ```
 
-**Run:** `python manage.py runserver`
+**Run:** `python3 manage.py runserver`
 **Test:** `pytest`
 
 ---

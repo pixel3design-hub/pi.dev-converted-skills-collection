@@ -56,7 +56,7 @@ git branch -D hub/{session-id}/{agent-id}/attempt-1
 ### 4. Clean Up Worktrees
 
 ```bash
-python ../agenthub/scripts/session_manager.py --cleanup {session-id}
+python3 ../agenthub/scripts/session_manager.py --cleanup {session-id}
 ```
 
 ### 5. Post Merge Summary
@@ -82,7 +82,7 @@ channel: results
 ### 6. Update State
 
 ```bash
-python ../agenthub/scripts/session_manager.py --update {session-id} --state merged
+python3 ../agenthub/scripts/session_manager.py --update {session-id} --state merged
 ```
 
 ## Safety

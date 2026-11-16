@@ -9,9 +9,9 @@ The vendor-management skill's three Python tools all read the same JSON shape (w
 3. Run the three tools:
 
 ```bash
-python scripts/vendor_scorer.py            --input vendor_catalog.json --profile saas       --output scorecard.md
-python scripts/sla_compliance_tracker.py   --input sla_records.json                          --output sla_report.md
-python scripts/vendor_risk_classifier.py   --input vendor_catalog.json --profile saas       --output risk_matrix.md
+python3 scripts/vendor_scorer.py            --input vendor_catalog.json --profile saas       --output scorecard.md
+python3 scripts/sla_compliance_tracker.py   --input sla_records.json                          --output sla_report.md
+python3 scripts/vendor_risk_classifier.py   --input vendor_catalog.json --profile saas       --output risk_matrix.md
 ```
 
 (SLA records are a separate file — see the SLA shape below.)

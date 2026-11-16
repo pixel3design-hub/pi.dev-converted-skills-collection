@@ -58,7 +58,7 @@ def divide(a: float, b: float) -> float:
 
 **Command:**
 ```bash
-python scripts/test_generator.py --input math_utils.py --framework pytest
+python3 scripts/test_generator.py --input math_utils.py --framework pytest
 ```
 
 **Generated test output (`test_math_utils.py`):**
@@ -90,7 +90,7 @@ class TestDivide:
 
 **Command:**
 ```bash
-python scripts/coverage_analyzer.py --report lcov.info --threshold 80
+python3 scripts/coverage_analyzer.py --report lcov.info --threshold 80
 ```
 
 **Sample output:**
@@ -117,10 +117,10 @@ Recommended: Generate tests for P0 items first to reach 80% threshold.
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
-| `test_generator.py` | Generate test cases from code/requirements | `python scripts/test_generator.py --input source.py --framework pytest` |
-| `coverage_analyzer.py` | Parse and analyze coverage reports | `python scripts/coverage_analyzer.py --report lcov.info --threshold 80` |
-| `tdd_workflow.py` | Guide red-green-refactor cycles | `python scripts/tdd_workflow.py --phase red --test test_auth.py` |
-| `fixture_generator.py` | Generate test data and mocks | `python scripts/fixture_generator.py --entity User --count 5` |
+| `test_generator.py` | Generate test cases from code/requirements | `python3 scripts/test_generator.py --input source.py --framework pytest` |
+| `coverage_analyzer.py` | Parse and analyze coverage reports | `python3 scripts/coverage_analyzer.py --report lcov.info --threshold 80` |
+| `tdd_workflow.py` | Guide red-green-refactor cycles | `python3 scripts/tdd_workflow.py --phase red --test test_auth.py` |
+| `fixture_generator.py` | Generate test data and mocks | `python3 scripts/fixture_generator.py --entity User --count 5` |
 
 Additional scripts: `framework_adapter.py` (convert between frameworks), `metrics_calculator.py` (quality metrics), `format_detector.py` (detect language/framework), `output_formatter.py` (CLI/desktop/CI output).
 

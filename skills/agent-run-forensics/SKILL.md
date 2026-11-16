@@ -32,14 +32,14 @@ This skill makes the answer come from that recording.
 
 ```bash
 # 1 - Find the run (skip if the question is about this session: the hook gives you its path)
-python scripts/trace_finder.py --since 7d --touched config.yaml
+python3 scripts/trace_finder.py --since 7d --touched config.yaml
 # 2 - Read it: what happened, in order, and which files changed
-python scripts/trace_timeline.py --trace <path> --files        # SILENT = changed, never named by the agent
-python scripts/trace_timeline.py --trace <path> --grep timeout # or --errors, --file PATH, --around N
+python3 scripts/trace_timeline.py --trace <path> --files        # SILENT = changed, never named by the agent
+python3 scripts/trace_timeline.py --trace <path> --grep timeout # or --errors, --file PATH, --around N
 # 3 - Walk back from the step in question
-python scripts/trace_timeline.py --trace <path> --why 9
+python3 scripts/trace_timeline.py --trace <path> --why 9
 # 4 - Before repeating any summary as fact, check it
-python scripts/claim_checker.py --trace <path> --claim "passed:pytest" --claim "not-edited:config.yaml"
+python3 scripts/claim_checker.py --trace <path> --claim "passed:pytest" --claim "not-edited:config.yaml"
 ```
 
 **Step 3** prints two lists and you keep them apart in the answer:

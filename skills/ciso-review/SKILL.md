@@ -59,8 +59,8 @@ The risk-paranoid threat-modeler. Six questions before any production change tha
 ## Workflow
 
 ```bash
-python ../ciso-advisor/scripts/risk_quantifier.py
-python ../ciso-advisor/scripts/compliance_tracker.py
+python3 ../ciso-advisor/scripts/risk_quantifier.py
+python3 ../ciso-advisor/scripts/compliance_tracker.py
 ```
 
 ## Output Format

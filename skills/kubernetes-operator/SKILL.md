@@ -60,13 +60,13 @@ The 3 tools below catch each of these.
 SKILL=engineering/kubernetes-operator/skills/kubernetes-operator
 
 # Validate a CRD design
-python "$SKILL/scripts/crd_validator.py" --crd config/crd/myapp.yaml
+python3 "$SKILL/scripts/crd_validator.py" --crd config/crd/myapp.yaml
 
 # Lint a Go reconcile function
-python "$SKILL/scripts/reconcile_lint.py" --controller controllers/myapp_controller.go
+python3 "$SKILL/scripts/reconcile_lint.py" --controller controllers/myapp_controller.go
 
 # Score against OperatorHub Capability Levels (1-5)
-python "$SKILL/scripts/operator_capability_audit.py" --operator-dir .
+python3 "$SKILL/scripts/operator_capability_audit.py" --operator-dir .
 ```
 
 ## The 3 Python tools
@@ -78,8 +78,8 @@ All stdlib-only. Run with `--help`.
 Validates a CRD YAML against operator-pattern best practices.
 
 ```bash
-python scripts/crd_validator.py --crd config/crd/myapp.yaml
-python scripts/crd_validator.py --crd config/crd/ --format json
+python3 scripts/crd_validator.py --crd config/crd/myapp.yaml
+python3 scripts/crd_validator.py --crd config/crd/ --format json
 ```
 
 **Checks:**
@@ -96,7 +96,7 @@ python scripts/crd_validator.py --crd config/crd/ --format json
 Lints a Go controller reconcile function for anti-patterns.
 
 ```bash
-python scripts/reconcile_lint.py --controller controllers/myapp_controller.go
+python3 scripts/reconcile_lint.py --controller controllers/myapp_controller.go
 ```
 
 **Checks (regex-based heuristics):**
@@ -114,7 +114,7 @@ python scripts/reconcile_lint.py --controller controllers/myapp_controller.go
 Scores an operator against OperatorHub's 5 Capability Levels.
 
 ```bash
-python scripts/operator_capability_audit.py --operator-dir .
+python3 scripts/operator_capability_audit.py --operator-dir .
 ```
 
 **Levels:**

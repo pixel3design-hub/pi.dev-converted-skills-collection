@@ -28,8 +28,8 @@ org health, organizational health, health diagnostic, health dashboard, health c
 ## Quick Start
 
 ```bash
-python scripts/health_scorer.py        # Guided CLI — enter metrics, get scored dashboard
-python scripts/health_scorer.py --json # Output raw JSON for integration
+python3 scripts/health_scorer.py        # Guided CLI — enter metrics, get scored dashboard
+python3 scripts/health_scorer.py --json # Output raw JSON for integration
 ```
 
 Or describe your metrics in natural language:

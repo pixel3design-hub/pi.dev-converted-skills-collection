@@ -211,8 +211,8 @@ def diff_in_diff(df, outcome, treatment_col, post_col, controls=None):
 
 ```bash
 # Testing & linting
-python -m pytest tests/ -v --cov=src/
-python -m black src/ && python -m pylint src/
+python3 -m pytest tests/ -v --cov=src/
+python3 -m black src/ && python3 -m pylint src/
 
 # Bundled pipeline scaffolds (stdlib runners — extend the process() body with project logic)
 python3 scripts/experiment_designer.py --input experiment_spec.json --output experiment_design.json

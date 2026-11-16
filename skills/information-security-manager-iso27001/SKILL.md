@@ -47,19 +47,19 @@ Use this skill when you hear:
 ### Run Security Risk Assessment
 
 ```bash
-python scripts/risk_assessment.py --scope "patient-data-system" --output risk_register.json
+python3 scripts/risk_assessment.py --scope "patient-data-system" --output risk_register.json
 ```
 
 ### Check Compliance Status
 
 ```bash
-python scripts/compliance_checker.py --standard iso27001 --controls-file controls.csv
+python3 scripts/compliance_checker.py --standard iso27001 --controls-file controls.csv
 ```
 
 ### Generate Gap Analysis Report
 
 ```bash
-python scripts/compliance_checker.py --standard iso27001 --gap-analysis --output gaps.md
+python3 scripts/compliance_checker.py --standard iso27001 --gap-analysis --output gaps.md
 ```
 
 ---
@@ -74,13 +74,13 @@ Automated security risk assessment following ISO 27001 Clause 6.1.2 methodology.
 
 ```bash
 # Full risk assessment
-python scripts/risk_assessment.py --scope "cloud-infrastructure" --output risks.json
+python3 scripts/risk_assessment.py --scope "cloud-infrastructure" --output risks.json
 
 # Healthcare-specific assessment
-python scripts/risk_assessment.py --scope "ehr-system" --template healthcare --output risks.json
+python3 scripts/risk_assessment.py --scope "ehr-system" --template healthcare --output risks.json
 
 # Quick asset-based assessment
-python scripts/risk_assessment.py --assets assets.csv --output risks.json
+python3 scripts/risk_assessment.py --assets assets.csv --output risks.json
 ```
 
 **Parameters:**
@@ -108,16 +108,16 @@ Verify ISO 27001/27002 control implementation status.
 
 ```bash
 # Check all ISO 27001 controls
-python scripts/compliance_checker.py --standard iso27001
+python3 scripts/compliance_checker.py --standard iso27001
 
 # Gap analysis with recommendations
-python scripts/compliance_checker.py --standard iso27001 --gap-analysis
+python3 scripts/compliance_checker.py --standard iso27001 --gap-analysis
 
 # Check specific control domains
-python scripts/compliance_checker.py --standard iso27001 --domains "access-control,cryptography"
+python3 scripts/compliance_checker.py --standard iso27001 --domains "access-control,cryptography"
 
 # Export compliance report
-python scripts/compliance_checker.py --standard iso27001 --output compliance_report.md
+python3 scripts/compliance_checker.py --standard iso27001 --output compliance_report.md
 ```
 
 **Parameters:**
@@ -154,7 +154,7 @@ Document organizational context and ISMS boundaries:
 **Step 2: Conduct Risk Assessment**
 
 ```bash
-python scripts/risk_assessment.py --scope "full-organization" --template general --output initial_risks.json
+python3 scripts/risk_assessment.py --scope "full-organization" --template general --output initial_risks.json
 ```
 
 - Identify information assets
@@ -169,7 +169,7 @@ python scripts/risk_assessment.py --scope "full-organization" --template general
 Map risks to ISO 27002 controls:
 
 ```bash
-python scripts/compliance_checker.py --standard iso27002 --gap-analysis --output control_gaps.md
+python3 scripts/compliance_checker.py --standard iso27002 --gap-analysis --output control_gaps.md
 ```
 
 Control categories:
@@ -222,7 +222,7 @@ Identify threats per asset category:
 **Step 3: Vulnerability Assessment**
 
 ```bash
-python scripts/risk_assessment.py --scope "network-infrastructure" --output vuln_risks.json
+python3 scripts/risk_assessment.py --scope "network-infrastructure" --output vuln_risks.json
 ```
 
 Document vulnerabilities:
@@ -353,10 +353,10 @@ Run periodic checks:
 
 ```bash
 # Monthly compliance check
-python scripts/compliance_checker.py --standard iso27001 --output monthly_$(date +%Y%m).md
+python3 scripts/compliance_checker.py --standard iso27001 --output monthly_$(date +%Y%m).md
 
 # Quarterly gap analysis
-python scripts/compliance_checker.py --standard iso27001 --gap-analysis --output quarterly_gaps.md
+python3 scripts/compliance_checker.py --standard iso27001 --gap-analysis --output quarterly_gaps.md
 ```
 
 ---
@@ -368,7 +368,7 @@ python scripts/compliance_checker.py --standard iso27001 --gap-analysis --output
 ### Step 1: Define Assets
 
 ```bash
-python scripts/risk_assessment.py --scope "patient-data-system" --template healthcare
+python3 scripts/risk_assessment.py --scope "patient-data-system" --template healthcare
 ```
 
 **Asset inventory output:**
@@ -401,7 +401,7 @@ python scripts/risk_assessment.py --scope "patient-data-system" --template healt
 ### Step 4: Verify Implementation
 
 ```bash
-python scripts/compliance_checker.py --controls-file implemented_controls.csv
+python3 scripts/compliance_checker.py --controls-file implemented_controls.csv
 ```
 
 **Verification output:**

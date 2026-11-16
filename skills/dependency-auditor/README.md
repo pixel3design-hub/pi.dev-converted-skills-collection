@@ -33,15 +33,11 @@ The Dependency Auditor skill consists of three main Python scripts that work tog
 
 ## Installation
 
-No external dependencies required! All scripts use only Python standard library.
-
-```bash
-# Clone or download the dependency-auditor skill
-cd engineering/dependency-auditor/scripts
-
-# Make scripts executable
-chmod +x dep_scanner.py license_checker.py upgrade_planner.py
-```
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/dependency-auditor` from a clone of that repo, or copy this directory into
+`~/.agents/skills/dependency-auditor` to have it available in every project. The collection README lists the
+other routes.
 
 ## Quick Start
 
@@ -49,39 +45,39 @@ chmod +x dep_scanner.py license_checker.py upgrade_planner.py
 
 ```bash
 # Basic vulnerability scan
-python dep_scanner.py /path/to/your/project
+python3 dep_scanner.py /path/to/your/project
 
 # JSON output for automation
-python dep_scanner.py /path/to/your/project --format json --output scan_results.json
+python3 dep_scanner.py /path/to/your/project --format json --output scan_results.json
 
 # Fail CI/CD on high-severity vulnerabilities
-python dep_scanner.py /path/to/your/project --fail-on-high
+python3 dep_scanner.py /path/to/your/project --fail-on-high
 ```
 
 ### 2. Check License Compliance
 
 ```bash
 # Basic license compliance check
-python license_checker.py /path/to/your/project
+python3 license_checker.py /path/to/your/project
 
 # Strict policy enforcement
-python license_checker.py /path/to/your/project --policy strict
+python3 license_checker.py /path/to/your/project --policy strict
 
 # Use existing dependency inventory
-python license_checker.py /path/to/project --inventory scan_results.json --format json
+python3 license_checker.py /path/to/project --inventory scan_results.json --format json
 ```
 
 ### 3. Plan Dependency Upgrades
 
 ```bash
 # Generate upgrade plan from dependency inventory
-python upgrade_planner.py scan_results.json
+python3 upgrade_planner.py scan_results.json
 
 # Custom timeline and risk filtering
-python upgrade_planner.py scan_results.json --timeline 60 --risk-threshold medium
+python3 upgrade_planner.py scan_results.json --timeline 60 --risk-threshold medium
 
 # Security updates only
-python upgrade_planner.py scan_results.json --security-only --format json
+python3 upgrade_planner.py scan_results.json --security-only --format json
 ```
 
 ## Detailed Usage
@@ -100,7 +96,7 @@ The dependency scanner parses project files to extract dependencies and check th
 #### Command Line Options
 
 ```bash
-python dep_scanner.py [PROJECT_PATH] [OPTIONS]
+python3 dep_scanner.py [PROJECT_PATH] [OPTIONS]
 
 Required Arguments:
   PROJECT_PATH          Path to the project directory to scan
@@ -112,9 +108,9 @@ Optional Arguments:
   --quick-scan          Perform quick scan (skip transitive dependencies)
 
 Examples:
-  python dep_scanner.py /app
-  python dep_scanner.py . --format json --output results.json
-  python dep_scanner.py /project --fail-on-high --quick-scan
+  python3 dep_scanner.py /app
+  python3 dep_scanner.py . --format json --output results.json
+  python3 dep_scanner.py /project --fail-on-high --quick-scan
 ```
 
 #### Output Format
@@ -183,7 +179,7 @@ The license checker analyzes dependency licenses for compliance and detects pote
 #### Command Line Options
 
 ```bash
-python license_checker.py [PROJECT_PATH] [OPTIONS]
+python3 license_checker.py [PROJECT_PATH] [OPTIONS]
 
 Required Arguments:
   PROJECT_PATH          Path to the project directory to analyze
@@ -196,9 +192,9 @@ Optional Arguments:
   --warn-conflicts      Show warnings for potential conflicts
 
 Examples:
-  python license_checker.py /app
-  python license_checker.py . --format json --output compliance.json
-  python license_checker.py /app --inventory deps.json --policy strict
+  python3 license_checker.py /app
+  python3 license_checker.py . --format json --output compliance.json
+  python3 license_checker.py /app --inventory deps.json --policy strict
 ```
 
 #### License Classifications
@@ -226,7 +222,7 @@ The upgrade planner analyzes dependency inventories and creates prioritized upgr
 #### Command Line Options
 
 ```bash
-python upgrade_planner.py [INVENTORY_FILE] [OPTIONS]
+python3 upgrade_planner.py [INVENTORY_FILE] [OPTIONS]
 
 Required Arguments:
   INVENTORY_FILE        Path to dependency inventory JSON file
@@ -239,9 +235,9 @@ Optional Arguments:
   --security-only       Only plan upgrades with security fixes
 
 Examples:
-  python upgrade_planner.py deps.json
-  python upgrade_planner.py inventory.json --timeline 60 --format json
-  python upgrade_planner.py deps.json --security-only --risk-threshold medium
+  python3 upgrade_planner.py deps.json
+  python3 upgrade_planner.py inventory.json --timeline 60 --format json
+  python3 upgrade_planner.py deps.json --security-only --risk-threshold medium
 ```
 
 #### Risk Assessment
@@ -285,16 +281,16 @@ jobs:
       
       - name: Run Vulnerability Scan
         run: |
-          python scripts/dep_scanner.py . --format json --output scan.json
-          python scripts/dep_scanner.py . --fail-on-high
+          python3 scripts/dep_scanner.py . --format json --output scan.json
+          python3 scripts/dep_scanner.py . --fail-on-high
       
       - name: Check License Compliance
         run: |
-          python scripts/license_checker.py . --inventory scan.json --policy strict
+          python3 scripts/license_checker.py . --inventory scan.json --policy strict
       
       - name: Generate Upgrade Plan
         run: |
-          python scripts/upgrade_planner.py scan.json --output upgrade-plan.txt
+          python3 scripts/upgrade_planner.py scan.json --output upgrade-plan.txt
       
       - name: Upload Reports
         uses: actions/upload-artifact@v4
@@ -316,20 +312,20 @@ pipeline {
             steps {
                 script {
                     // Vulnerability scan
-                    sh 'python scripts/dep_scanner.py . --format json --output scan.json'
+                    sh 'python3 scripts/dep_scanner.py . --format json --output scan.json'
                     
                     // License compliance
-                    sh 'python scripts/license_checker.py . --inventory scan.json --format json --output compliance.json'
+                    sh 'python3 scripts/license_checker.py . --inventory scan.json --format json --output compliance.json'
                     
                     // Upgrade planning
-                    sh 'python scripts/upgrade_planner.py scan.json --format json --output upgrades.json'
+                    sh 'python3 scripts/upgrade_planner.py scan.json --format json --output upgrades.json'
                 }
                 
                 // Archive reports
                 archiveArtifacts artifacts: '*.json', fingerprint: true
                 
                 // Fail build on high-severity vulnerabilities
-                sh 'python scripts/dep_scanner.py . --fail-on-high'
+                sh 'python3 scripts/dep_scanner.py . --fail-on-high'
             }
         }
     }
@@ -363,10 +359,10 @@ set -e
 echo "Running weekly security dependency updates..."
 
 # Scan for vulnerabilities
-python scripts/dep_scanner.py . --format json --output current-scan.json
+python3 scripts/dep_scanner.py . --format json --output current-scan.json
 
 # Generate security-only upgrade plan
-python scripts/upgrade_planner.py current-scan.json --security-only --output security-upgrades.txt
+python3 scripts/upgrade_planner.py current-scan.json --security-only --output security-upgrades.txt
 
 # Check if security updates are available
 if grep -q "URGENT" security-upgrades.txt; then
@@ -498,7 +494,7 @@ Enable debug logging by setting environment variable:
 
 ```bash
 export DEPENDENCY_AUDIT_DEBUG=1
-python scripts/dep_scanner.py /your/project
+python3 scripts/dep_scanner.py /your/project
 ```
 
 ## Contributing

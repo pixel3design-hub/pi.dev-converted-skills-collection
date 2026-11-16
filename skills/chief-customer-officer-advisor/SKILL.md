@@ -37,16 +37,16 @@ CCO, chief customer officer, customer success, retention strategy, gross retenti
 
 ```bash
 # Decision A: Decompose retention honestly
-python scripts/retention_decomposition_analyzer.py                          # embedded B2B SaaS sample
-python scripts/retention_decomposition_analyzer.py path/to/cohorts.json
+python3 scripts/retention_decomposition_analyzer.py                          # embedded B2B SaaS sample
+python3 scripts/retention_decomposition_analyzer.py path/to/cohorts.json
 
 # Decision B: Design customer segmentation + differential investment
-python scripts/customer_segmentation_designer.py                            # embedded 4-tier sample
-python scripts/customer_segmentation_designer.py path/to/customers.json
+python3 scripts/customer_segmentation_designer.py                            # embedded 4-tier sample
+python3 scripts/customer_segmentation_designer.py path/to/customers.json
 
 # Decision C: Calculate CS team coverage model
-python scripts/cs_coverage_calculator.py                                    # embedded 350-customer sample
-python scripts/cs_coverage_calculator.py path/to/book.json
+python3 scripts/cs_coverage_calculator.py                                    # embedded 350-customer sample
+python3 scripts/cs_coverage_calculator.py path/to/book.json
 ```
 
 ## Key Questions (ask these first)
@@ -143,7 +143,7 @@ See `references/cs_team_org_evolution.md` for stage-to-role map (seed → late-s
 
 ```bash
 # 1. Pull cohort data: closed/won by quarter for last 8 quarters
-python scripts/retention_decomposition_analyzer.py cohorts.json
+python3 scripts/retention_decomposition_analyzer.py cohorts.json
 # 2. Review GRR / NRR / contraction / expansion separately
 # 3. For each cohort showing GRR < 90%: identify churn root cause (7-category taxonomy)
 # 4. Cross-check with cs-cro-advisor: does the expansion math add up?
@@ -156,7 +156,7 @@ python scripts/retention_decomposition_analyzer.py cohorts.json
 
 ```bash
 # 1. Build customers.json with ARR, tenure, ICP fit signals
-python scripts/customer_segmentation_designer.py customers.json
+python3 scripts/customer_segmentation_designer.py customers.json
 # 2. Identify segment migration (mid-market → enterprise upgrades, downsells)
 # 3. Identify kill list (customers below investment floor)
 # 4. Output: new tier assignment + investment-per-tier + kill list for sales review
@@ -167,7 +167,7 @@ python scripts/customer_segmentation_designer.py customers.json
 
 ```bash
 # 1. Build book.json with current customer base + planned acquisition
-python scripts/cs_coverage_calculator.py book.json
+python3 scripts/cs_coverage_calculator.py book.json
 # 2. Calculate required CSM headcount by segment
 # 3. Compare to current team; identify gaps
 # 4. Cross-check with cs-chro-advisor on comp + leveling

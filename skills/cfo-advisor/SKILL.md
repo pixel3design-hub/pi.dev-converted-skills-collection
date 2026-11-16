@@ -31,13 +31,13 @@ CFO, chief financial officer, burn rate, runway, unit economics, LTV, CAC, fundr
 
 ```bash
 # Burn rate & runway scenarios (base/bull/bear)
-python scripts/burn_rate_calculator.py
+python3 scripts/burn_rate_calculator.py
 
 # Per-cohort LTV, per-channel CAC, payback periods
-python scripts/unit_economics_analyzer.py
+python3 scripts/unit_economics_analyzer.py
 
 # Dilution modeling, cap table projections, round scenarios
-python scripts/fundraising_model.py
+python3 scripts/fundraising_model.py
 ```
 
 ## Key Questions (ask these first)

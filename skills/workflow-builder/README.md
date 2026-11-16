@@ -15,10 +15,10 @@ All three run with `--sample` (no args) and `--help`.
 ## Quick start
 
 ```bash
-python scripts/workflow_intake.py --task "review my open PRs for bugs"
-python scripts/scaffold_workflow.py --topology pipeline --name pr-triage \
+python3 scripts/workflow_intake.py --task "review my open PRs for bugs"
+python3 scripts/scaffold_workflow.py --topology pipeline --name pr-triage \
   --description "Triage open PRs" > /tmp/pr-triage.js
-python scripts/validate_workflow.py /tmp/pr-triage.js
+python3 scripts/validate_workflow.py /tmp/pr-triage.js
 ```
 
 ## Layout

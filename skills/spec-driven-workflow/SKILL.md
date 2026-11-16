@@ -154,7 +154,7 @@ See `references/bounded_autonomy_rules.md` for the complete decision matrix.
 Run `spec_validator.py` against the spec file:
 
 ```bash
-python spec_validator.py --file spec.md --strict
+python3 spec_validator.py --file spec.md --strict
 ```
 
 Manual validation checklist:
@@ -175,7 +175,7 @@ Manual validation checklist:
 Run `test_extractor.py` against the approved spec:
 
 ```bash
-python test_extractor.py --file spec.md --framework pytest --output tests/
+python3 test_extractor.py --file spec.md --framework pytest --output tests/
 ```
 
 1. Each acceptance criterion becomes one or more test cases.
@@ -329,11 +329,11 @@ A complete worked example (Password Reset spec with extracted test cases) is ava
 
 ```bash
 # Generate a spec template
-python spec_generator.py --name "User Authentication" --description "OAuth 2.0 login flow"
+python3 spec_generator.py --name "User Authentication" --description "OAuth 2.0 login flow"
 
 # Validate a spec
-python spec_validator.py --file specs/auth.md --strict
+python3 spec_validator.py --file specs/auth.md --strict
 
 # Extract test cases
-python test_extractor.py --file specs/auth.md --framework pytest --output tests/test_auth.py
+python3 test_extractor.py --file specs/auth.md --framework pytest --output tests/test_auth.py
 ```

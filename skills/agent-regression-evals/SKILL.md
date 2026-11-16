@@ -32,11 +32,11 @@ while the path to it called a tool it never should have.
 #     {"case_id": "refund-lookup", "trial": 1, "passed": true, "critical": true,
 #      "cost_usd": 0.012, "trajectory": [{"tool": "get_order", "args": {...}}]}
 # 1 - Grade the path where the path matters (safety, required lookups).
-python scripts/trajectory_checker.py --spec cases.json --results candidate.jsonl
+python3 scripts/trajectory_checker.py --spec cases.json --results candidate.jsonl
 # 2 - Separate flaky cases from stable ones before trusting any comparison.
-python scripts/flake_detector.py --results candidate.jsonl --k 3 --quarantine-out q.json
+python3 scripts/flake_detector.py --results candidate.jsonl --k 3 --quarantine-out q.json
 # 3 - Gate: paired per-case comparison against baseline. Exit 4 blocks the merge.
-python scripts/regression_gate.py --baseline baseline.jsonl --candidate candidate.jsonl --quarantine q.json
+python3 scripts/regression_gate.py --baseline baseline.jsonl --candidate candidate.jsonl --quarantine q.json
 ```
 
 Step 1 uses match modes `strict | unordered | subset | superset`. Default to

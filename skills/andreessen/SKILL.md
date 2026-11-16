@@ -110,15 +110,15 @@ The scripts exist so the verdict isn't vibes. Score the inputs, let the weightin
 
 ```bash
 # Market-first evaluation (market weighted 0.55; sub-4 market is a hard kill gate)
-python scripts/market_first_evaluator.py --size 8 --growth 7 --timing 9 --pull 8 --team 6 --product 5
+python3 scripts/market_first_evaluator.py --size 8 --growth 7 --timing 9 --pull 8 --team 6 --product 5
 
 # Product/market fit signal scoring (Sean Ellis 40% gate + 4 qualitative signals)
-python scripts/pmf_signal_scorer.py --ellis-pct 45 --retention 8 --organic 7 --demand 8 --frequency 7
+python3 scripts/pmf_signal_scorer.py --ellis-pct 45 --retention 8 --organic 7 --demand 8 --frequency 7
 
 # Daily 3x5 card (front capped at 3-5) + Anti-Todo log (back)
-python scripts/anti_todo_card.py --new --must-do "Ship PMF dashboard" "Call 5 churned users" "Write board update"
-python scripts/anti_todo_card.py --did "Fixed the retention query"
-python scripts/anti_todo_card.py --summary
+python3 scripts/anti_todo_card.py --new --must-do "Ship PMF dashboard" "Call 5 churned users" "Write board update"
+python3 scripts/anti_todo_card.py --did "Fixed the retention query"
+python3 scripts/anti_todo_card.py --summary
 ```
 
 ### 4. Deliver the verdict in the operating voice

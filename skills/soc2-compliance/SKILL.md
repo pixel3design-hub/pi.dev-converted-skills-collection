@@ -373,13 +373,13 @@ Generates a SOC 2 control matrix from selected TSC categories.
 
 ```bash
 # Generate full security matrix in markdown
-python scripts/control_matrix_builder.py --categories security --format md
+python3 scripts/control_matrix_builder.py --categories security --format md
 
 # Generate matrix for multiple categories as JSON
-python scripts/control_matrix_builder.py --categories security,availability,confidentiality --format json
+python3 scripts/control_matrix_builder.py --categories security,availability,confidentiality --format json
 
 # All categories, CSV output
-python scripts/control_matrix_builder.py --categories security,availability,confidentiality,processing-integrity,privacy --format csv
+python3 scripts/control_matrix_builder.py --categories security,availability,confidentiality,processing-integrity,privacy --format csv
 ```
 
 ### Evidence Tracker
@@ -388,10 +388,10 @@ Tracks evidence collection status per control.
 
 ```bash
 # Check evidence status from a control matrix
-python scripts/evidence_tracker.py --matrix controls.json --status
+python3 scripts/evidence_tracker.py --matrix controls.json --status
 
 # JSON output for integration
-python scripts/evidence_tracker.py --matrix controls.json --status --json
+python3 scripts/evidence_tracker.py --matrix controls.json --status --json
 ```
 
 ### Gap Analyzer
@@ -400,10 +400,10 @@ Analyzes current controls against SOC 2 requirements and identifies gaps.
 
 ```bash
 # Type I gap analysis
-python scripts/gap_analyzer.py --controls current_controls.json --type type1
+python3 scripts/gap_analyzer.py --controls current_controls.json --type type1
 
 # Type II gap analysis (includes operating effectiveness)
-python scripts/gap_analyzer.py --controls current_controls.json --type type2 --json
+python3 scripts/gap_analyzer.py --controls current_controls.json --type type2 --json
 ```
 
 ---

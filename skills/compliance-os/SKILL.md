@@ -39,20 +39,20 @@ compliance orchestration, multi-framework compliance, compliance OS, cross-frame
 
 ```bash
 # Decision A: Which frameworks apply for the company?
-python scripts/framework_selector.py                          # embedded mid-stage AI SaaS sample
-python scripts/framework_selector.py path/to/profile.json
+python3 scripts/framework_selector.py                          # embedded mid-stage AI SaaS sample
+python3 scripts/framework_selector.py path/to/profile.json
 
 # Decision B: Compute cross-framework overlap
-python scripts/cross_framework_mapper.py                      # embedded ISO 27001 + SOC 2 sample
-python scripts/cross_framework_mapper.py path/to/control_libs.json
+python3 scripts/cross_framework_mapper.py                      # embedded ISO 27001 + SOC 2 sample
+python3 scripts/cross_framework_mapper.py path/to/control_libs.json
 
 # Decision C: Simulate an audit
-python scripts/audit_simulator.py                             # embedded ISO 27001 sample
-python scripts/audit_simulator.py path/to/audit_scope.json
+python3 scripts/audit_simulator.py                             # embedded ISO 27001 sample
+python3 scripts/audit_simulator.py path/to/audit_scope.json
 
 # Decision D: Consolidate evidence checklist across frameworks
-python scripts/evidence_pool_generator.py                     # embedded 3-framework sample
-python scripts/evidence_pool_generator.py path/to/program.json
+python3 scripts/evidence_pool_generator.py                     # embedded 3-framework sample
+python3 scripts/evidence_pool_generator.py path/to/program.json
 ```
 
 ## Key Questions (ask these first)
@@ -125,12 +125,12 @@ python scripts/evidence_pool_generator.py path/to/program.json
 
 ```bash
 # 1. Run framework selector with company profile
-python scripts/framework_selector.py profile.json
+python3 scripts/framework_selector.py profile.json
 # 2. For each applicable framework, identify the per-framework skill and run its gap analysis
 # 3. Run cross-framework mapper to identify reuse opportunities
-python scripts/cross_framework_mapper.py control_libs.json
+python3 scripts/cross_framework_mapper.py control_libs.json
 # 4. Run evidence pool generator to consolidate
-python scripts/evidence_pool_generator.py program.json
+python3 scripts/evidence_pool_generator.py program.json
 # 5. Cross-check with cs-compliance-officer agent
 # 6. Output: prioritized program backlog with owners + dates
 ```
@@ -140,12 +140,12 @@ python scripts/evidence_pool_generator.py program.json
 
 ```bash
 # 1. Refresh framework selector if profile changed
-python scripts/framework_selector.py profile.json
+python3 scripts/framework_selector.py profile.json
 # 2. For each framework, run its internal-audit-plan tool
 #    (e.g., aims_audit_scheduler.py for ISO 42001; isms_audit_scheduler.py for ISO 27001)
 # 3. Coordinate the audit calendar across frameworks (auditor independence + capacity)
 # 4. Run audit simulator for each framework to prep auditors
-python scripts/audit_simulator.py scope.json
+python3 scripts/audit_simulator.py scope.json
 # 5. Output: integrated audit calendar with owners + auditor assignments
 ```
 
@@ -156,10 +156,10 @@ python scripts/audit_simulator.py scope.json
 # 1. Run gap analysis for the new framework
 #    (ISO 42001: aims_gap_analyzer.py; ISO 27001: compliance_checker.py; SOC 2: gap_analyzer.py)
 # 2. Run cross-framework mapper against already-certified frameworks
-python scripts/cross_framework_mapper.py control_libs.json
+python3 scripts/cross_framework_mapper.py control_libs.json
 # 3. Reuse evidence for HIGH-confidence mappings; build new for MEDIUM/LOW
 # 4. Run audit simulator to dry-run the certification audit
-python scripts/audit_simulator.py scope.json
+python3 scripts/audit_simulator.py scope.json
 # 5. Close remaining gaps before external auditor stage 1
 ```
 
@@ -168,7 +168,7 @@ python scripts/audit_simulator.py scope.json
 
 ```bash
 # 1. Refresh evidence pool generator
-python scripts/evidence_pool_generator.py program.json
+python3 scripts/evidence_pool_generator.py program.json
 # 2. Identify HIGH-reuse-leverage artefacts (1 evidence -> 5+ controls)
 # 3. Confirm evidence freshness (within retention requirement per framework)
 # 4. Audit the evidence pool itself (no orphan controls, no stale evidence)

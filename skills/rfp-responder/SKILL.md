@@ -52,7 +52,7 @@ The skill surfaces GAPs explicitly. Leadership decides whether to close them, pa
 Drop the RFP markdown / text into `scripts/rfp_parser.py`. Output: structured JSON listing every requirement, tagged MANDATORY / WEIGHTED / NICE-TO-HAVE based on cue words (must / shall = MANDATORY; should / weighted scoring numbers = WEIGHTED; may / preferred / desired = NICE-TO-HAVE). Captures section structure, scoring criteria if disclosed, deadline, submission format constraints.
 
 ```bash
-python scripts/rfp_parser.py --input rfp.md --output json > parsed.json
+python3 scripts/rfp_parser.py --input rfp.md --output json > parsed.json
 ```
 
 ### Step 2 — Score fit per requirement
@@ -60,7 +60,7 @@ python scripts/rfp_parser.py --input rfp.md --output json > parsed.json
 Fill `assets/rfp_intake_template.md` with your proof-point library (each proof tagged with type + verifiable source + which requirement-tags it covers) and proposed win-themes. Feed parsed RFP + intake into `scripts/response_drafter.py`. Output: proof-point matrix per requirement with STRONG / PARTIAL / GAP, win-theme injection, GAP audit.
 
 ```bash
-python scripts/response_drafter.py --input draft_input.json --output markdown > matrix.md
+python3 scripts/response_drafter.py --input draft_input.json --output markdown > matrix.md
 ```
 
 **Hard rule:** GAP requirements are surfaced, never invented around. Leadership reads the GAP audit and decides: close the gap, partner-bid, or no-bid.
@@ -74,7 +74,7 @@ Shipley method: 3-5 themes that span requirements. Each theme answers "why us ov
 Feed deal context (fit %, incumbent strength, relationship, decision-criteria alignment, late-entry, competitor count, deal size vs. average) into `scripts/winrate_predictor.py`. Output: Shipley-derived estimate 0-100% + confidence band + factor breakdown + BID / PARTNER-BID / NO-BID verdict.
 
 ```bash
-python scripts/winrate_predictor.py --input deal_context.json --profile enterprise-software --output markdown
+python3 scripts/winrate_predictor.py --input deal_context.json --profile enterprise-software --output markdown
 ```
 
 **No-bid threshold:** estimate < 20% triggers automatic no-bid recommendation.

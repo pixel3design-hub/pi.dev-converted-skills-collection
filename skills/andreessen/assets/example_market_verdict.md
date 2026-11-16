@@ -36,7 +36,7 @@ device startups. Our team is two ex-FDA reviewers and a strong ML engineer. The 
 **Deterministic score:**
 
 ```
-python scripts/market_first_evaluator.py --size 7 --growth 6 --timing 7 --pull 3 --team 8 --product 6
+python3 scripts/market_first_evaluator.py --size 7 --growth 6 --timing 7 --pull 3 --team 8 --product 6
 ```
 
 Market cluster ≈ 5.75 (size/timing decent, pull weak at 3). Composite ≈ 6.36. Team scored 8 —

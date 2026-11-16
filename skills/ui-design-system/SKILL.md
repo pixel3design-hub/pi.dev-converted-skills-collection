@@ -64,7 +64,7 @@ Use this skill when you need to:
 
 2. **Generate tokens using script**
    ```bash
-   python scripts/design_token_generator.py "#0066CC" modern json
+   python3 scripts/design_token_generator.py "#0066CC" modern json
    ```
 
 3. **Review generated categories**
@@ -79,13 +79,13 @@ Use this skill when you need to:
 4. **Export in target format**
    ```bash
    # CSS custom properties
-   python scripts/design_token_generator.py "#0066CC" modern css > design-tokens.css
+   python3 scripts/design_token_generator.py "#0066CC" modern css > design-tokens.css
 
    # SCSS variables
-   python scripts/design_token_generator.py "#0066CC" modern scss > _design-tokens.scss
+   python3 scripts/design_token_generator.py "#0066CC" modern scss > _design-tokens.scss
 
    # JSON for Figma/tooling
-   python scripts/design_token_generator.py "#0066CC" modern json > design-tokens.json
+   python3 scripts/design_token_generator.py "#0066CC" modern json > design-tokens.json
    ```
 
 5. **Validate accessibility**
@@ -197,13 +197,13 @@ Use this skill when you need to:
 1. **Export tokens in required formats**
    ```bash
    # For CSS projects
-   python scripts/design_token_generator.py "#0066CC" modern css
+   python3 scripts/design_token_generator.py "#0066CC" modern css
 
    # For SCSS projects
-   python scripts/design_token_generator.py "#0066CC" modern scss
+   python3 scripts/design_token_generator.py "#0066CC" modern scss
 
    # For JavaScript/TypeScript
-   python scripts/design_token_generator.py "#0066CC" modern json
+   python3 scripts/design_token_generator.py "#0066CC" modern json
    ```
 
 2. **Prepare framework integration**
@@ -269,13 +269,13 @@ Generates complete design token system from brand color.
 
 ```bash
 # Generate JSON tokens (default)
-python scripts/design_token_generator.py "#0066CC"
+python3 scripts/design_token_generator.py "#0066CC"
 
 # Classic style with CSS output
-python scripts/design_token_generator.py "#8B4513" classic css
+python3 scripts/design_token_generator.py "#8B4513" classic css
 
 # Playful style summary view
-python scripts/design_token_generator.py "#FF6B6B" playful summary
+python3 scripts/design_token_generator.py "#FF6B6B" playful summary
 ```
 
 **Output Categories:**

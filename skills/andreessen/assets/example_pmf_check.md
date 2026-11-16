@@ -24,7 +24,7 @@ raise a Series A and hire a sales team."
 **Deterministic score:**
 
 ```
-python scripts/pmf_signal_scorer.py --ellis-pct 31 --retention 5 --organic 3 --demand 4 --frequency 6
+python3 scripts/pmf_signal_scorer.py --ellis-pct 31 --retention 5 --organic 3 --demand 4 --frequency 6
 ```
 
 Composite ≈ 4.4. Ellis gate: FAIL.

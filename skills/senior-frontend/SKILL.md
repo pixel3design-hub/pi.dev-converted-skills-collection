@@ -32,12 +32,12 @@ Generate a new Next.js or React project with TypeScript, Tailwind CSS, and best 
 
 1. Run the scaffolder with your project name and template:
    ```bash
-   python scripts/frontend_scaffolder.py my-app --template nextjs
+   python3 scripts/frontend_scaffolder.py my-app --template nextjs
    ```
 
 2. Add optional features (auth, api, forms, testing, storybook):
    ```bash
-   python scripts/frontend_scaffolder.py dashboard --template nextjs --features auth,api
+   python3 scripts/frontend_scaffolder.py dashboard --template nextjs --features auth,api
    ```
 
 3. Navigate to the project and install dependencies:
@@ -76,22 +76,22 @@ Generate React components with TypeScript, tests, and Storybook stories.
 
 1. Generate a client component:
    ```bash
-   python scripts/component_generator.py Button --dir src/components/ui
+   python3 scripts/component_generator.py Button --dir src/components/ui
    ```
 
 2. Generate a server component:
    ```bash
-   python scripts/component_generator.py ProductCard --type server
+   python3 scripts/component_generator.py ProductCard --type server
    ```
 
 3. Generate with test and story files:
    ```bash
-   python scripts/component_generator.py UserProfile --with-test --with-story
+   python3 scripts/component_generator.py UserProfile --with-test --with-story
    ```
 
 4. Generate a custom hook:
    ```bash
-   python scripts/component_generator.py FormValidation --type hook
+   python3 scripts/component_generator.py FormValidation --type hook
    ```
 
 ### Generator Options
@@ -116,7 +116,7 @@ Analyze package.json and project structure for bundle optimization opportunities
 
 1. Run the analyzer on your project:
    ```bash
-   python scripts/bundle_analyzer.py /path/to/project
+   python3 scripts/bundle_analyzer.py /path/to/project
    ```
 
 2. Review the health score and issues:
@@ -135,7 +135,7 @@ Analyze package.json and project structure for bundle optimization opportunities
 
 4. Re-run with verbose mode to check import patterns:
    ```bash
-   python scripts/bundle_analyzer.py . --verbose
+   python3 scripts/bundle_analyzer.py . --verbose
    ```
 
 ### Bundle Score Interpretation
@@ -243,7 +243,7 @@ Four built-in profiles in `profiles/` calibrate every recommendation:
 Pick a profile via:
 
 ```bash
-python scripts/frontend_decision_engine.py \
+python3 scripts/frontend_decision_engine.py \
   --primary-device mobile-4g --lcp-target-ms 2000 \
   --seo-dependent true --auth-walled false --team-size 5
 ```
@@ -294,6 +294,6 @@ Three surfaces:
 
 1. **Slash command:** `/cs-frontend-review <prompt>` — full grill + decision engine + composition routing.
 2. **Agent subagent:** `Agent({subagent_type: "cs-frontend-engineer", prompt: "..."})` — forks context, returns ≤ 200-word digest.
-3. **Direct tool call:** `python scripts/frontend_decision_engine.py ...` — deterministic profile match when inputs are known.
+3. **Direct tool call:** `python3 scripts/frontend_decision_engine.py ...` — deterministic profile match when inputs are known.
 
 See `agents/engineering/cs-frontend-engineer.md` for the full invocation contract.

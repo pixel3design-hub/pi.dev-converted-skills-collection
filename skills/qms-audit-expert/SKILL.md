@@ -271,13 +271,13 @@ Prepare for certification body or regulatory audit:
 
 ```bash
 # Generate optimized audit schedule
-python scripts/audit_schedule_optimizer.py --processes processes.json
+python3 scripts/audit_schedule_optimizer.py --processes processes.json
 
 # Interactive mode
-python scripts/audit_schedule_optimizer.py --interactive
+python3 scripts/audit_schedule_optimizer.py --interactive
 
 # JSON output for integration
-python scripts/audit_schedule_optimizer.py --processes processes.json --output json
+python3 scripts/audit_schedule_optimizer.py --processes processes.json --output json
 ```
 
 Generates risk-based audit schedule considering:

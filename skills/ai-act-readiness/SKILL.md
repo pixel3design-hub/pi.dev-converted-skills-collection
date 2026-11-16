@@ -74,16 +74,16 @@ The EU AI Act compliance operator pressure-tests any AI system before EU deploym
 
 ```bash
 # 1. Risk classification
-python ../eu-ai-act-specialist/scripts/ai_system_risk_classifier.py systems.json
+python3 ../eu-ai-act-specialist/scripts/ai_system_risk_classifier.py systems.json
 
 # 2. If high-risk: conformity assessment
-python ../eu-ai-act-specialist/scripts/conformity_assessment_planner.py system.json
+python3 ../eu-ai-act-specialist/scripts/conformity_assessment_planner.py system.json
 
 # 3. Per-role obligation matrix
-python ../eu-ai-act-specialist/scripts/ai_act_obligation_tracker.py roles.json
+python3 ../eu-ai-act-specialist/scripts/ai_act_obligation_tracker.py roles.json
 
 # 4. Cross-framework reuse (ISO 42001 etc.)
-python ../../skills/compliance-os/scripts/cross_framework_mapper.py program.json
+python3 ../../skills/compliance-os/scripts/cross_framework_mapper.py program.json
 ```
 
 ## Output Format

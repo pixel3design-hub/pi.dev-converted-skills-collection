@@ -125,18 +125,18 @@ Core SaaS metrics from raw business numbers.
 
 ```bash
 # Interactive mode
-python scripts/metrics_calculator.py
+python3 scripts/metrics_calculator.py
 
 # CLI mode
-python scripts/metrics_calculator.py --mrr 50000 --customers 100 --churned 5 --json
+python3 scripts/metrics_calculator.py --mrr 50000 --customers 100 --churned 5 --json
 ```
 
 ### 2. Quick Ratio Calculator (`scripts/quick_ratio_calculator.py`)
 Growth efficiency metric: (New MRR + Expansion) / (Churned + Contraction)
 
 ```bash
-python scripts/quick_ratio_calculator.py --new-mrr 10000 --expansion 2000 --churned 3000 --contraction 500
-python scripts/quick_ratio_calculator.py --new-mrr 10000 --expansion 2000 --churned 3000 --json
+python3 scripts/quick_ratio_calculator.py --new-mrr 10000 --expansion 2000 --churned 3000 --contraction 500
+python3 scripts/quick_ratio_calculator.py --new-mrr 10000 --expansion 2000 --churned 3000 --json
 ```
 
 **Benchmarks:**
@@ -149,8 +149,8 @@ python scripts/quick_ratio_calculator.py --new-mrr 10000 --expansion 2000 --chur
 Project metrics forward 12 months based on growth/churn assumptions.
 
 ```bash
-python scripts/unit_economics_simulator.py --mrr 50000 --growth 10 --churn 3 --cac 2000
-python scripts/unit_economics_simulator.py --mrr 50000 --growth 10 --churn 3 --cac 2000 --json
+python3 scripts/unit_economics_simulator.py --mrr 50000 --growth 10 --churn 3 --cac 2000
+python3 scripts/unit_economics_simulator.py --mrr 50000 --growth 10 --churn 3 --cac 2000 --json
 ```
 
 **Use for:**

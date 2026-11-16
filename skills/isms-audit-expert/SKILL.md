@@ -207,16 +207,16 @@ Verify operational readiness:
 
 | Script | Purpose | Usage |
 |--------|---------|-------|
-| `isms_audit_scheduler.py` | Generate risk-based audit plans | `python scripts/isms_audit_scheduler.py --year 2025 --format markdown` |
+| `isms_audit_scheduler.py` | Generate risk-based audit plans | `python3 scripts/isms_audit_scheduler.py --year 2025 --format markdown` |
 
 ### Audit Planning Example
 
 ```bash
 # Generate annual audit plan
-python scripts/isms_audit_scheduler.py --year 2025 --output audit_plan.json
+python3 scripts/isms_audit_scheduler.py --year 2025 --output audit_plan.json
 
 # With custom control risk ratings
-python scripts/isms_audit_scheduler.py --controls controls.csv --format markdown
+python3 scripts/isms_audit_scheduler.py --controls controls.csv --format markdown
 ```
 
 ---

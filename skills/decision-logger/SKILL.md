@@ -27,12 +27,12 @@ decision log, memory, approved decisions, action items, board minutes, /decision
 ## Quick Start
 
 ```bash
-python scripts/decision_tracker.py --demo             # See sample output
-python scripts/decision_tracker.py --summary          # Overview + overdue
-python scripts/decision_tracker.py --overdue          # Past-deadline actions
-python scripts/decision_tracker.py --conflicts        # Contradiction detection
-python scripts/decision_tracker.py --owner "CTO"      # Filter by owner
-python scripts/decision_tracker.py --search "pricing" # Search decisions
+python3 scripts/decision_tracker.py --demo             # See sample output
+python3 scripts/decision_tracker.py --summary          # Overview + overdue
+python3 scripts/decision_tracker.py --overdue          # Past-deadline actions
+python3 scripts/decision_tracker.py --conflicts        # Contradiction detection
+python3 scripts/decision_tracker.py --owner "CTO"      # Filter by owner
+python3 scripts/decision_tracker.py --search "pricing" # Search decisions
 ```
 
 ---

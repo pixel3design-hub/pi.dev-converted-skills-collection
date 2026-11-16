@@ -6,7 +6,7 @@ Production workflow for parallel branch development with isolated ports, env syn
 
 ```bash
 # Create + prepare a worktree
-python scripts/worktree_manager.py \
+python3 scripts/worktree_manager.py \
   --repo . \
   --branch feature/api-hardening \
   --name wt-api-hardening \
@@ -15,7 +15,7 @@ python scripts/worktree_manager.py \
   --format text
 
 # Review stale worktrees
-python scripts/worktree_cleanup.py --repo . --stale-days 14 --format text
+python3 scripts/worktree_cleanup.py --repo . --stale-days 14 --format text
 ```
 
 ## Included Tools
@@ -32,20 +32,9 @@ Both support `--input <json-file>` and stdin JSON for automation.
 
 ## Installation
 
-### Pi
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/git-worktree-manager` from a clone of that repo, or copy this directory into
+`~/.agents/skills/git-worktree-manager` to have it available in every project. The collection README lists the
+other routes.
 
-```bash
-cp -R engineering/git-worktree-manager ~/.agents/skills/git-worktree-manager
-```
-
-### OpenAI Codex
-
-```bash
-cp -R engineering/git-worktree-manager ~/.codex/skills/git-worktree-manager
-```
-
-### OpenClaw
-
-```bash
-cp -R engineering/git-worktree-manager ~/.openclaw/skills/git-worktree-manager
-```

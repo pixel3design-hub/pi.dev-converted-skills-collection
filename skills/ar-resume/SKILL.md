@@ -29,7 +29,7 @@ Resume a paused or context-limited experiment. Reads all history and continues w
 If no experiment specified:
 
 ```bash
-python ../autoresearch-agent/scripts/setup_experiment.py --list
+python3 ../autoresearch-agent/scripts/setup_experiment.py --list
 ```
 
 Show status for each (active/paused/done based on results.tsv age). Let user pick.

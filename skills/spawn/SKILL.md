@@ -71,7 +71,7 @@ Constraints:
 
 4. Update session state to `running` via:
 ```bash
-python ../agenthub/scripts/session_manager.py --update {session-id} --state running
+python3 ../agenthub/scripts/session_manager.py --update {session-id} --state running
 ```
 
 ## Critical Rules

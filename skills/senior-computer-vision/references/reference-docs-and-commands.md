@@ -55,15 +55,15 @@ yolo export model=best.pt format=onnx simplify=True dynamic=True
 
 ```bash
 # Training
-python train_net.py --config-file configs/COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml \
+python3 train_net.py --config-file configs/COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml \
     --num-gpus 1 OUTPUT_DIR ./output
 
 # Evaluation
-python train_net.py --config-file configs/faster_rcnn.yaml --eval-only \
+python3 train_net.py --config-file configs/faster_rcnn.yaml --eval-only \
     MODEL.WEIGHTS output/model_final.pth
 
 # Inference
-python demo.py --config-file configs/faster_rcnn.yaml \
+python3 demo.py --config-file configs/faster_rcnn.yaml \
     --input images/*.jpg --output results/ \
     --opts MODEL.WEIGHTS output/model_final.pth
 ```
@@ -72,13 +72,13 @@ python demo.py --config-file configs/faster_rcnn.yaml \
 
 ```bash
 # Training
-python tools/train.py configs/faster_rcnn/faster-rcnn_r50_fpn_1x_coco.py
+python3 tools/train.py configs/faster_rcnn/faster-rcnn_r50_fpn_1x_coco.py
 
 # Testing
-python tools/test.py configs/faster_rcnn.py checkpoints/latest.pth --eval bbox
+python3 tools/test.py configs/faster_rcnn.py checkpoints/latest.pth --eval bbox
 
 # Inference
-python demo/image_demo.py demo.jpg configs/faster_rcnn.py checkpoints/latest.pth
+python3 demo/image_demo.py demo.jpg configs/faster_rcnn.py checkpoints/latest.pth
 ```
 
 ### Model Optimization
@@ -86,7 +86,7 @@ python demo/image_demo.py demo.jpg configs/faster_rcnn.py checkpoints/latest.pth
 ```bash
 # ONNX export and simplify
 python -c "import torch; model = torch.load('model.pt'); torch.onnx.export(model, torch.randn(1,3,640,640), 'model.onnx', opset_version=17)"
-python -m onnxsim model.onnx model_sim.onnx
+python3 -m onnxsim model.onnx model_sim.onnx
 
 # TensorRT conversion
 trtexec --onnx=model.onnx --saveEngine=model.engine --fp16 --workspace=4096

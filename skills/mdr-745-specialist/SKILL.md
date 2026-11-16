@@ -300,13 +300,13 @@ Required elements per Article 13:
 
 ```bash
 # Quick gap analysis
-python scripts/mdr_gap_analyzer.py --device "Device Name" --class IIa
+python3 scripts/mdr_gap_analyzer.py --device "Device Name" --class IIa
 
 # JSON output for integration
-python scripts/mdr_gap_analyzer.py --device "Device Name" --class III --output json
+python3 scripts/mdr_gap_analyzer.py --device "Device Name" --class III --output json
 
 # Interactive assessment
-python scripts/mdr_gap_analyzer.py --interactive
+python3 scripts/mdr_gap_analyzer.py --interactive
 ```
 
 Analyzes device against MDR requirements, identifies compliance gaps, generates prioritized recommendations.

@@ -70,31 +70,31 @@ All scripts support two output formats via the `--format` flag:
 
 ```bash
 # Health scoring
-python scripts/health_score_calculator.py assets/sample_customer_data.json
-python scripts/health_score_calculator.py assets/sample_customer_data.json --format json
+python3 scripts/health_score_calculator.py assets/sample_customer_data.json
+python3 scripts/health_score_calculator.py assets/sample_customer_data.json --format json
 
 # Churn risk analysis
-python scripts/churn_risk_analyzer.py assets/sample_customer_data.json
-python scripts/churn_risk_analyzer.py assets/sample_customer_data.json --format json
+python3 scripts/churn_risk_analyzer.py assets/sample_customer_data.json
+python3 scripts/churn_risk_analyzer.py assets/sample_customer_data.json --format json
 
 # Expansion opportunity scoring
-python scripts/expansion_opportunity_scorer.py assets/sample_customer_data.json
-python scripts/expansion_opportunity_scorer.py assets/sample_customer_data.json --format json
+python3 scripts/expansion_opportunity_scorer.py assets/sample_customer_data.json
+python3 scripts/expansion_opportunity_scorer.py assets/sample_customer_data.json --format json
 ```
 
 ### Workflow Integration
 
 ```bash
 # 1. Score customer health across portfolio
-python scripts/health_score_calculator.py customer_portfolio.json --format json > health_results.json
+python3 scripts/health_score_calculator.py customer_portfolio.json --format json > health_results.json
 # Verify: confirm health_results.json contains the expected number of customer records before continuing
 
 # 2. Identify at-risk accounts
-python scripts/churn_risk_analyzer.py customer_portfolio.json --format json > risk_results.json
+python3 scripts/churn_risk_analyzer.py customer_portfolio.json --format json > risk_results.json
 # Verify: confirm risk_results.json is non-empty and risk tiers are present for each customer
 
 # 3. Find expansion opportunities in healthy accounts
-python scripts/expansion_opportunity_scorer.py customer_portfolio.json --format json > expansion_results.json
+python3 scripts/expansion_opportunity_scorer.py customer_portfolio.json --format json > expansion_results.json
 # Verify: confirm expansion_results.json lists opportunities ranked by priority
 
 # 4. Prepare QBR using templates
@@ -130,8 +130,8 @@ python scripts/expansion_opportunity_scorer.py customer_portfolio.json --format 
 
 **Usage:**
 ```bash
-python scripts/health_score_calculator.py customer_data.json
-python scripts/health_score_calculator.py customer_data.json --format json
+python3 scripts/health_score_calculator.py customer_data.json
+python3 scripts/health_score_calculator.py customer_data.json --format json
 ```
 
 ### 2. churn_risk_analyzer.py
@@ -155,8 +155,8 @@ python scripts/health_score_calculator.py customer_data.json --format json
 
 **Usage:**
 ```bash
-python scripts/churn_risk_analyzer.py customer_data.json
-python scripts/churn_risk_analyzer.py customer_data.json --format json
+python3 scripts/churn_risk_analyzer.py customer_data.json
+python3 scripts/churn_risk_analyzer.py customer_data.json --format json
 ```
 
 ### 3. expansion_opportunity_scorer.py
@@ -170,8 +170,8 @@ python scripts/churn_risk_analyzer.py customer_data.json --format json
 
 **Usage:**
 ```bash
-python scripts/expansion_opportunity_scorer.py customer_data.json
-python scripts/expansion_opportunity_scorer.py customer_data.json --format json
+python3 scripts/expansion_opportunity_scorer.py customer_data.json
+python3 scripts/expansion_opportunity_scorer.py customer_data.json --format json
 ```
 
 ---

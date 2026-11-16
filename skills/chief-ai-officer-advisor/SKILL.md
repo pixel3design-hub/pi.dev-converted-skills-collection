@@ -37,16 +37,16 @@ CAIO, chief AI officer, AI strategy, model selection, foundation model, fine-tun
 
 ```bash
 # Decision A: API vs fine-tune vs build
-python scripts/model_buildvsbuy_calculator.py                          # embedded customer-support sample
-python scripts/model_buildvsbuy_calculator.py path/to/use_case.json
+python3 scripts/model_buildvsbuy_calculator.py                          # embedded customer-support sample
+python3 scripts/model_buildvsbuy_calculator.py path/to/use_case.json
 
 # Decision B: Risk classification under EU AI Act + US state laws
-python scripts/ai_risk_classifier.py                                   # embedded hiring-AI sample
-python scripts/ai_risk_classifier.py path/to/use_case.json
+python3 scripts/ai_risk_classifier.py                                   # embedded hiring-AI sample
+python3 scripts/ai_risk_classifier.py path/to/use_case.json
 
 # Decision C: API vs self-hosted economics
-python scripts/ai_cost_economics.py                                    # embedded 5M tokens/day sample
-python scripts/ai_cost_economics.py path/to/workload.json
+python3 scripts/ai_cost_economics.py                                    # embedded 5M tokens/day sample
+python3 scripts/ai_cost_economics.py path/to/workload.json
 ```
 
 ## Key Questions (ask these first)
@@ -162,7 +162,7 @@ See `references/ai_team_org_evolution.md`.
 
 ```bash
 # 1. Define use_case.json (volume, latency, accuracy, team size, budget)
-python scripts/model_buildvsbuy_calculator.py use_case.json
+python3 scripts/model_buildvsbuy_calculator.py use_case.json
 # 2. Review 3-year TCO + breakeven
 # 3. Cross-check with cs-cfo-advisor on budget commitment
 # 4. Cross-check with cs-cto-advisor on engineering capacity (esp. for fine-tune)
@@ -174,7 +174,7 @@ python scripts/model_buildvsbuy_calculator.py use_case.json
 
 ```bash
 # 1. Define use_case.json (decisions affected, users, geography, sector)
-python scripts/ai_risk_classifier.py use_case.json
+python3 scripts/ai_risk_classifier.py use_case.json
 # 2. For HIGH-RISK: budget conformity assessment + registration
 # 3. For LIMITED-RISK: implement transparency requirements
 # 4. Cross-check with cs-general-counsel-advisor on contractual implications
@@ -187,7 +187,7 @@ python scripts/ai_risk_classifier.py use_case.json
 
 ```bash
 # 1. Build workload.json (tokens/day, model size, latency, quality tolerance)
-python scripts/ai_cost_economics.py workload.json
+python3 scripts/ai_cost_economics.py workload.json
 # 2. Run sensitivity scenarios (low/mid/high GPU rates)
 # 3. Estimate migration cost (engineering time + risk)
 # 4. Cross-check with cs-cfo-advisor on capex commitment

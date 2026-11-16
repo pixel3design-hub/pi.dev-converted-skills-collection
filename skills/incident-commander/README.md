@@ -18,33 +18,33 @@ This skill implements battle-tested practices from SRE and DevOps teams at scale
 
 ```bash
 # From JSON file
-python scripts/incident_classifier.py --input incident.json --format text
+python3 scripts/incident_classifier.py --input incident.json --format text
 
 # From stdin text
-echo "Database is down affecting all users" | python scripts/incident_classifier.py --format text
+echo "Database is down affecting all users" | python3 scripts/incident_classifier.py --format text
 
 # Interactive mode
-python scripts/incident_classifier.py --interactive
+python3 scripts/incident_classifier.py --interactive
 ```
 
 ### Reconstruct Timeline
 
 ```bash
 # Analyze event timeline
-python scripts/timeline_reconstructor.py --input events.json --format text
+python3 scripts/timeline_reconstructor.py --input events.json --format text
 
 # With gap analysis
-python scripts/timeline_reconstructor.py --input events.json --gap-analysis --format markdown
+python3 scripts/timeline_reconstructor.py --input events.json --gap-analysis --format markdown
 ```
 
 ### Generate PIR Document
 
 ```bash
 # Basic PIR
-python scripts/pir_generator.py --incident incident.json --format markdown
+python3 scripts/pir_generator.py --incident incident.json --format markdown
 
 # Comprehensive PIR with timeline
-python scripts/pir_generator.py --incident incident.json --timeline timeline.json --rca-method fishbone
+python3 scripts/pir_generator.py --incident incident.json --timeline timeline.json --rca-method fishbone
 ```
 
 ## Scripts
@@ -166,12 +166,12 @@ Standardized communication templates:
 1. **Initial Classification**
 ```bash
 echo "Payment API returning 500 errors for 70% of requests" | \
-  python scripts/incident_classifier.py --format text
+  python3 scripts/incident_classifier.py --format text
 ```
 
 2. **Timeline Reconstruction** (after collecting events)
 ```bash
-python scripts/timeline_reconstructor.py \
+python3 scripts/timeline_reconstructor.py \
   --input events.json \
   --gap-analysis \
   --format markdown \
@@ -180,7 +180,7 @@ python scripts/timeline_reconstructor.py \
 
 3. **PIR Generation** (after incident resolution)
 ```bash
-python scripts/pir_generator.py \
+python3 scripts/pir_generator.py \
   --incident incident.json \
   --timeline timeline.md \
   --rca-method fishbone \
@@ -192,13 +192,13 @@ python scripts/pir_generator.py \
 **CI/CD Pipeline Integration:**
 ```bash
 # Classify deployment issues
-cat deployment_error.log | python scripts/incident_classifier.py --format json
+cat deployment_error.log | python3 scripts/incident_classifier.py --format json
 ```
 
 **Monitoring Integration:**
 ```bash
 # Process alert events
-curl -s "monitoring-api/events" | python scripts/timeline_reconstructor.py --format text
+curl -s "monitoring-api/events" | python3 scripts/timeline_reconstructor.py --format text
 ```
 
 **Runbook Generation:**
@@ -232,9 +232,9 @@ Use classification output to automatically select appropriate runbooks and escal
 
 Each script includes comprehensive help:
 ```bash
-python scripts/incident_classifier.py --help
-python scripts/timeline_reconstructor.py --help  
-python scripts/pir_generator.py --help
+python3 scripts/incident_classifier.py --help
+python3 scripts/timeline_reconstructor.py --help  
+python3 scripts/pir_generator.py --help
 ```
 
 For methodology questions, refer to the reference documentation in the `references/` directory.

@@ -78,10 +78,10 @@ Use this skill when you need to:
 2. **Run persona generator**
    ```bash
    # Human-readable output
-   python scripts/persona_generator.py
+   python3 scripts/persona_generator.py
 
    # JSON output for integration
-   python scripts/persona_generator.py json
+   python3 scripts/persona_generator.py json
    ```
 
 3. **Review generated components**

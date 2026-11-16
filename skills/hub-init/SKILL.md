@@ -30,7 +30,7 @@ Initialize an AgentHub collaboration session. Creates the `.agenthub/` directory
 Pass them to the init script:
 
 ```bash
-python ../agenthub/scripts/hub_init.py \
+python3 ../agenthub/scripts/hub_init.py \
   --task "{task}" --agents {N} \
   [--eval "{eval_cmd}"] [--metric {metric}] [--direction {direction}] \
   [--base-branch {branch}]

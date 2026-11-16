@@ -58,7 +58,7 @@ Operational consequence: keep `references/` flat. No nested subfolders.
 2. Count lines. If > 100, identify the next-largest section. Move it to `references/<topic>.md`.
 3. Replace the moved section with a 1-2-line pointer: "See [references/topic.md](references/topic.md) for X."
 4. Repeat until SKILL.md ≤ 100 lines.
-5. Validate: `python scripts/skill_structure_validator.py path/to/skill-folder/`
+5. Validate: `python3 scripts/skill_structure_validator.py path/to/skill-folder/`
 
 ## When 100 Is Too Restrictive
 

@@ -21,8 +21,8 @@ Run `/karpathy-check` before committing. The review agent catches what the LLM m
 /karpathy-check
 
 # Or directly from shell
-python scripts/complexity_checker.py src/ --threshold strict
-python scripts/diff_surgeon.py
+python3 scripts/complexity_checker.py src/ --threshold strict
+python3 scripts/diff_surgeon.py
 ```
 
 **Effectiveness:** ~85%. Catches most violations. Requires the user to remember to run it.
@@ -63,13 +63,13 @@ repos:
     hooks:
       - id: karpathy-complexity
         name: Karpathy complexity check
-        entry: python engineering/karpathy-coder/scripts/complexity_checker.py
+        entry: python3 engineering/karpathy-coder/scripts/complexity_checker.py
         language: python
         types: [python]
         args: [--threshold, medium]
       - id: karpathy-diff
         name: Karpathy diff surgeon
-        entry: python engineering/karpathy-coder/scripts/diff_surgeon.py
+        entry: python3 engineering/karpathy-coder/scripts/diff_surgeon.py
         language: python
         always_run: true
 ```
@@ -99,12 +99,12 @@ jobs:
           python-version: "3.11"
       - name: Complexity check
         run: |
-          python engineering/karpathy-coder/scripts/complexity_checker.py \
+          python3 engineering/karpathy-coder/scripts/complexity_checker.py \
             $(git diff --name-only origin/main...HEAD | grep -E '\.(py|ts|tsx)$' | tr '\n' ' ') \
             --threshold medium --json > complexity.json
       - name: Diff noise check
         run: |
-          python engineering/karpathy-coder/scripts/diff_surgeon.py \
+          python3 engineering/karpathy-coder/scripts/diff_surgeon.py \
             --diff origin/main...HEAD --json > noise.json
       - name: Report
         run: |

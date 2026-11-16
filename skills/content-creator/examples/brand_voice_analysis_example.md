@@ -25,7 +25,7 @@ Anyway, hope this helps! Drop a comment if you have questions! 🚀
 ## Command
 
 ```bash
-python scripts/brand_voice_analyzer.py sample_blog_post.txt
+python3 scripts/brand_voice_analyzer.py sample_blog_post.txt
 ```
 
 ---
@@ -88,7 +88,7 @@ VOICE CONSISTENCY SCORE: 62/100
 ## Sample Output (JSON Format)
 
 ```bash
-python scripts/brand_voice_analyzer.py sample_blog_post.txt json
+python3 scripts/brand_voice_analyzer.py sample_blog_post.txt json
 ```
 
 ```json

@@ -71,13 +71,13 @@ The ISO 27001 ISMS auditor pressure-tests any ISMS work. Six sample-driven quest
 
 ```bash
 # 1. Audit programme planning
-python ../isms-audit-expert/scripts/isms_audit_scheduler.py audit_scope.json
+python3 ../isms-audit-expert/scripts/isms_audit_scheduler.py audit_scope.json
 
 # 2. Mock audit for readiness check
-python ../../skills/compliance-os/scripts/audit_simulator.py iso27001_scope.json
+python3 ../../skills/compliance-os/scripts/audit_simulator.py iso27001_scope.json
 
 # 3. Cross-framework reuse (SOC 2 = 75% overlap; ISO 42001 = 60% reuse)
-python ../../skills/compliance-os/scripts/cross_framework_mapper.py program.json
+python3 ../../skills/compliance-os/scripts/cross_framework_mapper.py program.json
 ```
 
 ## Output Format

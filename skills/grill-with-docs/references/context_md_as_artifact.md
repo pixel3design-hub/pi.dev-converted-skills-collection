@@ -81,8 +81,8 @@ When a term spans contexts, define it in each `CONTEXT.md` with the context's pe
 
 When grilling against `CONTEXT.md`:
 
-- [ ] Lint structure: `python scripts/context_md_linter.py CONTEXT.md`
-- [ ] Lint vs code: `python scripts/glossary_code_consistency.py --context CONTEXT.md --code src/`
+- [ ] Lint structure: `python3 scripts/context_md_linter.py CONTEXT.md`
+- [ ] Lint vs code: `python3 scripts/glossary_code_consistency.py --context CONTEXT.md --code src/`
 - [ ] For each "defined but unused": ask "dead term, or rename happened?"
 - [ ] For each "code-only proper noun": ask "domain term that needs definition, or generic?"
 - [ ] For each new term introduced during the grill: edit `CONTEXT.md` *now*, not "later"

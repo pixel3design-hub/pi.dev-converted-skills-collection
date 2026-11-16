@@ -53,7 +53,7 @@ What are you doing with it?
 | `synthetic` × `anonymous-aggregate` × `train-foundation-model` | GO (with provenance log) |
 | any × `regulated` × `train-foundation-model` | NO-GO (framework prohibits raw use) |
 
-Run `python scripts/ai_training_data_audit.py` for the full matrix applied to your sources.
+Run `python3 scripts/ai_training_data_audit.py` for the full matrix applied to your sources.
 
 ## GDPR Art. 6 Lawful Basis Decision Tree (EU residents only)
 

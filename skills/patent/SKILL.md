@@ -110,7 +110,7 @@ Asked for novelty and FTO; skipped for pure landscape (always signal-gathering b
 Deterministic from intake answers. Use `scripts/sub_use_case_router.py`:
 
 ```bash
-python scripts/sub_use_case_router.py \
+python3 scripts/sub_use_case_router.py \
   --sub-use-case novelty \
   --jurisdictions "" \
   --risk strict \
@@ -185,7 +185,7 @@ If no Lens.org key: skip; note in audit log; recommend manual citation review on
 Same invention often filed in multiple jurisdictions (US + EP + JP + CN). Group by family ID or priority number to avoid double-counting. Use `scripts/family_resolver.py`:
 
 ```bash
-python scripts/family_resolver.py --hits-file hits.json
+python3 scripts/family_resolver.py --hits-file hits.json
 # Returns: deduplicated family list + family-member jurisdictions
 ```
 

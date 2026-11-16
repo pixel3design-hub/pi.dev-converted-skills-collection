@@ -32,12 +32,12 @@ general counsel, GC, legal review, contract review, MSA, SaaS agreement, NDA, DP
 
 ```bash
 # Scan a contract for risky clauses (uses bundled sample if no path given)
-python scripts/contract_risk_scanner.py
-python scripts/contract_risk_scanner.py path/to/contract.txt
+python3 scripts/contract_risk_scanner.py
+python3 scripts/contract_risk_scanner.py path/to/contract.txt
 
 # Analyze a term sheet for founder-friendliness
-python scripts/term_sheet_analyzer.py
-python scripts/term_sheet_analyzer.py path/to/term_sheet.json
+python3 scripts/term_sheet_analyzer.py
+python3 scripts/term_sheet_analyzer.py path/to/term_sheet.json
 ```
 
 ## Key Questions (ask these first)
@@ -116,7 +116,7 @@ See `references/ip_and_regulatory.md` for sequencing.
 
 ### Workflow 2: Term Sheet Response
 1. Save the term sheet as a JSON file matching the schema in `term_sheet_analyzer.py --help`
-2. Run `python scripts/term_sheet_analyzer.py path/to/term_sheet.json`
+2. Run `python3 scripts/term_sheet_analyzer.py path/to/term_sheet.json`
 3. Review the founder-friendliness score and per-clause flags
 4. Negotiate the worst 3 clauses (don't try to win all 20)
 5. Always have a securities/venture attorney review before signing

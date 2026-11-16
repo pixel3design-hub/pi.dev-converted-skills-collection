@@ -70,7 +70,7 @@ For each line item, populate the schema below. Skip prior-year fields if you don
 ## Step 3 — Run the categorizer
 
 ```bash
-python scripts/spend_categorizer.py \
+python3 scripts/spend_categorizer.py \
   --input spend.json \
   --profile tech-startup \
   --output categorized.md
@@ -126,7 +126,7 @@ Take the same suppliers, add criticality and switching cost. The supplier-consol
 ## Step 5 — Run consolidation
 
 ```bash
-python scripts/supplier_consolidation.py \
+python3 scripts/supplier_consolidation.py \
   --input suppliers.json \
   --profile tech-startup \
   --output consolidation_plan.md
@@ -155,7 +155,7 @@ If you have PO timestamp data, the cycle analyzer surfaces bottleneck categories
 Run with:
 
 ```bash
-python scripts/purchasing_cycle_analyzer.py \
+python3 scripts/purchasing_cycle_analyzer.py \
   --input pos.json \
   --output cycle.md
 ```

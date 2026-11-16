@@ -40,13 +40,13 @@ Flags that skip cleanup become debt: dead branches, stale defaults, untested cod
 
 ```bash
 # 1. Audit the repo for flag debt
-python scripts/flag_debt_scanner.py --repo . --max-age-days 90
+python3 scripts/flag_debt_scanner.py --repo . --max-age-days 90
 
 # 2. Plan a progressive rollout for a new flag
-python scripts/rollout_planner.py --population 100000 --target-percent 100 --duration-days 14 --strategy ring
+python3 scripts/rollout_planner.py --population 100000 --target-percent 100 --duration-days 14 --strategy ring
 
 # 3. Verify every flag has a documented kill switch
-python scripts/kill_switch_audit.py --repo . --flag-doc docs/feature-flags.md
+python3 scripts/kill_switch_audit.py --repo . --flag-doc docs/feature-flags.md
 ```
 
 ## The 4 flag types (taxonomy)
@@ -71,8 +71,8 @@ All three are stdlib-only. Run with `--help`.
 Finds flags older than `--max-age-days` with low usage, suggesting candidates for cleanup.
 
 ```bash
-python scripts/flag_debt_scanner.py --repo . --max-age-days 90 --format text
-python scripts/flag_debt_scanner.py --repo . --max-age-days 60 --format json > debt.json
+python3 scripts/flag_debt_scanner.py --repo . --max-age-days 90 --format text
+python3 scripts/flag_debt_scanner.py --repo . --max-age-days 60 --format json > debt.json
 ```
 
 **Detection heuristic:**
@@ -89,9 +89,9 @@ Outputs flag name, age in days, file references, suggested action. JSON mode is 
 Generates a phased rollout schedule from population size, target percent, duration, and strategy.
 
 ```bash
-python scripts/rollout_planner.py --population 100000 --target-percent 100 --duration-days 14 --strategy ring
-python scripts/rollout_planner.py --population 50000 --target-percent 25 --duration-days 7 --strategy linear
-python scripts/rollout_planner.py --population 1000000 --target-percent 100 --duration-days 30 --strategy log
+python3 scripts/rollout_planner.py --population 100000 --target-percent 100 --duration-days 14 --strategy ring
+python3 scripts/rollout_planner.py --population 50000 --target-percent 25 --duration-days 7 --strategy linear
+python3 scripts/rollout_planner.py --population 1000000 --target-percent 100 --duration-days 30 --strategy log
 ```
 
 **Strategies:**
@@ -107,8 +107,8 @@ Outputs a markdown table with date, percent, expected user count, abort criteria
 Cross-references code-discovered flags against documentation to verify each has a kill switch path written down.
 
 ```bash
-python scripts/kill_switch_audit.py --repo . --flag-doc docs/feature-flags.md
-python scripts/kill_switch_audit.py --repo . --flag-doc runbooks/flags.md --format json
+python3 scripts/kill_switch_audit.py --repo . --flag-doc docs/feature-flags.md
+python3 scripts/kill_switch_audit.py --repo . --flag-doc runbooks/flags.md --format json
 ```
 
 **What it checks:**

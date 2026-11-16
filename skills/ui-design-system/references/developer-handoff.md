@@ -440,7 +440,7 @@ export const Primary = {
 
 - [ ] Brand color defined
 - [ ] Style selected (modern/classic/playful)
-- [ ] Tokens generated: `python scripts/design_token_generator.py "#0066CC" modern`
+- [ ] Tokens generated: `python3 scripts/design_token_generator.py "#0066CC" modern`
 - [ ] All formats exported (JSON, CSS, SCSS)
 
 ### Developer Setup

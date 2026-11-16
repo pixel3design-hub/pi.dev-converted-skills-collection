@@ -50,16 +50,16 @@ meeting is done when every action has an owner and a date; that completion check
 
 ```bash
 # 1. Gate: should this meeting exist?
-python scripts/meeting_cost_calculator.py --attendees 6 --minutes 60 \
+python3 scripts/meeting_cost_calculator.py --attendees 6 --minutes 60 \
   --avg-rate 90 --include-refocus --has-decision --has-agenda --has-owner
 
 # 2. Agenda: timeboxed, decision-first, outcomes mandatory
-python scripts/agenda_builder.py --length 45 \
+python3 scripts/agenda_builder.py --length 45 \
   --topic "Q3 pricing:Decide usage-based vs seat-based:15:maria" \
   --topic "Launch risks:Discuss open launch blockers:15:sam"
 
 # 4. Extract: raw notes -> owner + due-date checklist with ORPHAN/NO-DUE flags
-python scripts/action_item_extractor.py --input notes.md
+python3 scripts/action_item_extractor.py --input notes.md
 ```
 
 ## Scripts

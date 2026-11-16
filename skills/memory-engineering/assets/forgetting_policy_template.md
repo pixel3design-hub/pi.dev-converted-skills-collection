@@ -127,7 +127,7 @@ means you cannot stop it recurring.*
 ```
 
 ```bash
-python scripts/forgetting_policy_linter.py --policy my_policy.json
+python3 scripts/forgetting_policy_linter.py --policy my_policy.json
 # exit 0 = PASS · 2 = CONDITIONAL · 4 = FAIL (F1 or F4 failed)
 ```
 

@@ -121,7 +121,7 @@ Forcing choice. **Re-asked** at the post-Phase-2 checkpoint after the user has s
 **One broad recon search** to map themes, terminology, methodological distinctions.
 
 - Run the lane check (Consensus available or not), then:
-  - Free lane: `python scripts/free_search.py --query "<broad version of Q1>" --source both --max 20` (or the esearch/works URL templates above)
+  - Free lane: `python3 scripts/free_search.py --query "<broad version of Q1>" --source both --max 20` (or the esearch/works URL templates above)
   - **If Consensus is available, additionally** run one broad Consensus search and merge
 - Query: broad version of Q1 (terminology variants are okay; first search casts wide)
 - Record: `citation_tracker.py --action record_search --session NAME --query "..."`

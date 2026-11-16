@@ -7,8 +7,8 @@ sweeps and multi-seed runs are one command, not a script.
 
 ## Frameworks Introduced
 - **One flag per kwarg**: if `kwarg` is a valid keyword argument of an algorithm function,
-  `--kwarg` sets it. `python -m spinup.run [algo] --help` prints the docstring readout.
-  - How: `python -m spinup.run [algo name] [experiment flags]`.
+  `--kwarg` sets it. `python3 -m spinup.run [algo] --help` prints the docstring readout.
+  - How: `python3 -m spinup.run [algo name] [experiment flags]`.
 
 - **Multiple values means multiple experiments**: providing more than one value for an
   argument launches one experiment per combination, **in series**. They do not run in
@@ -48,7 +48,7 @@ sweeps and multi-seed runs are one command, not a script.
 The quickstart, with every flag doing something distinct:
 
 ```bash
-python -m spinup.run ppo --exp_name ppo_ant --env Ant-v2 --clip_ratio 0.1 0.2 \
+python3 -m spinup.run ppo --exp_name ppo_ant --env Ant-v2 --clip_ratio 0.1 0.2 \
     --hid[h] [32,32] [64,32] --act torch.nn.Tanh --seed 0 10 20 --dt \
     --data_dir path/to/data
 ```
@@ -56,8 +56,8 @@ python -m spinup.run ppo --exp_name ppo_ant --env Ant-v2 --clip_ratio 0.1 0.2 \
 Choosing the backend explicitly:
 
 ```bash
-python -m spinup.run ppo_pytorch --env Walker2d-v2 --exp_name walker
-python -m spinup.run ppo_tf1     --env Walker2d-v2 --exp_name walker
+python3 -m spinup.run ppo_pytorch --env Walker2d-v2 --exp_name walker
+python3 -m spinup.run ppo_tf1     --env Walker2d-v2 --exp_name walker
 # bare `ppo` reads spinup/user_config.py for the default backend
 ```
 
@@ -91,7 +91,7 @@ eg.run(ppo_pytorch, num_cpu=args.cpu)
 ```
 
 ## Worked Example
-`python -m spinup.run ddpg_tf1 --env Hopper-v2 --hid[h] [300] [128,128] --act tf.nn.tanh tf.nn.relu`
+`python3 -m spinup.run ddpg_tf1 --env Hopper-v2 --hid[h] [300] [128,128] --act tf.nn.tanh tf.nn.relu`
 
 Two `hid` values times two `act` values is four experiments, run in series, producing four
 suffixes:

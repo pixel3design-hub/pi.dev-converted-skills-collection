@@ -55,16 +55,16 @@ For every violation it finds, it provides the precise before/after code fix tail
 
 ```bash
 # Scan entire project
-python scripts/a11y_scanner.py /path/to/project
+python3 scripts/a11y_scanner.py /path/to/project
 
 # Scan with JSON output for tooling
-python scripts/a11y_scanner.py /path/to/project --json
+python3 scripts/a11y_scanner.py /path/to/project --json
 
 # Check color contrast for specific values
-python scripts/contrast_checker.py --fg "#777777" --bg "#ffffff"
+python3 scripts/contrast_checker.py --fg "#777777" --bg "#ffffff"
 
 # Check contrast across a CSS/Tailwind file
-python scripts/contrast_checker.py --file /path/to/styles.css
+python3 scripts/contrast_checker.py --file /path/to/styles.css
 ```
 
 ### Slash Command
@@ -82,7 +82,7 @@ python scripts/contrast_checker.py --file /path/to/styles.css
 **Phase 1: Scan** -- Walk the source tree, detect framework, apply rule set.
 
 ```bash
-python scripts/a11y_scanner.py /path/to/project --format table
+python3 scripts/a11y_scanner.py /path/to/project --format table
 ```
 
 **Phase 2: Fix** -- Apply framework-specific fixes for each violation.
@@ -92,7 +92,7 @@ python scripts/a11y_scanner.py /path/to/project --format table
 **Phase 3: Verify** -- Re-run the scanner to confirm fixes and check for regressions.
 
 ```bash
-python scripts/a11y_scanner.py /path/to/project --baseline audit-baseline.json
+python3 scripts/a11y_scanner.py /path/to/project --baseline audit-baseline.json
 ```
 
 ## Example: React Component Audit
@@ -139,7 +139,7 @@ function ProductCard({ product }) {
 ### a11y_scanner.py
 
 ```
-Usage: python scripts/a11y_scanner.py <path> [options]
+Usage: python3 scripts/a11y_scanner.py <path> [options]
 
 Options:
   --json                  Output results as JSON
@@ -156,7 +156,7 @@ Options:
 ### contrast_checker.py
 
 ```
-Usage: python scripts/contrast_checker.py [options]
+Usage: python3 scripts/contrast_checker.py [options]
 
 Options:
   --fg COLOR              Foreground color (hex)

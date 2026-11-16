@@ -85,7 +85,7 @@ Before running scripts, verify your JSON is valid and matches the expected schem
 - **Mismatched array lengths** in funnel data (`stages` and `counts` must be the same length) → raises `ValueError`
 - **Non-numeric monetary values** in ROI data → raises `TypeError`
 
-Use `python -m json.tool your_file.json` to validate JSON syntax before passing it to any script.
+Use `python3 -m json.tool your_file.json` to validate JSON syntax before passing it to any script.
 
 ---
 
@@ -104,13 +104,13 @@ For a complete campaign review, run the three scripts in sequence:
 
 ```bash
 # Step 1 — Attribution: understand which channels drive conversions
-python scripts/attribution_analyzer.py campaign_data.json --model time-decay
+python3 scripts/attribution_analyzer.py campaign_data.json --model time-decay
 
 # Step 2 — Funnel: identify where prospects drop off on the path to conversion
-python scripts/funnel_analyzer.py funnel_data.json
+python3 scripts/funnel_analyzer.py funnel_data.json
 
 # Step 3 — ROI: calculate profitability and benchmark against industry standards
-python scripts/campaign_roi_calculator.py campaign_data.json
+python3 scripts/campaign_roi_calculator.py campaign_data.json
 ```
 
 Use attribution results to identify top-performing channels, then focus funnel analysis on those channels' segments, and finally validate ROI metrics to prioritize budget reallocation.
@@ -123,36 +123,36 @@ Use attribution results to identify top-performing channels, then focus funnel a
 
 ```bash
 # Run all 5 attribution models
-python scripts/attribution_analyzer.py campaign_data.json
+python3 scripts/attribution_analyzer.py campaign_data.json
 
 # Run a specific model
-python scripts/attribution_analyzer.py campaign_data.json --model time-decay
+python3 scripts/attribution_analyzer.py campaign_data.json --model time-decay
 
 # JSON output for pipeline integration
-python scripts/attribution_analyzer.py campaign_data.json --format json
+python3 scripts/attribution_analyzer.py campaign_data.json --format json
 
 # Custom time-decay half-life (default: 7 days)
-python scripts/attribution_analyzer.py campaign_data.json --model time-decay --half-life 14
+python3 scripts/attribution_analyzer.py campaign_data.json --model time-decay --half-life 14
 ```
 
 ### Funnel Analysis
 
 ```bash
 # Basic funnel analysis
-python scripts/funnel_analyzer.py funnel_data.json
+python3 scripts/funnel_analyzer.py funnel_data.json
 
 # JSON output
-python scripts/funnel_analyzer.py funnel_data.json --format json
+python3 scripts/funnel_analyzer.py funnel_data.json --format json
 ```
 
 ### Campaign ROI Calculation
 
 ```bash
 # Calculate ROI metrics for all campaigns
-python scripts/campaign_roi_calculator.py campaign_data.json
+python3 scripts/campaign_roi_calculator.py campaign_data.json
 
 # JSON output
-python scripts/campaign_roi_calculator.py campaign_data.json --format json
+python3 scripts/campaign_roi_calculator.py campaign_data.json --format json
 ```
 
 ---

@@ -31,7 +31,7 @@ Marketing is good. Do more of it.
 ## Command
 
 ```bash
-python scripts/seo_optimizer.py draft_article.md "content marketing strategy" "content marketing,marketing tips,business growth"
+python3 scripts/seo_optimizer.py draft_article.md "content marketing strategy" "content marketing,marketing tips,business growth"
 ```
 
 ---
@@ -132,7 +132,7 @@ RECOMMENDATIONS (Priority Order)
 ## Sample Output (JSON Format)
 
 ```bash
-python scripts/seo_optimizer.py draft_article.md "content marketing strategy" --json
+python3 scripts/seo_optimizer.py draft_article.md "content marketing strategy" --json
 ```
 
 ```json

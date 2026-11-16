@@ -30,7 +30,7 @@ Show experiment results, active loops, and progress across all experiments.
 ### Single experiment
 
 ```bash
-python ../autoresearch-agent/scripts/log_results.py --experiment {domain}/{name}
+python3 ../autoresearch-agent/scripts/log_results.py --experiment {domain}/{name}
 ```
 
 Also check for active loop:
@@ -46,13 +46,13 @@ Active loop: every {interval} (cron ID: {id}, started: {date})
 ### Domain view
 
 ```bash
-python ../autoresearch-agent/scripts/log_results.py --domain {domain}
+python3 ../autoresearch-agent/scripts/log_results.py --domain {domain}
 ```
 
 ### Full dashboard
 
 ```bash
-python ../autoresearch-agent/scripts/log_results.py --dashboard
+python3 ../autoresearch-agent/scripts/log_results.py --dashboard
 ```
 
 For each experiment, also check for loop.json and show loop status.
@@ -61,10 +61,10 @@ For each experiment, also check for loop.json and show loop status.
 
 ```bash
 # CSV
-python ../autoresearch-agent/scripts/log_results.py --dashboard --format csv --output {file}
+python3 ../autoresearch-agent/scripts/log_results.py --dashboard --format csv --output {file}
 
 # Markdown
-python ../autoresearch-agent/scripts/log_results.py --dashboard --format markdown --output {file}
+python3 ../autoresearch-agent/scripts/log_results.py --dashboard --format markdown --output {file}
 ```
 
 ## Output Example

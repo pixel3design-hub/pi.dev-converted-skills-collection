@@ -795,7 +795,7 @@ jobs:
 
       - name: Run data quality checks
         run: |
-          python scripts/run_quality_checks.py --env staging
+          python3 scripts/run_quality_checks.py --env staging
 
   deploy-production:
     runs-on: ubuntu-latest

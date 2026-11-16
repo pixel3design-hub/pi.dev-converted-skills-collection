@@ -112,7 +112,7 @@ main (v1.2.3) ← hotfix/security-patch → main (v1.2.4)
    ```bash
    # Run tests
    npm test
-   python -m pytest
+   python3 -m pytest
    
    # Security scan
    npm audit

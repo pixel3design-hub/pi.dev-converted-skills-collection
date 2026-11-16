@@ -45,8 +45,8 @@ executive mentor, pre-mortem, board prep, hard decisions, stress test, postmorte
 ## Quick Start
 
 ```bash
-python scripts/decision_matrix_scorer.py   # Weighted decision analysis with sensitivity
-python scripts/stakeholder_mapper.py        # Map influence vs alignment, find blockers
+python3 scripts/decision_matrix_scorer.py   # Weighted decision analysis with sensitivity
+python3 scripts/stakeholder_mapper.py        # Map influence vs alignment, find blockers
 ```
 
 ## Voice

@@ -28,8 +28,8 @@ CEO, chief executive officer, strategy, strategic planning, fundraising, board m
 ## Quick Start
 
 ```bash
-python scripts/strategy_analyzer.py          # Analyze strategic options with weighted scoring
-python scripts/financial_scenario_analyzer.py # Model financial scenarios (base/bull/bear)
+python3 scripts/strategy_analyzer.py          # Analyze strategic options with weighted scoring
+python3 scripts/financial_scenario_analyzer.py # Model financial scenarios (base/bull/bear)
 ```
 
 ## Core Responsibilities

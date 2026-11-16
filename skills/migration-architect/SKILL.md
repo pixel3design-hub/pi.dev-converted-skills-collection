@@ -410,8 +410,8 @@ class MigrationCircuitBreaker:
 migration_validation:
   stage: test
   script:
-    - python scripts/compatibility_checker.py --before=old_schema.json --after=new_schema.json
-    - python scripts/migration_planner.py --config=migration_config.json --validate
+    - python3 scripts/compatibility_checker.py --before=old_schema.json --after=new_schema.json
+    - python3 scripts/migration_planner.py --config=migration_config.json --validate
   artifacts:
     reports:
       - compatibility_report.json

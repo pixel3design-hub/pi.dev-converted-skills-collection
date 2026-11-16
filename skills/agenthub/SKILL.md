@@ -136,7 +136,7 @@ hub/{session-id}/agent-{N}/attempt-{M}
 Frontier = branch tips with no child branches. Equivalent to AgentHub's "leaves" query.
 
 ```bash
-python scripts/dag_analyzer.py --frontier --session {id}
+python3 scripts/dag_analyzer.py --frontier --session {id}
 ```
 
 ### Immutability
@@ -189,7 +189,7 @@ parent: null
 Best for: benchmarks, test pass rates, file sizes, response times.
 
 ```bash
-python scripts/result_ranker.py --session {id} \
+python3 scripts/result_ranker.py --session {id} \
   --eval-cmd "pytest bench.py --json" \
   --metric p50_ms --direction lower
 ```

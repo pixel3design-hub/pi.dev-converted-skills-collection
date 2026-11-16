@@ -72,7 +72,7 @@ Then do exactly ONE iteration:
 - Review results.tsv: what worked, what failed, what hasn't been tried
 - Edit the target file with ONE change (strategy escalation based on run count)
 - Commit: git add {target} && git commit -m "experiment: {description}"
-- Evaluate: python ../autoresearch-agent/scripts/run_experiment.py --experiment {domain}/{name} --single
+- Evaluate: python3 ../autoresearch-agent/scripts/run_experiment.py --experiment {domain}/{name} --single
 - Read the output (KEEP/DISCARD/CRASH)
 
 Rules:

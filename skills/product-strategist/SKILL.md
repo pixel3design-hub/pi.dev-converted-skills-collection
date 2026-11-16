@@ -30,16 +30,16 @@ Strategic toolkit for Head of Product to drive vision, alignment, and organizati
 
 ```bash
 # Growth strategy with default teams
-python scripts/okr_cascade_generator.py growth
+python3 scripts/okr_cascade_generator.py growth
 
 # Retention strategy with custom teams
-python scripts/okr_cascade_generator.py retention --teams "Engineering,Design,Data"
+python3 scripts/okr_cascade_generator.py retention --teams "Engineering,Design,Data"
 
 # Revenue strategy with 40% product contribution
-python scripts/okr_cascade_generator.py revenue --contribution 0.4
+python3 scripts/okr_cascade_generator.py revenue --contribution 0.4
 
 # Export as JSON for integration
-python scripts/okr_cascade_generator.py growth --json > okrs.json
+python3 scripts/okr_cascade_generator.py growth --json > okrs.json
 ```
 
 ---
@@ -73,10 +73,10 @@ See `references/strategy_types.md` for detailed guidance.
 
 ```bash
 # Default teams
-python scripts/okr_cascade_generator.py growth
+python3 scripts/okr_cascade_generator.py growth
 
 # Custom org structure with contribution percentage
-python scripts/okr_cascade_generator.py growth \
+python3 scripts/okr_cascade_generator.py growth \
   --teams "Core,Platform,Mobile,AI" \
   --contribution 0.3
 ```
@@ -103,7 +103,7 @@ Before finalizing:
 
 ```bash
 # Export JSON for tools like Lattice, Ally, Workboard
-python scripts/okr_cascade_generator.py growth --json > q1_okrs.json
+python3 scripts/okr_cascade_generator.py growth --json > q1_okrs.json
 ```
 
 ---
@@ -113,7 +113,7 @@ python scripts/okr_cascade_generator.py growth --json > q1_okrs.json
 ### Usage
 
 ```bash
-python scripts/okr_cascade_generator.py [strategy] [options]
+python3 scripts/okr_cascade_generator.py [strategy] [options]
 ```
 
 **Strategies:** `growth` | `retention` | `revenue` | `innovation` | `operational`

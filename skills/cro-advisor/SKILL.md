@@ -29,13 +29,13 @@ CRO, chief revenue officer, revenue strategy, ARR, MRR, sales model, pipeline, r
 
 ### Revenue Forecasting
 ```bash
-python scripts/revenue_forecast_model.py
+python3 scripts/revenue_forecast_model.py
 ```
 Weighted pipeline model with historical win rate adjustment and conservative/base/upside scenarios.
 
 ### Churn & Retention Analysis
 ```bash
-python scripts/churn_analyzer.py
+python3 scripts/churn_analyzer.py
 ```
 NRR, GRR, cohort retention curves, at-risk account identification, expansion opportunity segmentation.
 

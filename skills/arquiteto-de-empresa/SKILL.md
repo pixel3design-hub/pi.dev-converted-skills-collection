@@ -64,13 +64,13 @@ The scripts mirror what you would do by hand — scaffold, validation, and index
 
 ```bash
 # 1. Scaffold: creates the OKF folder tree + index.md/log.md + per-folder index
-python scripts/scaffold_bundle.py "My Company" --out ./my-company --has-product --has-tech
+python3 scripts/scaffold_bundle.py "My Company" --out ./my-company --has-product --has-tech
 
 # 2. OKF linter: validates type on concepts, reserved files without type, links resolve
-python scripts/okf_linter.py ./my-company
+python3 scripts/okf_linter.py ./my-company
 
 # 3. Index generator: (re)generates the index.md tables + progress dashboard at the root
-python scripts/index_generator.py ./my-company
+python3 scripts/index_generator.py ./my-company
 ```
 
 Recommended flow: **scaffold → interview per phase → write concepts → `okf_linter` → `index_generator`**.

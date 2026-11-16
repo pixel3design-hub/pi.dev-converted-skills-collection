@@ -189,8 +189,8 @@ Run **once across all channels** with constraints.
 1. Save each template as a JSON file (e.g., `channel-cts-partner.json`, `channel-roi.json`, `channel-mix.json`)
 2. Run in sequence:
    ```bash
-   python scripts/cost_to_serve_calculator.py --input channel-cts-partner.json --output markdown > out-cts-partner.md
-   python scripts/channel_roi_analyzer.py --input channel-roi.json --profile saas --output markdown > out-roi.md
-   python scripts/channel_mix_optimizer.py --input channel-mix.json --profile saas --output markdown > out-mix.md
+   python3 scripts/cost_to_serve_calculator.py --input channel-cts-partner.json --output markdown > out-cts-partner.md
+   python3 scripts/channel_roi_analyzer.py --input channel-roi.json --profile saas --output markdown > out-roi.md
+   python3 scripts/channel_mix_optimizer.py --input channel-mix.json --profile saas --output markdown > out-mix.md
    ```
 3. Bring all three reports to the quarterly channel review.

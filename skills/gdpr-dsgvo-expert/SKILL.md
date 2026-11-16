@@ -34,10 +34,10 @@ Scans codebases for potential GDPR compliance issues including personal data pat
 
 ```bash
 # Scan a project directory
-python scripts/gdpr_compliance_checker.py /path/to/project
+python3 scripts/gdpr_compliance_checker.py /path/to/project
 
 # JSON output for CI/CD integration
-python scripts/gdpr_compliance_checker.py . --json --output report.json
+python3 scripts/gdpr_compliance_checker.py . --json --output report.json
 ```
 
 **Detects:**
@@ -64,10 +64,10 @@ Generates Data Protection Impact Assessment documentation following Art. 35 requ
 
 ```bash
 # Get input template
-python scripts/dpia_generator.py --template > input.json
+python3 scripts/dpia_generator.py --template > input.json
 
 # Generate DPIA report
-python scripts/dpia_generator.py --input input.json --output dpia_report.md
+python3 scripts/dpia_generator.py --input input.json --output dpia_report.md
 ```
 
 **Features:**
@@ -91,20 +91,20 @@ Manages data subject rights requests under GDPR Articles 15-22.
 
 ```bash
 # Add new request
-python scripts/data_subject_rights_tracker.py add \
+python3 scripts/data_subject_rights_tracker.py add \
   --type access --subject "John Doe" --email "john@example.com"
 
 # List all requests
-python scripts/data_subject_rights_tracker.py list
+python3 scripts/data_subject_rights_tracker.py list
 
 # Update status
-python scripts/data_subject_rights_tracker.py status --id DSR-202601-0001 --update verified
+python3 scripts/data_subject_rights_tracker.py status --id DSR-202601-0001 --update verified
 
 # Generate compliance report
-python scripts/data_subject_rights_tracker.py report --output compliance.json
+python3 scripts/data_subject_rights_tracker.py report --output compliance.json
 
 # Generate response template
-python scripts/data_subject_rights_tracker.py template --id DSR-202601-0001
+python3 scripts/data_subject_rights_tracker.py template --id DSR-202601-0001
 ```
 
 **Supported Rights:**
@@ -170,7 +170,7 @@ Step-by-step DPIA process:
 
 ```
 Step 1: Run compliance checker on codebase
-        → python scripts/gdpr_compliance_checker.py /path/to/code
+        → python3 scripts/gdpr_compliance_checker.py /path/to/code
 
 Step 2: Review findings and compliance score
         → Address critical and high issues
@@ -179,9 +179,9 @@ Step 3: Determine if DPIA required
         → Check references/dpia_methodology.md threshold criteria
 
 Step 4: If DPIA required, generate assessment
-        → python scripts/dpia_generator.py --template > input.json
+        → python3 scripts/dpia_generator.py --template > input.json
         → Fill in processing details
-        → python scripts/dpia_generator.py --input input.json --output dpia.md
+        → python3 scripts/dpia_generator.py --input input.json --output dpia.md
 
 Step 5: Document in records of processing activities
 ```
@@ -190,22 +190,22 @@ Step 5: Document in records of processing activities
 
 ```
 Step 1: Log request in tracker
-        → python scripts/data_subject_rights_tracker.py add --type [type] ...
+        → python3 scripts/data_subject_rights_tracker.py add --type [type] ...
 
 Step 2: Verify identity (proportionate measures)
-        → python scripts/data_subject_rights_tracker.py status --id [ID] --update verified
+        → python3 scripts/data_subject_rights_tracker.py status --id [ID] --update verified
 
 Step 3: Gather data from systems
-        → python scripts/data_subject_rights_tracker.py status --id [ID] --update in_progress
+        → python3 scripts/data_subject_rights_tracker.py status --id [ID] --update in_progress
 
 Step 4: Generate response
-        → python scripts/data_subject_rights_tracker.py template --id [ID]
+        → python3 scripts/data_subject_rights_tracker.py template --id [ID]
 
 Step 5: Send response and complete
-        → python scripts/data_subject_rights_tracker.py status --id [ID] --update completed
+        → python3 scripts/data_subject_rights_tracker.py status --id [ID] --update completed
 
 Step 6: Monitor compliance
-        → python scripts/data_subject_rights_tracker.py report
+        → python3 scripts/data_subject_rights_tracker.py report
 ```
 
 ### Workflow 3: German BDSG Compliance Check

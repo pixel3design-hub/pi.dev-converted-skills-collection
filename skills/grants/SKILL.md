@@ -124,7 +124,7 @@ RePORTER is **POST-only**. Use `bash_tool` + `curl` — never `web_fetch`.
 Compute at runtime via `scripts/fiscal_year_calculator.py`. Default: current FY + 3 prior. Federal FY starts Oct 1, so:
 
 ```bash
-python scripts/fiscal_year_calculator.py --output json
+python3 scripts/fiscal_year_calculator.py --output json
 # Returns: {"current_fy": 2026, "window": [2023, 2024, 2025, 2026]}
 ```
 
@@ -191,7 +191,7 @@ NOT career stage alone. Career stage **+** project scope **+** prelim data drive
 Use `scripts/mechanism_matcher.py`:
 
 ```bash
-python scripts/mechanism_matcher.py \
+python3 scripts/mechanism_matcher.py \
   --career-stage "early_career" \
   --prelim-data "pilot" \
   --environment "r01_eligible" \

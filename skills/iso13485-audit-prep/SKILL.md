@@ -75,10 +75,10 @@ The ISO 13485 QMS auditor pressure-tests any medical-device QMS work. Six tracea
 
 ```bash
 # 1. Audit programme optimization
-python ../qms-audit-expert/scripts/audit_schedule_optimizer.py audit_scope.json
+python3 ../qms-audit-expert/scripts/audit_schedule_optimizer.py audit_scope.json
 
 # 2. Mock audit for readiness check
-python ../../skills/compliance-os/scripts/audit_simulator.py iso13485_scope.json
+python3 ../../skills/compliance-os/scripts/audit_simulator.py iso13485_scope.json
 
 # 3. CAPA system review
 # Route to ../capa-officer/ tools

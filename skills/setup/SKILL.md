@@ -31,7 +31,7 @@ Set up a new autoresearch experiment with all required configuration.
 Pass them directly to the setup script:
 
 ```bash
-python ../autoresearch-agent/scripts/setup_experiment.py \
+python3 ../autoresearch-agent/scripts/setup_experiment.py \
   --domain {domain} --name {name} \
   --target {target} --eval "{eval_cmd}" \
   --metric {metric} --direction {direction} \
@@ -45,7 +45,7 @@ Collect each parameter one at a time:
 1. **Domain** — Ask: "What domain? (engineering, marketing, content, prompts, custom)"
 2. **Name** — Ask: "Experiment name? (e.g., api-speed, blog-titles)"
 3. **Target file** — Ask: "Which file to optimize?" Verify it exists.
-4. **Eval command** — Ask: "How to measure it? (e.g., pytest bench.py, python evaluate.py)"
+4. **Eval command** — Ask: "How to measure it? (e.g., pytest bench.py, python3 evaluate.py)"
 5. **Metric** — Ask: "What metric does the eval output? (e.g., p50_ms, ctr_score)"
 6. **Direction** — Ask: "Is lower or higher better?"
 7. **Evaluator** (optional) — Show built-in evaluators. Ask: "Use a built-in evaluator, or your own?"
@@ -57,10 +57,10 @@ Then run `setup_experiment.py` with the collected parameters.
 
 ```bash
 # Show existing experiments
-python ../autoresearch-agent/scripts/setup_experiment.py --list
+python3 ../autoresearch-agent/scripts/setup_experiment.py --list
 
 # Show available evaluators
-python ../autoresearch-agent/scripts/setup_experiment.py --list-evaluators
+python3 ../autoresearch-agent/scripts/setup_experiment.py --list-evaluators
 ```
 
 ## Built-in Evaluators

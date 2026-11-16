@@ -22,7 +22,7 @@ The LLM Wiki plugin is tool-agnostic. The **scripts** are pure Python stdlib and
 If you use multiple CLIs against the same vault:
 
 ```bash
-python scripts/init_vault.py --path ~/vaults/research --topic "X" --tool all
+python3 scripts/init_vault.py --path ~/vaults/research --topic "X" --tool all
 ```
 
 This creates:
@@ -90,17 +90,17 @@ The scripts don't care which tool calls them. You can run them from the shell an
 
 ```bash
 # from inside the vault
-python ~/.agents/skills/llm-wiki/scripts/lint_wiki.py --vault .
-python ~/.agents/skills/llm-wiki/scripts/update_index.py --vault .
-python ~/.agents/skills/llm-wiki/scripts/wiki_search.py --vault . --query "superposition"
+python3 ~/.agents/skills/llm-wiki/scripts/lint_wiki.py --vault .
+python3 ~/.agents/skills/llm-wiki/scripts/update_index.py --vault .
+python3 ~/.agents/skills/llm-wiki/scripts/wiki_search.py --vault . --query "superposition"
 ```
 
 Aliases are handy. Add to your shell rc:
 
 ```bash
-alias wiki-lint='python ~/.agents/skills/llm-wiki/scripts/lint_wiki.py --vault .'
-alias wiki-index='python ~/.agents/skills/llm-wiki/scripts/update_index.py --vault .'
-alias wiki-search='python ~/.agents/skills/llm-wiki/scripts/wiki_search.py --vault .'
+alias wiki-lint='python3 ~/.agents/skills/llm-wiki/scripts/lint_wiki.py --vault .'
+alias wiki-index='python3 ~/.agents/skills/llm-wiki/scripts/update_index.py --vault .'
+alias wiki-search='python3 ~/.agents/skills/llm-wiki/scripts/wiki_search.py --vault .'
 ```
 
 ## MCP exposure (future)

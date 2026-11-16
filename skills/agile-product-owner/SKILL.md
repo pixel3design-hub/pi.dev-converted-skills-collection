@@ -325,10 +325,10 @@ Before adding to sprint, validate each story:
 
 ```bash
 # Generate stories from sample epic
-python scripts/user_story_generator.py
+python3 scripts/user_story_generator.py
 
 # Plan sprint with capacity
-python scripts/user_story_generator.py sprint 30
+python3 scripts/user_story_generator.py sprint 30
 ```
 
 Generates:

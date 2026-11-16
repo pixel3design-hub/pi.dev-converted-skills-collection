@@ -80,8 +80,8 @@ Decision rules, thresholds and tells from Spinning Up. One page; keep it beside 
 ## Quick commands
 
 ```bash
-python -m spinup.run ppo --env Walker2d-v2 --exp_name walker --seed 0 10 20
-python -m spinup.run test_policy data/walker/walker_s0        # add -d for SAC
-python -m spinup.run plot data/walker                          # prefix autocompletes
-python -m spinup.run [algo] --help                             # every kwarg is a flag
+python3 -m spinup.run ppo --env Walker2d-v2 --exp_name walker --seed 0 10 20
+python3 -m spinup.run test_policy data/walker/walker_s0        # add -d for SAC
+python3 -m spinup.run plot data/walker                          # prefix autocompletes
+python3 -m spinup.run [algo] --help                             # every kwarg is a flag
 ```

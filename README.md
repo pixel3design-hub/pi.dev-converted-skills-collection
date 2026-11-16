@@ -62,6 +62,8 @@ After a `/reload`, each installed skill answers to `/skill:<name>`.
 | `Task`, `WebFetch`, `WebSearch`, `AskUserQuestion` | `Agent`, `ninerouter_web_fetch`, `ninerouter_web_search`, `ask_user_question` |
 | `{skill_path}/scripts/x.py` | `scripts/x.py`, or `../<sibling>/scripts/x.py` when the file ships in another skill |
 | `${CLAUDE_PLUGIN_ROOT}/vendor/<skill>/x` | `../<skill>/x` |
+| bare `python script.py` commands | `python3 script.py` (1,152 commands) |
+| per-skill `## Installation` sections (npx, plugin marketplace, `cp -R engineering/...`) | one stock section pointing at this repo |
 | `tools:`, `context:` (Claude agent fields) | dropped |
 | `version:`, `domain:`, `model:` and other scalars | moved into `metadata:` |
 

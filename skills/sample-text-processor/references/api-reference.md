@@ -79,21 +79,21 @@ Find all text files in a directory recursively.
 Analyze text file statistics.
 
 ```bash
-python text_processor.py analyze <file> [options]
+python3 text_processor.py analyze <file> [options]
 ```
 
 #### `transform`
 Transform text file content.
 
 ```bash
-python text_processor.py transform <file> --mode <mode> [options]
+python3 text_processor.py transform <file> --mode <mode> [options]
 ```
 
 #### `batch`
 Process multiple files in a directory.
 
 ```bash
-python text_processor.py batch <directory> [options]
+python3 text_processor.py batch <directory> [options]
 ```
 
 ### Global Options

@@ -105,13 +105,13 @@ Pre-commit your threshold to avoid post-hoc rationalization:
 
 ```bash
 # 1. Parse the RFP
-python scripts/rfp_parser.py --input rfp.md --output json > parsed.json
+python3 scripts/rfp_parser.py --input rfp.md --output json > parsed.json
 
 # 2. Build the proof-point matrix + GAP audit + win-theme report
-python scripts/response_drafter.py --input rfp_intake.json --output markdown > matrix.md
+python3 scripts/response_drafter.py --input rfp_intake.json --output markdown > matrix.md
 
 # 3. Compute fit % from the matrix, fill into deal_context.json, then:
-python scripts/winrate_predictor.py --input deal_context.json --profile enterprise-software --output markdown
+python3 scripts/winrate_predictor.py --input deal_context.json --profile enterprise-software --output markdown
 
 # 4. Take parsed RFP + matrix + winrate into the go/no-go review.
 ```

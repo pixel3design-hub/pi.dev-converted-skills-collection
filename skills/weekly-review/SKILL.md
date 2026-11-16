@@ -36,7 +36,7 @@ becomes a next action), then a mind sweep to empty the head. Start with evidence
 
 ```bash
 # Inventory open loops: unchecked checkboxes, TODO/FIXME markers, stale files
-python scripts/open_loop_scanner.py --dir ~/notes --stale-days 14
+python3 scripts/open_loop_scanner.py --dir ~/notes --stale-days 14
 ```
 
 Route every loop found to a list — next action, waiting-for, someday/maybe, or trash.
@@ -48,8 +48,8 @@ become actions), the upcoming calendar (prepare, don't react), the waiting-for l
 drop), and every project for exactly one next action. Then gate honestly:
 
 ```bash
-python scripts/weekly_review_gate.py --list   # show the numbered ten-step checklist
-python scripts/weekly_review_gate.py --done "1,2,3,4,5,6,7,8" --skip "9:no someday list yet"
+python3 scripts/weekly_review_gate.py --list   # show the numbered ten-step checklist
+python3 scripts/weekly_review_gate.py --done "1,2,3,4,5,6,7,8" --skip "9:no someday list yet"
 ```
 
 The gate computes completion %, names every missing step, and exits 0 (COMPLETE) or 2
@@ -61,7 +61,7 @@ Review someday/maybe (activate, keep, or kill), capture new ideas while the head
 audit the whole commitment portfolio:
 
 ```bash
-python scripts/commitment_auditor.py --input commitments.json
+python3 scripts/commitment_auditor.py --input commitments.json
 ```
 
 Flags STALLED / NO-NEXT-ACTION / SOMEDAY-CANDIDATE, prints the health formula with the score, and

@@ -287,7 +287,7 @@ def detect_drift(reference, current, threshold=0.05):
 ### Model Deployment Pipeline
 
 ```bash
-python scripts/model_deployment_pipeline.py --model model.pkl --target staging
+python3 scripts/model_deployment_pipeline.py --model model.pkl --target staging
 ```
 
 Generates deployment artifacts: Dockerfile, Kubernetes manifests, health checks.
@@ -295,7 +295,7 @@ Generates deployment artifacts: Dockerfile, Kubernetes manifests, health checks.
 ### RAG System Builder
 
 ```bash
-python scripts/rag_system_builder.py --config rag_config.yaml --analyze
+python3 scripts/rag_system_builder.py --config rag_config.yaml --analyze
 ```
 
 Scaffolds RAG pipeline with vector store integration and retrieval logic.
@@ -303,7 +303,7 @@ Scaffolds RAG pipeline with vector store integration and retrieval logic.
 ### ML Monitoring Suite
 
 ```bash
-python scripts/ml_monitoring_suite.py --config monitoring.yaml --deploy
+python3 scripts/ml_monitoring_suite.py --config monitoring.yaml --deploy
 ```
 
 Sets up drift detection, alerting, and performance dashboards.

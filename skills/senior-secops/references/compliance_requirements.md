@@ -688,17 +688,17 @@ jobs:
       - name: Verify encryption at rest
         run: |
           # Check database encryption configuration
-          python scripts/compliance_checker.py --check encryption
+          python3 scripts/compliance_checker.py --check encryption
 
       - name: Verify access controls
         run: |
           # Check RBAC configuration
-          python scripts/compliance_checker.py --check access-control
+          python3 scripts/compliance_checker.py --check access-control
 
       - name: Check logging configuration
         run: |
           # Verify audit logging enabled
-          python scripts/compliance_checker.py --check audit-logging
+          python3 scripts/compliance_checker.py --check audit-logging
 
   pci-checks:
     runs-on: ubuntu-latest
@@ -709,11 +709,11 @@ jobs:
       - name: Scan for PAN in code
         run: |
           # Check for unencrypted card numbers
-          python scripts/compliance_checker.py --check pci-pan-exposure
+          python3 scripts/compliance_checker.py --check pci-pan-exposure
 
       - name: Verify TLS configuration
         run: |
-          python scripts/compliance_checker.py --check tls-config
+          python3 scripts/compliance_checker.py --check tls-config
 
   gdpr-checks:
     runs-on: ubuntu-latest
@@ -722,11 +722,11 @@ jobs:
 
       - name: Check data retention policies
         run: |
-          python scripts/compliance_checker.py --check data-retention
+          python3 scripts/compliance_checker.py --check data-retention
 
       - name: Verify consent mechanisms
         run: |
-          python scripts/compliance_checker.py --check consent-management
+          python3 scripts/compliance_checker.py --check consent-management
 ```
 
 ---

@@ -35,7 +35,7 @@ Collect application specifications:
 Run the architecture designer to get pattern recommendations:
 
 ```bash
-python scripts/architecture_designer.py --input requirements.json
+python3 scripts/architecture_designer.py --input requirements.json
 ```
 
 **Example output:**
@@ -65,7 +65,7 @@ See `references/architecture_patterns.md` for detailed pattern specifications.
 Analyze estimated costs and optimization opportunities:
 
 ```bash
-python scripts/cost_optimizer.py --resources current_setup.json --monthly-spend 2000
+python3 scripts/cost_optimizer.py --resources current_setup.json --monthly-spend 2000
 ```
 
 **Example output:**
@@ -96,7 +96,7 @@ Use the [GCP Pricing Calculator](https://cloud.google.com/products/calculator) f
 Create infrastructure-as-code for the selected pattern:
 
 ```bash
-python scripts/deployment_manager.py --app-name my-app --pattern serverless_web --region us-central1
+python3 scripts/deployment_manager.py --app-name my-app --pattern serverless_web --region us-central1
 ```
 
 **Example Terraform HCL output (Cloud Run + Firestore):**
@@ -269,7 +269,7 @@ gcloud access-context-manager perimeters list --policy=$POLICY_ID
 Recommends GCP services based on workload requirements.
 
 ```bash
-python scripts/architecture_designer.py --input requirements.json --output design.json
+python3 scripts/architecture_designer.py --input requirements.json --output design.json
 ```
 
 **Input:** JSON with app type, scale, budget, compliance needs
@@ -280,7 +280,7 @@ python scripts/architecture_designer.py --input requirements.json --output desig
 Analyzes GCP resources for cost savings.
 
 ```bash
-python scripts/cost_optimizer.py --resources inventory.json --monthly-spend 5000
+python3 scripts/cost_optimizer.py --resources inventory.json --monthly-spend 5000
 ```
 
 **Output:** Recommendations for:
@@ -295,7 +295,7 @@ python scripts/cost_optimizer.py --resources inventory.json --monthly-spend 5000
 Generates gcloud CLI deployment scripts and Terraform configurations.
 
 ```bash
-python scripts/deployment_manager.py --app-name my-app --pattern serverless_web --region us-central1
+python3 scripts/deployment_manager.py --app-name my-app --pattern serverless_web --region us-central1
 ```
 
 **Output:** Production-ready deployment scripts with:

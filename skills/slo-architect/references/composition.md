@@ -43,12 +43,12 @@ Wire-up:
 
 ```bash
 # 1. Get the budget from the SLO definition
-python slo_architect/scripts/error_budget_calculator.py \
+python3 slo_architect/scripts/error_budget_calculator.py \
   --target 99.9 --window-days 30 --format json \
   | jq .budget_minutes
 
 # 2. Pass it to the chaos blast-radius calculator
-python chaos_engineering/scripts/blast_radius_calculator.py \
+python3 chaos_engineering/scripts/blast_radius_calculator.py \
   --traffic-share 0.05 \
   --user-pop 1000000 \
   --duration-min 15 \

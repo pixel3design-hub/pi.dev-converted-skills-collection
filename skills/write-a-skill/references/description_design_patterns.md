@@ -114,7 +114,7 @@ Where complexity demands more chars, prioritize:
 Run before every skill PR:
 
 ```bash
-python scripts/skill_description_validator.py path/to/SKILL.md
+python3 scripts/skill_description_validator.py path/to/SKILL.md
 ```
 
 If validator returns FAIL, fix before merging. If WARN, justify and document the trade-off.

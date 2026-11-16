@@ -34,13 +34,13 @@ Scan source code for security vulnerabilities including hardcoded secrets, SQL i
 
 ```bash
 # Scan project for security issues
-python scripts/security_scanner.py /path/to/project
+python3 scripts/security_scanner.py /path/to/project
 
 # Filter by severity
-python scripts/security_scanner.py /path/to/project --severity high
+python3 scripts/security_scanner.py /path/to/project --severity high
 
 # JSON output for CI/CD
-python scripts/security_scanner.py /path/to/project --json --output report.json
+python3 scripts/security_scanner.py /path/to/project --json --output report.json
 ```
 
 **Detects:**
@@ -56,13 +56,13 @@ Scan dependencies for known CVEs across npm, Python, and Go ecosystems.
 
 ```bash
 # Assess project dependencies
-python scripts/vulnerability_assessor.py /path/to/project
+python3 scripts/vulnerability_assessor.py /path/to/project
 
 # Critical/high only
-python scripts/vulnerability_assessor.py /path/to/project --severity high
+python3 scripts/vulnerability_assessor.py /path/to/project --severity high
 
 # Export vulnerability report
-python scripts/vulnerability_assessor.py /path/to/project --json --output vulns.json
+python3 scripts/vulnerability_assessor.py /path/to/project --json --output vulns.json
 ```
 
 **Scans:**
@@ -82,16 +82,16 @@ Verify security compliance against SOC 2, PCI-DSS, HIPAA, and GDPR frameworks.
 
 ```bash
 # Check all frameworks
-python scripts/compliance_checker.py /path/to/project
+python3 scripts/compliance_checker.py /path/to/project
 
 # Specific framework
-python scripts/compliance_checker.py /path/to/project --framework soc2
-python scripts/compliance_checker.py /path/to/project --framework pci-dss
-python scripts/compliance_checker.py /path/to/project --framework hipaa
-python scripts/compliance_checker.py /path/to/project --framework gdpr
+python3 scripts/compliance_checker.py /path/to/project --framework soc2
+python3 scripts/compliance_checker.py /path/to/project --framework pci-dss
+python3 scripts/compliance_checker.py /path/to/project --framework hipaa
+python3 scripts/compliance_checker.py /path/to/project --framework gdpr
 
 # Export compliance report
-python scripts/compliance_checker.py /path/to/project --json --output compliance.json
+python3 scripts/compliance_checker.py /path/to/project --json --output compliance.json
 ```
 
 **Verifies:**
@@ -112,27 +112,27 @@ Complete security assessment of a codebase.
 
 ```bash
 # Step 1: Scan for code vulnerabilities
-python scripts/security_scanner.py . --severity medium
+python3 scripts/security_scanner.py . --severity medium
 # STOP if exit code 2 — resolve critical findings before continuing
 ```
 
 ```bash
 # Step 2: Check dependency vulnerabilities
-python scripts/vulnerability_assessor.py . --severity high
+python3 scripts/vulnerability_assessor.py . --severity high
 # STOP if exit code 2 — patch critical CVEs before continuing
 ```
 
 ```bash
 # Step 3: Verify compliance controls
-python scripts/compliance_checker.py . --framework all
+python3 scripts/compliance_checker.py . --framework all
 # STOP if exit code 2 — address critical gaps before proceeding
 ```
 
 ```bash
 # Step 4: Generate combined reports
-python scripts/security_scanner.py . --json --output security.json
-python scripts/vulnerability_assessor.py . --json --output vulns.json
-python scripts/compliance_checker.py . --json --output compliance.json
+python3 scripts/security_scanner.py . --json --output security.json
+python3 scripts/vulnerability_assessor.py . --json --output vulns.json
+python3 scripts/compliance_checker.py . --json --output compliance.json
 ```
 
 ### Workflow 2: CI/CD Security Gate
@@ -159,13 +159,13 @@ jobs:
           python-version: '3.11'
 
       - name: "security-scanner"
-        run: python scripts/security_scanner.py . --severity high
+        run: python3 scripts/security_scanner.py . --severity high
 
       - name: "vulnerability-assessment"
-        run: python scripts/vulnerability_assessor.py . --severity critical
+        run: python3 scripts/vulnerability_assessor.py . --severity critical
 
       - name: "compliance-check"
-        run: python scripts/compliance_checker.py . --framework soc2
+        run: python3 scripts/compliance_checker.py . --framework soc2
 ```
 
 Each step fails the pipeline on its respective exit code — no deployment proceeds past a critical finding.

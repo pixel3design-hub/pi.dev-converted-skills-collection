@@ -21,13 +21,13 @@ Pipeline analysis, forecast accuracy tracking, and GTM efficiency measurement fo
 
 ```bash
 # Analyze pipeline health and coverage
-python scripts/pipeline_analyzer.py --input assets/sample_pipeline_data.json --format text
+python3 scripts/pipeline_analyzer.py --input assets/sample_pipeline_data.json --format text
 
 # Track forecast accuracy over multiple periods
-python scripts/forecast_accuracy_tracker.py assets/sample_forecast_data.json --format text
+python3 scripts/forecast_accuracy_tracker.py assets/sample_forecast_data.json --format text
 
 # Calculate GTM efficiency metrics
-python scripts/gtm_efficiency_calculator.py assets/sample_gtm_data.json --format text
+python3 scripts/gtm_efficiency_calculator.py assets/sample_gtm_data.json --format text
 ```
 
 ---
@@ -44,7 +44,7 @@ Analyzes sales pipeline health including coverage ratios, stage conversion rates
 **Usage:**
 
 ```bash
-python scripts/pipeline_analyzer.py --input pipeline.json --format text
+python3 scripts/pipeline_analyzer.py --input pipeline.json --format text
 ```
 
 **Key Metrics Calculated:**
@@ -86,7 +86,7 @@ Tracks forecast accuracy over time using MAPE, detects systematic bias, analyzes
 **Usage:**
 
 ```bash
-python scripts/forecast_accuracy_tracker.py forecast_data.json --format text
+python3 scripts/forecast_accuracy_tracker.py forecast_data.json --format text
 ```
 
 **Key Metrics Calculated:**
@@ -131,7 +131,7 @@ Calculates core SaaS GTM efficiency metrics with industry benchmarking, ratings,
 **Usage:**
 
 ```bash
-python scripts/gtm_efficiency_calculator.py gtm_data.json --format text
+python3 scripts/gtm_efficiency_calculator.py gtm_data.json --format text
 ```
 
 **Key Metrics Calculated:**
@@ -186,7 +186,7 @@ Use this workflow for your weekly pipeline inspection cadence.
 
 2. **Generate pipeline report:**
    ```bash
-   python scripts/pipeline_analyzer.py --input current_pipeline.json --format text
+   python3 scripts/pipeline_analyzer.py --input current_pipeline.json --format text
    ```
 
 3. **Cross-check output totals** against your CRM source system to confirm data integrity.
@@ -209,7 +209,7 @@ Use monthly or quarterly to evaluate and improve forecasting discipline.
 
 2. **Generate accuracy report:**
    ```bash
-   python scripts/forecast_accuracy_tracker.py forecast_history.json --format text
+   python3 scripts/forecast_accuracy_tracker.py forecast_history.json --format text
    ```
 
 3. **Cross-check actuals** against closed-won records in your CRM before drawing conclusions.
@@ -231,7 +231,7 @@ Use quarterly or during board prep to evaluate go-to-market efficiency.
 
 2. **Calculate efficiency metrics:**
    ```bash
-   python scripts/gtm_efficiency_calculator.py quarterly_data.json --format text
+   python3 scripts/gtm_efficiency_calculator.py quarterly_data.json --format text
    ```
 
 3. **Cross-check computed ARR and spend totals** against your finance system before sharing results.

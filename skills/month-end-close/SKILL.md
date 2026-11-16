@@ -28,12 +28,12 @@ close date, reconciliations "agree" without a proof, and flux review accepts
 
 ```bash
 # 1 - Calendar: dependency order, critical path, owners, reviewers, load.
-python scripts/close_calendar_planner.py --plan close_plan.json
+python3 scripts/close_calendar_planner.py --plan close_plan.json
 # 2 - Reconciliations: match, prove, age. One run per account.
-python scripts/reconciliation_matcher.py --gl gl_cash.csv --source bank.csv \
+python3 scripts/reconciliation_matcher.py --gl gl_cash.csv --source bank.csv \
   --gl-balance 52708.60 --source-balance 47144.72 --as-of 2026-10-31 --preparer Sam --reviewer Lee
 # 3 - Flux: every material change needs a quantified, evidenced explanation.
-python scripts/flux_analyzer.py --input tb_compare.csv --pct 10 --abs 10000 --reviewer Lee
+python3 scripts/flux_analyzer.py --input tb_compare.csv --pct 10 --abs 10000 --reviewer Lee
 ```
 
 **Step 1** schedules each task as soon as its predecessors finish, then checks

@@ -87,7 +87,7 @@ Cool — open the draft, click send. The skill doesn't need to do it for you.
 After any triage run:
 
 ```bash
-python ../scripts/draft_safety_validator.py \
+python3 ../scripts/draft_safety_validator.py \
   --action-log ${WORKSPACE}/Email/triage-log/$(date +%Y-%m-%d)-*.md
 ```
 

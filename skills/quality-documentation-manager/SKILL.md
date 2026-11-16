@@ -339,16 +339,16 @@ See `references/21cfr11-compliance-guide.md` for detailed compliance requirement
 
 ```bash
 # Validate document metadata
-python scripts/document_validator.py --doc document.json
+python3 scripts/document_validator.py --doc document.json
 
 # Interactive validation mode
-python scripts/document_validator.py --interactive
+python3 scripts/document_validator.py --interactive
 
 # JSON output for integration
-python scripts/document_validator.py --doc document.json --output json
+python3 scripts/document_validator.py --doc document.json --output json
 
 # Generate sample document JSON
-python scripts/document_validator.py --sample > sample_doc.json
+python3 scripts/document_validator.py --sample > sample_doc.json
 ```
 
 Validates:

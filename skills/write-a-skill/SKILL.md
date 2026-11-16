@@ -136,7 +136,7 @@ After drafting, verify:
 Validation tools + cs-* wrapper sit alongside this skill. Run all 6 review-checklist items programmatically:
 
 ```
-python scripts/skill_review_checklist_runner.py path/to/skill-folder
+python3 scripts/skill_review_checklist_runner.py path/to/skill-folder
 ```
 
 See [references/companion_tooling.md](references/companion_tooling.md) for the tool catalogue, cs-skill-author persona agent, and `/cs-write-a-skill` slash command.

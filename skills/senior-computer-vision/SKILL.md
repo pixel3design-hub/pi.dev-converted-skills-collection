@@ -28,13 +28,13 @@ Production computer vision engineering skill for object detection, image segment
 
 ```bash
 # Generate training configuration for YOLO or Faster R-CNN
-python scripts/vision_model_trainer.py models/ --task detection --arch yolov8
+python3 scripts/vision_model_trainer.py models/ --task detection --arch yolov8
 
 # Analyze model for optimization opportunities (quantization, pruning)
-python scripts/inference_optimizer.py model.pt --target onnx --benchmark
+python3 scripts/inference_optimizer.py model.pt --target onnx --benchmark
 
 # Build dataset pipeline with augmentations
-python scripts/dataset_pipeline_builder.py images/ --format coco --augment
+python3 scripts/dataset_pipeline_builder.py images/ --format coco --augment
 ```
 
 ## Core Expertise
@@ -97,7 +97,7 @@ Convert annotations to required format:
 
 ```bash
 # COCO format (recommended)
-python scripts/dataset_pipeline_builder.py data/images/ \
+python3 scripts/dataset_pipeline_builder.py data/images/ \
     --annotations data/labels/ \
     --format coco \
     --split 0.8 0.1 0.1 \
@@ -113,7 +113,7 @@ Generate training configuration:
 
 ```bash
 # For Ultralytics YOLO
-python scripts/vision_model_trainer.py data/coco/ \
+python3 scripts/vision_model_trainer.py data/coco/ \
     --task detection \
     --arch yolov8m \
     --epochs 100 \
@@ -122,7 +122,7 @@ python scripts/vision_model_trainer.py data/coco/ \
     --output configs/
 
 # For Detectron2
-python scripts/vision_model_trainer.py data/coco/ \
+python3 scripts/vision_model_trainer.py data/coco/ \
     --task detection \
     --arch faster_rcnn_R_50_FPN \
     --framework detectron2 \
@@ -136,7 +136,7 @@ python scripts/vision_model_trainer.py data/coco/ \
 yolo detect train data=data.yaml model=yolov8m.pt epochs=100 imgsz=640
 
 # Detectron2 training
-python train_net.py --config-file configs/faster_rcnn.yaml --num-gpus 1
+python3 train_net.py --config-file configs/faster_rcnn.yaml --num-gpus 1
 
 # Validate on test set
 yolo detect val model=runs/detect/train/weights/best.pt data=data.yaml
@@ -162,7 +162,7 @@ Use this workflow when preparing a trained model for production deployment.
 
 ```bash
 # Measure current model performance
-python scripts/inference_optimizer.py model.pt \
+python3 scripts/inference_optimizer.py model.pt \
     --benchmark \
     --input-size 640 640 \
     --batch-sizes 1 4 8 16 \
@@ -196,7 +196,7 @@ Baseline Performance (PyTorch FP32):
 
 ```bash
 # Export with dynamic batch size
-python scripts/inference_optimizer.py model.pt \
+python3 scripts/inference_optimizer.py model.pt \
     --export onnx \
     --input-size 640 640 \
     --dynamic-batch \
@@ -213,7 +213,7 @@ For INT8 quantization with calibration:
 
 ```bash
 # Generate calibration dataset
-python scripts/inference_optimizer.py model.onnx \
+python3 scripts/inference_optimizer.py model.onnx \
     --quantize int8 \
     --calibration-data data/calibration/ \
     --calibration-samples 500 \
@@ -244,7 +244,7 @@ python -c "import coremltools as ct; model = ct.convert('model.onnx'); model.sav
 ### Step 6: Benchmark Optimized Model
 
 ```bash
-python scripts/inference_optimizer.py model.engine \
+python3 scripts/inference_optimizer.py model.engine \
     --benchmark \
     --runtime tensorrt \
     --compare model.pt
@@ -268,7 +268,7 @@ Use this workflow when preparing a computer vision dataset for training.
 
 ```bash
 # Analyze image dataset
-python scripts/dataset_pipeline_builder.py data/raw/ \
+python3 scripts/dataset_pipeline_builder.py data/raw/ \
     --analyze \
     --output analysis/
 ```
@@ -295,7 +295,7 @@ Annotation Analysis:
 
 ```bash
 # Remove corrupted and duplicate images
-python scripts/dataset_pipeline_builder.py data/raw/ \
+python3 scripts/dataset_pipeline_builder.py data/raw/ \
     --clean \
     --remove-corrupted \
     --remove-duplicates \
@@ -306,7 +306,7 @@ python scripts/dataset_pipeline_builder.py data/raw/ \
 
 ```bash
 # Convert VOC to COCO format
-python scripts/dataset_pipeline_builder.py data/cleaned/ \
+python3 scripts/dataset_pipeline_builder.py data/cleaned/ \
     --annotations data/annotations/ \
     --input-format voc \
     --output-format coco \
@@ -327,7 +327,7 @@ Supported format conversions:
 
 ```bash
 # Generate augmentation config
-python scripts/dataset_pipeline_builder.py data/coco/ \
+python3 scripts/dataset_pipeline_builder.py data/coco/ \
     --augment \
     --aug-config configs/augmentation.yaml \
     --output data/augmented/
@@ -358,7 +358,7 @@ augmentations:
 ### Step 5: Create Train/Val/Test Splits
 
 ```bash
-python scripts/dataset_pipeline_builder.py data/augmented/ \
+python3 scripts/dataset_pipeline_builder.py data/augmented/ \
     --split 0.8 0.1 0.1 \
     --stratify \
     --seed 42 \
@@ -377,12 +377,12 @@ Split strategy guidelines:
 
 ```bash
 # For Ultralytics YOLO
-python scripts/dataset_pipeline_builder.py data/final/ \
+python3 scripts/dataset_pipeline_builder.py data/final/ \
     --generate-config yolo \
     --output data.yaml
 
 # For Detectron2
-python scripts/dataset_pipeline_builder.py data/final/ \
+python3 scripts/dataset_pipeline_builder.py data/final/ \
     --generate-config detectron2 \
     --output detectron2_config.py
 ```

@@ -30,7 +30,7 @@ Rank all agent results for a session. Supports metric-based evaluation (run a co
 Run the evaluation command in each agent's worktree:
 
 ```bash
-python ../agenthub/scripts/result_ranker.py \
+python3 ../agenthub/scripts/result_ranker.py \
   --session {session-id} \
   --eval-cmd "{eval_cmd}" \
   --metric {metric} --direction {direction}
@@ -78,7 +78,7 @@ Winner: agent-1 (strongest narrative arc and call-to-action)
 
 1. Update session state:
 ```bash
-python ../agenthub/scripts/session_manager.py --update {session-id} --state evaluating
+python3 ../agenthub/scripts/session_manager.py --update {session-id} --state evaluating
 ```
 
 2. Tell the user:

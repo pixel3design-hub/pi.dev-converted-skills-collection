@@ -63,9 +63,9 @@ Calculate and interpret financial ratios from financial statement data.
 - **Valuation:** P/E, P/B, P/S, EV/EBITDA, PEG Ratio
 
 ```bash
-python scripts/ratio_calculator.py assets/sample_financial_data.json
-python scripts/ratio_calculator.py assets/sample_financial_data.json --format json
-python scripts/ratio_calculator.py assets/sample_financial_data.json --category profitability
+python3 scripts/ratio_calculator.py assets/sample_financial_data.json
+python3 scripts/ratio_calculator.py assets/sample_financial_data.json --format json
+python3 scripts/ratio_calculator.py assets/sample_financial_data.json --category profitability
 ```
 
 ### 2. DCF Valuation (`scripts/dcf_valuation.py`)
@@ -80,9 +80,9 @@ Discounted Cash Flow enterprise and equity valuation with sensitivity analysis.
 - Two-way sensitivity analysis (discount rate vs growth rate)
 
 ```bash
-python scripts/dcf_valuation.py assets/sample_financial_data.json
-python scripts/dcf_valuation.py assets/sample_financial_data.json --format json
-python scripts/dcf_valuation.py assets/sample_financial_data.json --projection-years 7
+python3 scripts/dcf_valuation.py assets/sample_financial_data.json
+python3 scripts/dcf_valuation.py assets/sample_financial_data.json --format json
+python3 scripts/dcf_valuation.py assets/sample_financial_data.json --projection-years 7
 ```
 
 ### 3. Budget Variance Analyzer (`scripts/budget_variance_analyzer.py`)
@@ -97,9 +97,9 @@ Analyze actual vs budget vs prior year performance with materiality filtering.
 - Executive summary generation
 
 ```bash
-python scripts/budget_variance_analyzer.py assets/sample_financial_data.json
-python scripts/budget_variance_analyzer.py assets/sample_financial_data.json --format json
-python scripts/budget_variance_analyzer.py assets/sample_financial_data.json --threshold-pct 5 --threshold-amt 25000
+python3 scripts/budget_variance_analyzer.py assets/sample_financial_data.json
+python3 scripts/budget_variance_analyzer.py assets/sample_financial_data.json --format json
+python3 scripts/budget_variance_analyzer.py assets/sample_financial_data.json --threshold-pct 5 --threshold-amt 25000
 ```
 
 ### 4. Forecast Builder (`scripts/forecast_builder.py`)
@@ -113,9 +113,9 @@ Driver-based revenue forecasting with rolling cash flow projection and scenario 
 - Trend analysis using simple linear regression (standard library)
 
 ```bash
-python scripts/forecast_builder.py assets/sample_financial_data.json
-python scripts/forecast_builder.py assets/sample_financial_data.json --format json
-python scripts/forecast_builder.py assets/sample_financial_data.json --scenarios base,bull,bear
+python3 scripts/forecast_builder.py assets/sample_financial_data.json
+python3 scripts/forecast_builder.py assets/sample_financial_data.json --format json
+python3 scripts/forecast_builder.py assets/sample_financial_data.json --scenarios base,bull,bear
 ```
 
 ## Knowledge Bases

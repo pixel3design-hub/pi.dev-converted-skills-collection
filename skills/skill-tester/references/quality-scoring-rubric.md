@@ -404,7 +404,7 @@ The Security dimension evaluates Python scripts for security vulnerabilities and
 
 **Important**: By default, the quality scorer uses 4 dimensions × 25% weights for backward compatibility. To include Security assessment, use:
 ```bash
-python quality_scorer.py <skill_path> --include-security
+python3 quality_scorer.py <skill_path> --include-security
 ```
 
 When Security is enabled, all dimensions are rebalanced to 20% each (5 dimensions × 20% = 100%).

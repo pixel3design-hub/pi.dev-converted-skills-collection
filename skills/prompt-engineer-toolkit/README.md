@@ -32,20 +32,9 @@ python3 scripts/prompt_versioner.py add \
 
 ## Installation
 
-### Pi
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/prompt-engineer-toolkit` from a clone of that repo, or copy this directory into
+`~/.agents/skills/prompt-engineer-toolkit` to have it available in every project. The collection README lists the
+other routes.
 
-```bash
-cp -R marketing-skill/prompt-engineer-toolkit ~/.agents/skills/prompt-engineer-toolkit
-```
-
-### OpenAI Codex
-
-```bash
-cp -R marketing-skill/prompt-engineer-toolkit ~/.codex/skills/prompt-engineer-toolkit
-```
-
-### OpenClaw
-
-```bash
-cp -R marketing-skill/prompt-engineer-toolkit ~/.openclaw/skills/prompt-engineer-toolkit
-```

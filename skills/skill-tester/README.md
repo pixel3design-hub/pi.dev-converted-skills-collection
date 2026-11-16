@@ -15,28 +15,28 @@ The Skill Tester is a meta-skill that ensures quality and consistency across all
 ### Validate a Skill
 ```bash
 # Basic validation
-python scripts/skill_validator.py engineering/my-skill
+python3 scripts/skill_validator.py engineering/my-skill
 
 # Validate against specific tier
-python scripts/skill_validator.py engineering/my-skill --tier POWERFUL --json
+python3 scripts/skill_validator.py engineering/my-skill --tier POWERFUL --json
 ```
 
 ### Test Scripts
 ```bash
 # Test all scripts in a skill
-python scripts/script_tester.py engineering/my-skill
+python3 scripts/script_tester.py engineering/my-skill
 
 # Test with custom timeout
-python scripts/script_tester.py engineering/my-skill --timeout 60 --json
+python3 scripts/script_tester.py engineering/my-skill --timeout 60 --json
 ```
 
 ### Score Quality
 ```bash
 # Get quality assessment
-python scripts/quality_scorer.py engineering/my-skill
+python3 scripts/quality_scorer.py engineering/my-skill
 
 # Detailed scoring with improvement suggestions
-python scripts/quality_scorer.py engineering/my-skill --detailed --json
+python3 scripts/quality_scorer.py engineering/my-skill --detailed --json
 ```
 
 ## Components
@@ -101,9 +101,9 @@ jobs:
       - name: Validate Skills
         run: |
           for skill in $(git diff --name-only ${{ github.event.before }} | grep -E '^engineering/[^/]+/' | cut -d'/' -f1-2 | sort -u); do
-            python engineering/skill-tester/scripts/skill_validator.py $skill --json
-            python engineering/skill-tester/scripts/script_tester.py $skill
-            python engineering/skill-tester/scripts/quality_scorer.py $skill --minimum-score 75
+            python3 engineering/skill-tester/scripts/skill_validator.py $skill --json
+            python3 engineering/skill-tester/scripts/script_tester.py $skill
+            python3 engineering/skill-tester/scripts/quality_scorer.py $skill --minimum-score 75
           done
 ```
 
@@ -111,7 +111,7 @@ jobs:
 ```bash
 #!/bin/bash
 # .git/hooks/pre-commit
-python engineering/skill-tester/scripts/skill_validator.py engineering/my-skill --tier STANDARD
+python3 engineering/skill-tester/scripts/skill_validator.py engineering/my-skill --tier STANDARD
 if [ $? -ne 0 ]; then
     echo "Skill validation failed. Commit blocked."
     exit 1
@@ -139,13 +139,13 @@ The skill-tester can validate itself:
 
 ```bash
 # Validate the skill-tester structure
-python scripts/skill_validator.py . --tier POWERFUL
+python3 scripts/skill_validator.py . --tier POWERFUL
 
 # Test the skill-tester scripts
-python scripts/script_tester.py .
+python3 scripts/script_tester.py .
 
 # Score the skill-tester quality
-python scripts/quality_scorer.py . --detailed
+python3 scripts/quality_scorer.py . --detailed
 ```
 
 ## Advanced Usage
@@ -155,21 +155,21 @@ python scripts/quality_scorer.py . --detailed
 # Validate all skills in repository
 find engineering/ -maxdepth 1 -type d | while read skill; do
   echo "Validating $skill..."
-  python engineering/skill-tester/scripts/skill_validator.py "$skill"
+  python3 engineering/skill-tester/scripts/skill_validator.py "$skill"
 done
 ```
 
 ### Quality Monitoring
 ```bash
 # Generate quality report for all skills
-python engineering/skill-tester/scripts/quality_scorer.py engineering/ \
+python3 engineering/skill-tester/scripts/quality_scorer.py engineering/ \
   --batch --json > quality_report.json
 ```
 
 ### Custom Scoring Thresholds
 ```bash
 # Enforce minimum quality scores
-python scripts/quality_scorer.py engineering/my-skill --minimum-score 80
+python3 scripts/quality_scorer.py engineering/my-skill --minimum-score 80
 # Exit code 0 = passed, 1 = failed, 2 = needs improvement
 ```
 

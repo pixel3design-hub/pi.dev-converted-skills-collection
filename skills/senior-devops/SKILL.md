@@ -21,10 +21,10 @@ This skill provides three core capabilities through automated scripts:
 
 ```bash
 # Script 1: Pipeline Generator — scaffolds CI/CD pipelines for GitHub Actions or CircleCI
-python scripts/pipeline_generator.py ./app --platform=github --stages=build,test,deploy
+python3 scripts/pipeline_generator.py ./app --platform=github --stages=build,test,deploy
 
 # Script 2: Terraform Scaffolder — generates and validates IaC modules for AWS/GCP/Azure
-python scripts/terraform_scaffolder.py ./infra --provider=aws --module=ecs-service --verbose
+python3 scripts/terraform_scaffolder.py ./infra --provider=aws --module=ecs-service --verbose
 
 # Script 3: Deployment Manager — generates deployment manifests + runbooks with rollback support
 python3 scripts/deployment_manager.py deploy --env=staging --image=app:1.2.3 --strategy=blue-green --verbose --json
@@ -88,7 +88,7 @@ jobs:
 
 **Usage:**
 ```bash
-python scripts/pipeline_generator.py <project-path> --platform=github|circleci --stages=build,test,deploy
+python3 scripts/pipeline_generator.py <project-path> --platform=github|circleci --stages=build,test,deploy
 ```
 
 ### 2. Terraform Scaffolder
@@ -148,7 +148,7 @@ resource "aws_ecs_service" "app" {
 
 **Usage:**
 ```bash
-python scripts/terraform_scaffolder.py <target-path> --provider=aws|gcp|azure --module=ecs-service|gke-deployment|aks-service [--verbose]
+python3 scripts/terraform_scaffolder.py <target-path> --provider=aws|gcp|azure --module=ecs-service|gke-deployment|aks-service [--verbose]
 ```
 
 ### 3. Deployment Manager
@@ -197,14 +197,14 @@ spec:
 
 **Usage:**
 ```bash
-python scripts/deployment_manager.py deploy \
+python3 scripts/deployment_manager.py deploy \
   --env=staging|production \
   --image=app:1.2.3 \
   --strategy=blue-green|rolling \
   --health-check-url=https://app.example.com/healthz
 
-python scripts/deployment_manager.py rollback --env=production --to-version=1.2.2
-python scripts/deployment_manager.py --analyze --env=production   # audit current state
+python3 scripts/deployment_manager.py rollback --env=production --to-version=1.2.2
+python3 scripts/deployment_manager.py --analyze --env=production   # audit current state
 ```
 
 ## Resources
@@ -220,7 +220,7 @@ python scripts/deployment_manager.py --analyze --env=production   # audit curren
 
 ```bash
 # Scaffold or update module
-python scripts/terraform_scaffolder.py ./infra --provider=aws --module=ecs-service --verbose
+python3 scripts/terraform_scaffolder.py ./infra --provider=aws --module=ecs-service --verbose
 
 # Validate and plan — review diff before applying
 terraform -chdir=infra init
@@ -239,14 +239,14 @@ aws ecs describe-services --cluster production --services app-service \
 
 ```bash
 # Generate or update pipeline config
-python scripts/pipeline_generator.py . --platform=github --stages=build,test,security,deploy
+python3 scripts/pipeline_generator.py . --platform=github --stages=build,test,security,deploy
 
 # Build and tag image
 docker build -t ghcr.io/org/app:$(git rev-parse --short HEAD) .
 docker push ghcr.io/org/app:$(git rev-parse --short HEAD)
 
 # Deploy with health-check gate
-python scripts/deployment_manager.py deploy \
+python3 scripts/deployment_manager.py deploy \
   --env=production \
   --image=app:$(git rev-parse --short HEAD) \
   --strategy=blue-green \
@@ -265,7 +265,7 @@ kubectl patch service app-svc -n production \
 
 ```bash
 # Immediate rollback via deployment manager
-python scripts/deployment_manager.py rollback --env=production --to-version=1.2.2
+python3 scripts/deployment_manager.py rollback --env=production --to-version=1.2.2
 
 # Or via kubectl
 kubectl rollout undo deployment/app -n production

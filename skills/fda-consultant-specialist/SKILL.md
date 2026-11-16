@@ -307,11 +307,11 @@ Coordinated Public Disclosure
 
 ```bash
 # Track FDA submission status
-python scripts/fda_submission_tracker.py /path/to/project --type 510k
+python3 scripts/fda_submission_tracker.py /path/to/project --type 510k
 
 # Assess QMS documentation (legacy QSR section keys, mapped to ISO 13485 under QMSR)
-python scripts/qsr_compliance_checker.py /path/to/project --section 820.30  # legacy checklist key = ISO 13485 §7.3 (design & development)
+python3 scripts/qsr_compliance_checker.py /path/to/project --section 820.30  # legacy checklist key = ISO 13485 §7.3 (design & development)
 
 # Run HIPAA risk assessment
-python scripts/hipaa_risk_assessment.py /path/to/project --category technical
+python3 scripts/hipaa_risk_assessment.py /path/to/project --category technical
 ```

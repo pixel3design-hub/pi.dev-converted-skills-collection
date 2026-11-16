@@ -131,7 +131,7 @@ py-spy top --pid $(pgrep -f "uvicorn")
 py-spy record -o flamegraph.svg --pid $(pgrep -f "uvicorn") --duration 30
 
 # Profile from the start
-py-spy record -o flamegraph.svg -- python -m uvicorn app.main:app
+py-spy record -o flamegraph.svg -- python3 -m uvicorn app.main:app
 
 # Open flamegraph.svg in browser — look for wide bars = hot code paths
 ```
@@ -179,7 +179,7 @@ def my_function():
 
 ```bash
 # Run with line-by-line memory tracking
-python -m memory_profiler scripts/profile_function.py
+python3 -m memory_profiler scripts/profile_function.py
 
 # Output:
 # Line #    Mem usage    Increment   Line Contents

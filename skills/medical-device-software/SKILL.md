@@ -36,13 +36,13 @@ Three classifications get confused, and they use different inputs:
 
 ```bash
 # 1 - Classify: system and item classes, FDA level, cyber device?
-python scripts/software_safety_classifier.py --inventory assets/software_inventory.example.csv
+python3 scripts/software_safety_classifier.py --inventory assets/software_inventory.example.csv
 # 2 - Gap check: is every activity the class requires done, with evidence?
-python scripts/lifecycle_gap_check.py --class B --security --assessment assets/lifecycle_assessment.example.csv
+python3 scripts/lifecycle_gap_check.py --class B --security --assessment assets/lifecycle_assessment.example.csv
 # 3 - SOUP: identified, specified, anomaly lists reviewed, in the SBOM?
-python scripts/soup_register_check.py --register assets/soup_register.example.csv --sbom assets/sbom.example.cdx.json --cyber-device
+python3 scripts/soup_register_check.py --register assets/soup_register.example.csv --sbom assets/sbom.example.cdx.json --cyber-device
 # 4 - Release: every requirement tested, every risk control verified?
-python scripts/trace_matrix_check.py --matrix assets/trace_matrix.example.csv --class C --release
+python3 scripts/trace_matrix_check.py --matrix assets/trace_matrix.example.csv --class C --release
 ```
 
 Class first: steps 2 to 4 take the class from step 1. `--template` prints an

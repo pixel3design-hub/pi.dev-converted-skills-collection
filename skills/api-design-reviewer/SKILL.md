@@ -390,19 +390,19 @@ Provides comprehensive scoring of API design quality.
 ### CI/CD Integration
 ```yaml
 - name: "api-linting"
-  run: python scripts/api_linter.py openapi.json
+  run: python3 scripts/api_linter.py openapi.json
 
 - name: "breaking-change-detection"
-  run: python scripts/breaking_change_detector.py openapi-v1.json openapi-v2.json
+  run: python3 scripts/breaking_change_detector.py openapi-v1.json openapi-v2.json
 
 - name: "api-scorecard"
-  run: python scripts/api_scorecard.py openapi.json
+  run: python3 scripts/api_scorecard.py openapi.json
 ```
 
 ### Pre-commit Hooks
 ```bash
 #!/bin/bash
-python engineering/skills/api-design-reviewer/scripts/api_linter.py api/openapi.json
+python3 engineering/skills/api-design-reviewer/scripts/api_linter.py api/openapi.json
 if [ $? -ne 0 ]; then
   echo "API linting failed. Please fix the issues before committing."
   exit 1

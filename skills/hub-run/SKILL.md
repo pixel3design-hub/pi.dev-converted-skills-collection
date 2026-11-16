@@ -51,7 +51,7 @@ Execute these steps sequentially:
 Run `/hub-init` with the provided arguments:
 
 ```bash
-python ../agenthub/scripts/hub_init.py \
+python3 ../agenthub/scripts/hub_init.py \
   --task "{task}" --agents {N} \
   [--eval "{eval_cmd}"] [--metric {metric}] [--direction {direction}]
 ```

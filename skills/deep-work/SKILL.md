@@ -35,7 +35,7 @@ wins), computes the shallow share against the budget, and prints the forcing que
 shallow item — *how long would it take to train a smart recent graduate to do this?*
 
 ```bash
-python scripts/shallow_work_auditor.py \
+python3 scripts/shallow_work_auditor.py \
   --task "Write investor update:60" --task "Email triage:45" \
   --task "Analyze churn cohort:90:deep" --budget 50
 ```
@@ -49,7 +49,7 @@ productivity: the end time does not move). Deep first and earliest, 10-minute bu
 two batches (late morning + end of day), an optional fixed lunch:
 
 ```bash
-python scripts/time_block_planner.py --start 08:30 --end 17:00 --lunch 12:30 \
+python3 scripts/time_block_planner.py --start 08:30 --end 17:00 --lunch 12:30 \
   --task "Write product spec:120:deep" --task "Email sweep:30:shallow"
 ```
 
@@ -60,8 +60,8 @@ Two refusals, both exit 2: deep demand past the 4-hour cap (the planner names wh
 After each real focus block, log it. `status` shows this week's deep hours against the target (default 15); `streak` counts consecutive days with at least one session:
 
 ```bash
-python scripts/focus_session_logger.py log --minutes 90 --label "Write product spec"
-python scripts/focus_session_logger.py status --target 15
+python3 scripts/focus_session_logger.py log --minutes 90 --label "Write product spec"
+python3 scripts/focus_session_logger.py status --target 15
 ```
 
 ## Step 4 — Shutdown ritual

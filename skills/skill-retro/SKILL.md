@@ -26,7 +26,7 @@ into the repo:
 
 ```bash
 RUN="$(mktemp -d "${TMPDIR:-/tmp}/skill-retro-XXXXXXXX")"
-python scripts/collect_sessions.py --out "$RUN"          # 1 — harvest + redact
+python3 scripts/collect_sessions.py --out "$RUN"          # 1 — harvest + redact
 ```
 
 **1 — Collect.** Scans Pi project-history JSONL and Codex rollouts,
@@ -38,7 +38,7 @@ newest-first, and writes redacted transcripts. Read `$RUN/inventory.json`: if
 case for creating skills. To grade headless runs (for example skill evals saved as
 stream-json), add `--sessions-dir <dir>`.
 
-**2 — Score.** `python scripts/score_aggregator.py --inventory "$RUN/inventory.json"
+**2 — Score.** `python3 scripts/score_aggregator.py --inventory "$RUN/inventory.json"
 --emit-template > "$RUN/session_scores.json"`. Read each transcript in
 `$RUN/transcripts/` and judge it against **both** rubrics — `scorers/efficiency.md`
 and `scorers/code-quality.md`. Fill the template with a **label from the rubric's
@@ -55,7 +55,7 @@ it in `$RUN/suggestions.json` citing the sampled session id(s) that motivated it
 Zero suggestions is a valid success — say why per finding. Never modify the user's
 real skill files in this step.
 
-**4 — Aggregate (the gate).** `python scripts/score_aggregator.py --inventory
+**4 — Aggregate (the gate).** `python3 scripts/score_aggregator.py --inventory
 "$RUN/inventory.json" --scores "$RUN/session_scores.json" --suggestions
 "$RUN/suggestions.json"`. It validates labels against the rubric tables, refuses
 scores for unsampled sessions, requires substantive reasons, rejects suggestions
@@ -63,7 +63,7 @@ that cite no scored session, computes `overall = 0.5·efficiency +
 0.35·code_quality + 0.15·skill_coverage`, and writes `report.json`. **Exit 4 is a
 stop**: fix what it names and re-run; never hand-edit report.json around it.
 
-**5 — Render + tell.** `python scripts/render_report.py --report "$RUN/report.json"`
+**5 — Render + tell.** `python3 scripts/render_report.py --report "$RUN/report.json"`
 → one self-contained `report.html` (no JS, no CDN, dark-mode + print-to-PDF). Then
 tell the user the grade and the top findings in text, link
 `file://$RUN/report.html`, and ask whether to apply the proposed diffs to their

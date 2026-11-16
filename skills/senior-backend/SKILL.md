@@ -19,13 +19,13 @@ Backend development patterns, API design, database optimization, and security pr
 
 ```bash
 # Generate API routes from OpenAPI spec
-python scripts/api_scaffolder.py openapi.yaml --framework express --output src/routes/
+python3 scripts/api_scaffolder.py openapi.yaml --framework express --output src/routes/
 
 # Analyze database schema and generate migrations
-python scripts/database_migration_tool.py --connection postgres://localhost/mydb --analyze
+python3 scripts/database_migration_tool.py --connection postgres://localhost/mydb --analyze
 
 # Load test an API endpoint
-python scripts/api_load_tester.py https://api.example.com/users --concurrency 50 --duration 30
+python3 scripts/api_load_tester.py https://api.example.com/users --concurrency 50 --duration 30
 ```
 
 ---
@@ -42,14 +42,14 @@ Generates API route handlers, middleware, and OpenAPI specifications from schema
 **Usage:**
 ```bash
 # Generate Express routes from OpenAPI spec
-python scripts/api_scaffolder.py openapi.yaml --framework express --output src/routes/
+python3 scripts/api_scaffolder.py openapi.yaml --framework express --output src/routes/
 # Output: Generated 12 route handlers, validation middleware, and TypeScript types
 
 # Generate from database schema
-python scripts/api_scaffolder.py --from-db postgres://localhost/mydb --output src/routes/
+python3 scripts/api_scaffolder.py --from-db postgres://localhost/mydb --output src/routes/
 
 # Generate OpenAPI spec from existing routes
-python scripts/api_scaffolder.py src/routes/ --generate-spec --output openapi.yaml
+python3 scripts/api_scaffolder.py src/routes/ --generate-spec --output openapi.yaml
 ```
 
 **Supported Frameworks:**
@@ -69,15 +69,15 @@ Analyzes database schemas, detects changes, and generates migration files with r
 **Usage:**
 ```bash
 # Analyze current schema and suggest optimizations
-python scripts/database_migration_tool.py --connection postgres://localhost/mydb --analyze
+python3 scripts/database_migration_tool.py --connection postgres://localhost/mydb --analyze
 # Output: Missing indexes, N+1 query risks, and suggested migration files
 
 # Generate migration from schema diff
-python scripts/database_migration_tool.py --connection postgres://localhost/mydb \
+python3 scripts/database_migration_tool.py --connection postgres://localhost/mydb \
   --compare schema/v2.sql --output migrations/
 
 # Dry-run a migration
-python scripts/database_migration_tool.py --connection postgres://localhost/mydb \
+python3 scripts/database_migration_tool.py --connection postgres://localhost/mydb \
   --migrate migrations/20240115_add_user_indexes.sql --dry-run
 ```
 
@@ -93,11 +93,11 @@ Performs HTTP load testing with configurable concurrency, measuring latency perc
 **Usage:**
 ```bash
 # Basic load test
-python scripts/api_load_tester.py https://api.example.com/users --concurrency 50 --duration 30
+python3 scripts/api_load_tester.py https://api.example.com/users --concurrency 50 --duration 30
 # Output: Throughput (req/sec), latency percentiles (P50/P95/P99), error counts, and scaling recommendations
 
 # Test with custom headers and body
-python scripts/api_load_tester.py https://api.example.com/orders \
+python3 scripts/api_load_tester.py https://api.example.com/orders \
   --method POST \
   --header "Authorization: Bearer token123" \
   --body '{"product_id": 1, "quantity": 2}' \
@@ -105,7 +105,7 @@ python scripts/api_load_tester.py https://api.example.com/orders \
   --duration 60
 
 # Compare two endpoints
-python scripts/api_load_tester.py https://api.example.com/v1/users https://api.example.com/v2/users \
+python3 scripts/api_load_tester.py https://api.example.com/v1/users https://api.example.com/v2/users \
   --compare --concurrency 50 --duration 30
 ```
 
@@ -146,7 +146,7 @@ paths:
 
 **Step 2: Generate route scaffolding**
 ```bash
-python scripts/api_scaffolder.py openapi.yaml --framework express --output src/routes/
+python3 scripts/api_scaffolder.py openapi.yaml --framework express --output src/routes/
 ```
 
 **Step 3: Implement business logic**
@@ -173,7 +173,7 @@ export const createUser = async (req: Request, res: Response) => {
 
 **Step 5: Generate updated OpenAPI spec**
 ```bash
-python scripts/api_scaffolder.py src/routes/ --generate-spec --output openapi.yaml
+python3 scripts/api_scaffolder.py src/routes/ --generate-spec --output openapi.yaml
 ```
 
 ---
@@ -184,7 +184,7 @@ Use when queries are slow or database performance needs improvement.
 
 **Step 1: Analyze current performance**
 ```bash
-python scripts/database_migration_tool.py --connection $DATABASE_URL --analyze
+python3 scripts/database_migration_tool.py --connection $DATABASE_URL --analyze
 ```
 
 **Step 2: Identify slow queries**
@@ -200,24 +200,24 @@ LIMIT 10;
 
 **Step 3: Generate index migrations**
 ```bash
-python scripts/database_migration_tool.py --connection $DATABASE_URL \
+python3 scripts/database_migration_tool.py --connection $DATABASE_URL \
   --suggest-indexes --output migrations/
 ```
 
 **Step 4: Test migration (dry-run)**
 ```bash
-python scripts/database_migration_tool.py --connection $DATABASE_URL \
+python3 scripts/database_migration_tool.py --connection $DATABASE_URL \
   --migrate migrations/add_indexes.sql --dry-run
 ```
 
 **Step 5: Apply and verify**
 ```bash
 # Apply migration
-python scripts/database_migration_tool.py --connection $DATABASE_URL \
+python3 scripts/database_migration_tool.py --connection $DATABASE_URL \
   --migrate migrations/add_indexes.sql
 
 # Verify improvement
-python scripts/database_migration_tool.py --connection $DATABASE_URL --analyze
+python3 scripts/database_migration_tool.py --connection $DATABASE_URL --analyze
 ```
 
 ---
@@ -267,11 +267,11 @@ const data = CreateUserSchema.parse(req.body);
 **Step 4: Load test with attack patterns**
 ```bash
 # Test rate limiting
-python scripts/api_load_tester.py https://api.example.com/login \
+python3 scripts/api_load_tester.py https://api.example.com/login \
   --concurrency 200 --duration 10 --expect-rate-limit
 
 # Test input validation
-python scripts/api_load_tester.py https://api.example.com/users \
+python3 scripts/api_load_tester.py https://api.example.com/users \
   --method POST \
   --body '{"email": "not-an-email"}' \
   --expect-status 400
@@ -358,16 +358,16 @@ CREATE INDEX idx_users_email_name ON users(email) INCLUDE (name);
 
 ```bash
 # API Development
-python scripts/api_scaffolder.py openapi.yaml --framework express
-python scripts/api_scaffolder.py src/routes/ --generate-spec
+python3 scripts/api_scaffolder.py openapi.yaml --framework express
+python3 scripts/api_scaffolder.py src/routes/ --generate-spec
 
 # Database Operations
-python scripts/database_migration_tool.py --connection $DATABASE_URL --analyze
-python scripts/database_migration_tool.py --connection $DATABASE_URL --migrate file.sql
+python3 scripts/database_migration_tool.py --connection $DATABASE_URL --analyze
+python3 scripts/database_migration_tool.py --connection $DATABASE_URL --migrate file.sql
 
 # Performance Testing
-python scripts/api_load_tester.py https://api.example.com/endpoint --concurrency 50
-python scripts/api_load_tester.py https://api.example.com/endpoint --compare baseline.json
+python3 scripts/api_load_tester.py https://api.example.com/endpoint --concurrency 50
+python3 scripts/api_load_tester.py https://api.example.com/endpoint --compare baseline.json
 ```
 
 ---
@@ -407,7 +407,7 @@ Four built-in profiles in `profiles/` calibrate every recommendation:
 Pick a profile via:
 
 ```bash
-python scripts/backend_decision_engine.py \
+python3 scripts/backend_decision_engine.py \
   --team-size 8 --qps-p99 50 --read-write-ratio 20 \
   --tenancy shared-multi-tenant --data-sensitivity pii \
   --pattern modular-monolith --language-preference typescript
@@ -468,6 +468,6 @@ Three surfaces:
 
 1. **Slash command:** `/cs-backend-review <prompt>` — full grill + decision engine + composition routing.
 2. **Agent subagent:** `Agent({subagent_type: "cs-backend-engineer", prompt: "..."})` — forks context, returns ≤ 200-word digest.
-3. **Direct tool call:** `python scripts/backend_decision_engine.py ...` — deterministic profile match when inputs are known.
+3. **Direct tool call:** `python3 scripts/backend_decision_engine.py ...` — deterministic profile match when inputs are known.
 
 See `agents/engineering/cs-backend-engineer.md` for the full invocation contract.

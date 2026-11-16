@@ -70,7 +70,7 @@ checklist — trigger phrase in the description, SKILL.md ≤ 100 lines, concret
 example, references one level deep. Run it before presenting the diff:
 
 ```bash
-python engineering/write-a-skill/skills/write-a-skill/scripts/skill_review_checklist_runner.py "$RUN/proposed/<skill>/"
+python3 engineering/write-a-skill/skills/write-a-skill/scripts/skill_review_checklist_runner.py "$RUN/proposed/<skill>/"
 ```
 
 A suggestion whose proposed file fails the checklist is not ready to file

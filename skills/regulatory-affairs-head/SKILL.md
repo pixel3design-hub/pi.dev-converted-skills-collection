@@ -436,7 +436,7 @@ III  IIb  Check   Class I
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
-| [regulatory_tracker.py](scripts/regulatory_tracker.py) | Track submission status and timelines | `python regulatory_tracker.py` |
+| [regulatory_tracker.py](scripts/regulatory_tracker.py) | Track submission status and timelines | `python3 regulatory_tracker.py` |
 
 **Regulatory Tracker Features:**
 - Track multiple submissions across markets
@@ -446,7 +446,7 @@ III  IIb  Check   Class I
 
 **Example usage:**
 ```bash
-$ python regulatory_tracker.py --report status
+$ python3 regulatory_tracker.py --report status
 Submission Status Report — 2024-11-01
 ┌──────────────────┬──────────┬────────────┬─────────────┬──────────┐
 │ Product          │ Market   │ Type       │ Target Date │ Status   │

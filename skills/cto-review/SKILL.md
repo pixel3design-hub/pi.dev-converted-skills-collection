@@ -33,13 +33,13 @@ Pressure-tests architecture and engineering scaling decisions. Six questions to 
 ### 2. Tech Debt Inventory
 **What's the top tech debt item, what's it costing per week, and when does it become blocking?**
 ```bash
-python ../cto-advisor/scripts/tech_debt_analyzer.py
+python3 ../cto-advisor/scripts/tech_debt_analyzer.py
 ```
 
 ### 3. Team Scaling
 **For each open req, what's the ramp time and contribution model?**
 ```bash
-python ../cto-advisor/scripts/team_scaling_calculator.py
+python3 ../cto-advisor/scripts/team_scaling_calculator.py
 ```
 
 ### 4. Build vs Buy

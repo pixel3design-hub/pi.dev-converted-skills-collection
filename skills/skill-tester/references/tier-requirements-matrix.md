@@ -239,7 +239,7 @@ except Exception as e:
 parser = argparse.ArgumentParser(
     description="Standard skill with advanced functionality",
     formatter_class=argparse.RawDescriptionHelpFormatter,
-    epilog="Examples:\n  python script.py input.json --format json\n  python script.py data/ --batch --output results/"
+    epilog="Examples:\n  python3 script.py input.json --format json\n  python3 script.py data/ --batch --output results/"
 )
 parser.add_argument("input", help="Input file or directory")
 parser.add_argument("--format", choices=["json", "text"], default="json", help="Output format")
@@ -278,13 +278,13 @@ parser = argparse.ArgumentParser(
     epilog="""
 Examples:
   Basic usage:
-    python script.py process input.json --output results/
+    python3 script.py process input.json --output results/
   
   Advanced batch processing:
-    python script.py batch data/ --format json --parallel 4 --filter "*.csv"
+    python3 script.py batch data/ --format json --parallel 4 --filter "*.csv"
   
   Custom configuration:
-    python script.py process input.json --config custom.yaml --dry-run
+    python3 script.py process input.json --config custom.yaml --dry-run
 """
 )
 

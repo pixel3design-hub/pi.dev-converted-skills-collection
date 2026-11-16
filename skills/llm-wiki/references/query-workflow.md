@@ -25,7 +25,7 @@ If a read page points to another page that's clearly relevant, follow it. Don't 
 If the index doesn't surface the right page, use:
 
 ```bash
-python scripts/wiki_search.py --vault . --query "<terms>" --limit 5
+python3 scripts/wiki_search.py --vault . --query "<terms>" --limit 5
 ```
 
 BM25 search over wiki pages. Standard library only. Use when:
@@ -63,7 +63,7 @@ Not every query wants a markdown answer. Offer the user:
 
 - **Markdown page** (default) — filed back as a wiki page
 - **Comparison table** — for "A vs B" questions
-- **Marp slide deck** — via `python scripts/export_marp.py` on the synthesis page
+- **Marp slide deck** — via `python3 scripts/export_marp.py` on the synthesis page
 - **Chart (matplotlib)** — for data-driven questions; save to `wiki/assets/charts/`
 - **Obsidian Canvas** — for visual exploration (JSON format, stored at `wiki/canvases/`)
 

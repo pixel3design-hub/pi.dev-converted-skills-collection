@@ -30,12 +30,12 @@ of those a check that fails before the release, not a bug report after it.
 
 ```bash
 # 1 - Translation files: keys, placeholders, ICU syntax, CLDR plural forms
-python scripts/locale_sync.py locales/ --source-locale en
+python3 scripts/locale_sync.py locales/ --source-locale en
 # 2 - Code: user-facing text that bypasses t(), concatenation, locale-less formatting
-python scripts/hardcoded_strings.py src/
+python3 scripts/hardcoded_strings.py src/
 # 3 - Layout: generate a pseudo-locale and click through the app in it
-python scripts/pseudo_localize.py locales/en/common.json -o locales/en-XA/common.json
-python scripts/pseudo_localize.py locales/en/common.json --bidi -o locales/ar-XB/common.json
+python3 scripts/pseudo_localize.py locales/en/common.json -o locales/en-XA/common.json
+python3 scripts/pseudo_localize.py locales/en/common.json --bidi -o locales/ar-XB/common.json
 ```
 
 **Step 1** reads JSON/ARB (i18next or ICU), `.properties`, Apple `.strings`,

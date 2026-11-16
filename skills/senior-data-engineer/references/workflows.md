@@ -23,7 +23,7 @@ ORDER BY table_name, ordinal_position;
 #### Step 2: Generate Extraction Config
 
 ```bash
-python scripts/pipeline_orchestrator.py generate \
+python3 scripts/pipeline_orchestrator.py generate \
   --type airflow \
   --source postgres \
   --tables orders,customers,products \
@@ -141,7 +141,7 @@ with DAG(
 
     extract = BashOperator(
         task_id='extract_source_data',
-        bash_command='python /opt/airflow/scripts/extract.py --date {{ ds }}',
+        bash_command='python3 /opt/airflow/scripts/extract.py --date {{ ds }}',
     )
 
     transform = BashOperator(
@@ -156,7 +156,7 @@ with DAG(
 
     notify = BashOperator(
         task_id='send_notification',
-        bash_command='python /opt/airflow/scripts/notify.py --status success',
+        bash_command='python3 /opt/airflow/scripts/notify.py --status success',
         trigger_rule='all_success',
     )
 
@@ -171,7 +171,7 @@ dbt run --select stg_orders fct_orders
 dbt test --select fct_orders
 
 # Validate data quality
-python scripts/data_quality_validator.py validate \
+python3 scripts/data_quality_validator.py validate \
   --table fct_orders \
   --checks all \
   --output reports/quality_report.json

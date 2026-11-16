@@ -44,17 +44,17 @@ pip install -e .
 Verify the install (roughly 10 minutes; leave it running and keep reading):
 
 ```bash
-python -m spinup.run ppo --hid "[32,32]" --env LunarLander-v2 \
+python3 -m spinup.run ppo --hid "[32,32]" --env LunarLander-v2 \
     --exp_name installtest --gamma 0.999
-python -m spinup.run test_policy data/installtest/installtest_s0
-python -m spinup.run plot data/installtest/installtest_s0
+python3 -m spinup.run test_policy data/installtest/installtest_s0
+python3 -m spinup.run plot data/installtest/installtest_s0
 ```
 
 Optional MuJoCo, after following the mujoco-py README and obtaining a license:
 
 ```bash
 pip install gym[mujoco,robotics]
-python -m spinup.run ppo --hid "[32,32]" --env Walker2d-v2 --exp_name mujocotest
+python3 -m spinup.run ppo --hid "[32,32]" --env Walker2d-v2 --exp_name mujocotest
 ```
 
 ## Reference Tables
@@ -83,6 +83,6 @@ python -m spinup.run ppo --hid "[32,32]" --env Walker2d-v2 --exp_name mujocotest
 4. Not having MuJoCo blocks benchmarking, not learning.
 
 ## Connects To
-- **Ch 4**: `python -m spinup.run` is the entry point every later chapter uses.
+- **Ch 4**: `python3 -m spinup.run` is the entry point every later chapter uses.
 - **Ch 13**: the benchmarks that make MuJoCo the convention.
 - **Ch 20**: the MPI utilities that OpenMPI enables.

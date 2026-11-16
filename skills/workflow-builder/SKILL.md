@@ -32,7 +32,7 @@ Before proposing or writing any workflow, run the intake. Do not skip to code.
 
 2. **If the user is vague, do NOT stall.** Run the recommendation engine to turn whatever you have into 1-2 concrete proposals, then present them *with the reasoning*:
    ```bash
-   python scripts/workflow_intake.py --task "their description" \
+   python3 scripts/workflow_intake.py --task "their description" \
      --units unknown --stages unknown --needs-all unknown --structured unknown
    ```
    The engine returns a recommended topology (fan-out / pipeline / loop / barrier / judge-panel), model picks, a budget guard, and a one-line rationale per choice. Present those as "Here's what I'd build and why" — never ask the user to re-answer questions they already half-answered.
@@ -55,13 +55,13 @@ Workflows earn their cost when work is parallel or multi-stage, must be reproduc
 
 1. **Scaffold** a starter from the confirmed topology:
    ```bash
-   python scripts/scaffold_workflow.py --topology pipeline --name pr-triage \
+   python3 scripts/scaffold_workflow.py --topology pipeline --name pr-triage \
      --description "Triage open PRs" > .pi/workflows/pr-triage.js
    ```
 2. **Edit** the file: `meta` block first (pure literal, first statement), then the async body using the injected globals — `agent()`, `pipeline()`, `parallel()`, `phase()`, `log()`, `budget`, `args`, `workflow()`. Full surface in [references/api_reference.md](references/api_reference.md); copy-paste shapes in [references/orchestration_patterns.md](references/orchestration_patterns.md).
 3. **Validate** before running — catches the parser-fatal mistakes:
    ```bash
-   python scripts/validate_workflow.py .pi/workflows/pr-triage.js
+   python3 scripts/validate_workflow.py .pi/workflows/pr-triage.js
    ```
 4. **Run** it: enable the feature with `export CLAUDE_CODE_WORKFLOWS=1`, save the file under `.pi/workflows/`, then use `/workflows` to launch and watch it live. Press **P** to pause/resume, **X** to skip a sub-agent. Failed agents retry automatically.
 

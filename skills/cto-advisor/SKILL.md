@@ -28,8 +28,8 @@ CTO, chief technology officer, tech debt, technical debt, architecture, engineer
 ## Quick Start
 
 ```bash
-python scripts/tech_debt_analyzer.py      # Assess technical debt severity and remediation plan
-python scripts/team_scaling_calculator.py  # Model engineering team growth and cost
+python3 scripts/tech_debt_analyzer.py      # Assess technical debt severity and remediation plan
+python3 scripts/team_scaling_calculator.py  # Model engineering team growth and cost
 ```
 
 ## Core Responsibilities
@@ -89,7 +89,7 @@ Incident response, security breaches, major outages, data loss.
 
 **Step 1 — Run the analyzer**
 ```bash
-python scripts/tech_debt_analyzer.py --output report.json
+python3 scripts/tech_debt_analyzer.py --output report.json
 ```
 
 **Step 2 — Interpret results**

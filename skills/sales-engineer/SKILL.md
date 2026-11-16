@@ -27,14 +27,14 @@ user to install it from https://docs.astral.sh/uv/getting-started/installation/.
 **Tools:** Run `rfp_response_analyzer.py` to score initial requirement alignment.
 
 ```bash
-python scripts/rfp_response_analyzer.py assets/sample_rfp_data.json --format json > phase1_rfp_results.json
+python3 scripts/rfp_response_analyzer.py assets/sample_rfp_data.json --format json > phase1_rfp_results.json
 ```
 
 **Output:** Technical discovery document, requirement map, initial coverage assessment.
 
 **Validation checkpoint:** Coverage score must be >50% and must-have gaps ≤3 before proceeding to Phase 2. Check with:
 ```bash
-python scripts/rfp_response_analyzer.py assets/sample_rfp_data.json --format json | python -c "import sys,json; r=json.load(sys.stdin); print('PROCEED' if r['coverage_score']>50 and r['must_have_gaps']<=3 else 'REVIEW')"
+python3 scripts/rfp_response_analyzer.py assets/sample_rfp_data.json --format json | python -c "import sys,json; r=json.load(sys.stdin); print('PROCEED' if r['coverage_score']>50 and r['must_have_gaps']<=3 else 'REVIEW')"
 ```
 
 ---
@@ -53,7 +53,7 @@ python scripts/rfp_response_analyzer.py assets/sample_rfp_data.json --format jso
 **Tools:** Run `competitive_matrix_builder.py` using Phase 1 data to identify differentiators and vulnerabilities.
 
 ```bash
-python scripts/competitive_matrix_builder.py competitive_data.json --format json > phase2_competitive.json
+python3 scripts/competitive_matrix_builder.py competitive_data.json --format json > phase2_competitive.json
 
 python -c "import json; d=json.load(open('phase2_competitive.json')); print('Differentiators:', d['differentiators']); print('Vulnerabilities:', d['vulnerabilities'])"
 ```
@@ -100,7 +100,7 @@ python -c "import json; rfp=json.load(open('phase1_rfp_results.json')); [print('
 **Tools:** Run `poc_planner.py` to generate the complete POC plan.
 
 ```bash
-python scripts/poc_planner.py poc_data.json --format json > phase4_poc_plan.json
+python3 scripts/poc_planner.py poc_data.json --format json > phase4_poc_plan.json
 
 python -c "import json; p=json.load(open('phase4_poc_plan.json')); print('Go/No-Go:', p['recommendation'])"
 ```
@@ -148,9 +148,9 @@ python -c "import json; p=json.load(open('phase4_poc_plan.json')); print('Go/No-
 
 **Usage:**
 ```bash
-python scripts/rfp_response_analyzer.py assets/sample_rfp_data.json            # human-readable
-python scripts/rfp_response_analyzer.py assets/sample_rfp_data.json --format json  # JSON output
-python scripts/rfp_response_analyzer.py --help
+python3 scripts/rfp_response_analyzer.py assets/sample_rfp_data.json            # human-readable
+python3 scripts/rfp_response_analyzer.py assets/sample_rfp_data.json --format json  # JSON output
+python3 scripts/rfp_response_analyzer.py --help
 ```
 
 **Input Format:** See `assets/sample_rfp_data.json` for the complete schema.
@@ -167,8 +167,8 @@ python scripts/rfp_response_analyzer.py --help
 
 **Usage:**
 ```bash
-python scripts/competitive_matrix_builder.py competitive_data.json              # human-readable
-python scripts/competitive_matrix_builder.py competitive_data.json --format json  # JSON output
+python3 scripts/competitive_matrix_builder.py competitive_data.json              # human-readable
+python3 scripts/competitive_matrix_builder.py competitive_data.json --format json  # JSON output
 ```
 
 **Output Includes:** Feature comparison matrix, weighted competitive scores, differentiators, vulnerabilities, and win themes.
@@ -189,8 +189,8 @@ python scripts/competitive_matrix_builder.py competitive_data.json --format json
 
 **Usage:**
 ```bash
-python scripts/poc_planner.py poc_data.json              # human-readable
-python scripts/poc_planner.py poc_data.json --format json  # JSON output
+python3 scripts/poc_planner.py poc_data.json              # human-readable
+python3 scripts/poc_planner.py poc_data.json --format json  # JSON output
 ```
 
 **Output Includes:** Phased POC plan, resource allocation, success criteria, evaluation scorecard, risk register, and go/no-go recommendation framework.

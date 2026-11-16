@@ -29,20 +29,9 @@ python3 scripts/pipeline_generator.py \
 
 ## Installation
 
-### Pi
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/ci-cd-pipeline-builder` from a clone of that repo, or copy this directory into
+`~/.agents/skills/ci-cd-pipeline-builder` to have it available in every project. The collection README lists the
+other routes.
 
-```bash
-cp -R engineering/ci-cd-pipeline-builder ~/.agents/skills/ci-cd-pipeline-builder
-```
-
-### OpenAI Codex
-
-```bash
-cp -R engineering/ci-cd-pipeline-builder ~/.codex/skills/ci-cd-pipeline-builder
-```
-
-### OpenClaw
-
-```bash
-cp -R engineering/ci-cd-pipeline-builder ~/.openclaw/skills/ci-cd-pipeline-builder
-```

@@ -42,7 +42,7 @@ Use this workflow when comparing frontend/backend frameworks or libraries.
 ### Step 2: Run Comparison
 
 ```bash
-python scripts/stack_comparator.py \
+python3 scripts/stack_comparator.py \
   --technologies "React,Vue,Angular" \
   --use-case "enterprise-saas" \
   --weights "performance:20,ecosystem:25,scalability:20,developer_experience:35"
@@ -98,7 +98,7 @@ Use this workflow for comprehensive cost analysis over multiple years.
 ### Step 2: Run TCO Calculator
 
 ```bash
-python scripts/tco_calculator.py \
+python3 scripts/tco_calculator.py \
   --input assets/sample_input_tco.json \
   --years 5 \
   --output tco_report.json
@@ -160,7 +160,7 @@ Use this workflow when planning technology migrations.
 ### Step 4: Run Migration Analysis
 
 ```bash
-python scripts/migration_analyzer.py \
+python3 scripts/migration_analyzer.py \
   --from "angular-1.x" \
   --to "react" \
   --codebase-size 50000 \
@@ -239,7 +239,7 @@ For each technology:
 ### Step 3: Run Security Assessment
 
 ```bash
-python scripts/security_assessor.py \
+python3 scripts/security_assessor.py \
   --technology "express-js" \
   --compliance "soc2,gdpr" \
   --output security_report.json
@@ -308,7 +308,7 @@ For each provider, verify:
 ### Step 3: Run Cost Comparison
 
 ```bash
-python scripts/tco_calculator.py \
+python3 scripts/tco_calculator.py \
   --providers "aws,azure,gcp" \
   --workload-config workload.json \
   --years 3

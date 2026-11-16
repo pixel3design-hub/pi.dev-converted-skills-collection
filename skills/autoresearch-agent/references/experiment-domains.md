@@ -5,11 +5,11 @@
 ### Code Speed Optimization
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain engineering \
   --name api-speed \
   --target src/api/search.py \
-  --eval "python -m pytest tests/bench_search.py --tb=no -q" \
+  --eval "python3 -m pytest tests/bench_search.py --tb=no -q" \
   --metric p50_ms \
   --direction lower \
   --evaluator benchmark_speed
@@ -22,11 +22,11 @@ python scripts/setup_experiment.py \
 ### Bundle Size Reduction
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain engineering \
   --name bundle-size \
   --target webpack.config.js \
-  --eval "npm run build && python .autoresearch/engineering/bundle-size/evaluate.py" \
+  --eval "npm run build && python3 .autoresearch/engineering/bundle-size/evaluate.py" \
   --metric size_bytes \
   --direction lower \
   --evaluator benchmark_size
@@ -37,11 +37,11 @@ Edit `evaluate.py` to set `TARGET_FILE = "dist/main.js"` and add `BUILD_CMD = "n
 ### Test Pass Rate
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain engineering \
   --name fix-flaky-tests \
   --target src/utils/parser.py \
-  --eval "python .autoresearch/engineering/fix-flaky-tests/evaluate.py" \
+  --eval "python3 .autoresearch/engineering/fix-flaky-tests/evaluate.py" \
   --metric pass_rate \
   --direction higher \
   --evaluator test_pass_rate
@@ -50,11 +50,11 @@ python scripts/setup_experiment.py \
 ### Docker Build Speed
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain engineering \
   --name docker-build \
   --target Dockerfile \
-  --eval "python .autoresearch/engineering/docker-build/evaluate.py" \
+  --eval "python3 .autoresearch/engineering/docker-build/evaluate.py" \
   --metric build_seconds \
   --direction lower \
   --evaluator build_speed
@@ -63,11 +63,11 @@ python scripts/setup_experiment.py \
 ### Memory Optimization
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain engineering \
   --name memory-usage \
   --target src/processor.py \
-  --eval "python .autoresearch/engineering/memory-usage/evaluate.py" \
+  --eval "python3 .autoresearch/engineering/memory-usage/evaluate.py" \
   --metric peak_mb \
   --direction lower \
   --evaluator memory_usage
@@ -78,7 +78,7 @@ python scripts/setup_experiment.py \
 Requires NVIDIA GPU. See [autoresearch](https://github.com/karpathy/autoresearch).
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain engineering \
   --name ml-training \
   --target train.py \
@@ -95,11 +95,11 @@ python scripts/setup_experiment.py \
 ### Medium Article Headlines
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain marketing \
   --name medium-ctr \
   --target content/titles.md \
-  --eval "python .autoresearch/marketing/medium-ctr/evaluate.py" \
+  --eval "python3 .autoresearch/marketing/medium-ctr/evaluate.py" \
   --metric ctr_score \
   --direction higher \
   --evaluator llm_judge_content
@@ -114,11 +114,11 @@ Edit `evaluate.py`: set `TARGET_FILE = "content/titles.md"` and `CLI_TOOL = "pi"
 ### Social Media Copy
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain marketing \
   --name twitter-engagement \
   --target social/tweets.md \
-  --eval "python .autoresearch/marketing/twitter-engagement/evaluate.py" \
+  --eval "python3 .autoresearch/marketing/twitter-engagement/evaluate.py" \
   --metric engagement_score \
   --direction higher \
   --evaluator llm_judge_copy
@@ -129,11 +129,11 @@ Edit `evaluate.py`: set `PLATFORM = "twitter"` (or linkedin, instagram).
 ### Email Subject Lines
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain marketing \
   --name email-open-rate \
   --target emails/subjects.md \
-  --eval "python .autoresearch/marketing/email-open-rate/evaluate.py" \
+  --eval "python3 .autoresearch/marketing/email-open-rate/evaluate.py" \
   --metric engagement_score \
   --direction higher \
   --evaluator llm_judge_copy
@@ -144,11 +144,11 @@ Edit `evaluate.py`: set `PLATFORM = "email"`.
 ### Ad Copy
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain marketing \
   --name ad-copy-q2 \
   --target ads/google-search.md \
-  --eval "python .autoresearch/marketing/ad-copy-q2/evaluate.py" \
+  --eval "python3 .autoresearch/marketing/ad-copy-q2/evaluate.py" \
   --metric engagement_score \
   --direction higher \
   --evaluator llm_judge_copy
@@ -163,11 +163,11 @@ Edit `evaluate.py`: set `PLATFORM = "ad"`.
 ### Article Structure & Readability
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain content \
   --name article-structure \
   --target drafts/my-article.md \
-  --eval "python .autoresearch/content/article-structure/evaluate.py" \
+  --eval "python3 .autoresearch/content/article-structure/evaluate.py" \
   --metric ctr_score \
   --direction higher \
   --evaluator llm_judge_content
@@ -176,11 +176,11 @@ python scripts/setup_experiment.py \
 ### SEO Descriptions
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain content \
   --name seo-meta \
   --target seo/descriptions.md \
-  --eval "python .autoresearch/content/seo-meta/evaluate.py" \
+  --eval "python3 .autoresearch/content/seo-meta/evaluate.py" \
   --metric ctr_score \
   --direction higher \
   --evaluator llm_judge_content
@@ -193,11 +193,11 @@ python scripts/setup_experiment.py \
 ### System Prompt Optimization
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain prompts \
   --name support-bot \
   --target prompts/support-system.md \
-  --eval "python .autoresearch/prompts/support-bot/evaluate.py" \
+  --eval "python3 .autoresearch/prompts/support-bot/evaluate.py" \
   --metric quality_score \
   --direction higher \
   --evaluator llm_judge_prompt
@@ -221,11 +221,11 @@ Requires `tests/cases.json` with test inputs and expected outputs:
 ### Agent Skill Optimization
 
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain prompts \
   --name skill-improvement \
   --target SKILL.md \
-  --eval "python .autoresearch/prompts/skill-improvement/evaluate.py" \
+  --eval "python3 .autoresearch/prompts/skill-improvement/evaluate.py" \
   --metric quality_score \
   --direction higher \
   --evaluator llm_judge_prompt

@@ -60,10 +60,10 @@ Use the vulnerability scanner tool for automated checklist generation:
 
 ```bash
 # Generate OWASP checklist for a web application
-python scripts/vulnerability_scanner.py --target web --scope full
+python3 scripts/vulnerability_scanner.py --target web --scope full
 
 # Quick API-focused scan
-python scripts/vulnerability_scanner.py --target api --scope quick --json
+python3 scripts/vulnerability_scanner.py --target api --scope quick --json
 ```
 
 ### Quick Reference (OWASP Top 10:2025)
@@ -83,8 +83,8 @@ python scripts/vulnerability_scanner.py --target api --scope quick --json
 
 ```bash
 # Audit dependencies
-python scripts/dependency_auditor.py --file package.json --severity high
-python scripts/dependency_auditor.py --file requirements.txt --json
+python3 scripts/dependency_auditor.py --file package.json --severity high
+python3 scripts/dependency_auditor.py --file requirements.txt --json
 ```
 
 See [owasp_top_10_checklist.md](references/owasp_top_10_checklist.md) for detailed test procedures, code patterns to detect, remediation steps, and CVSS scoring guidance for each category.
@@ -113,7 +113,7 @@ See [attack_patterns.md](references/attack_patterns.md) for code patterns and de
 5. **Verify** — Rerun audit to confirm fix, update lock files
 
 ```bash
-python scripts/dependency_auditor.py --file package.json --severity critical --json
+python3 scripts/dependency_auditor.py --file package.json --severity critical --json
 ```
 
 ---
@@ -186,10 +186,10 @@ Generate professional reports from structured findings:
 
 ```bash
 # Generate markdown report from findings JSON
-python scripts/pentest_report_generator.py --findings findings.json --format md --output report.md
+python3 scripts/pentest_report_generator.py --findings findings.json --format md --output report.md
 
 # Generate JSON report
-python scripts/pentest_report_generator.py --findings findings.json --format json --output report.json
+python3 scripts/pentest_report_generator.py --findings findings.json --format json --output report.json
 ```
 
 ### Findings JSON Format
@@ -241,10 +241,10 @@ For pre-merge reviews or quick health checks:
 
 ```bash
 # 1. Generate OWASP checklist
-python scripts/vulnerability_scanner.py --target web --scope quick
+python3 scripts/vulnerability_scanner.py --target web --scope quick
 
 # 2. Scan dependencies
-python scripts/dependency_auditor.py --file package.json --severity high
+python3 scripts/dependency_auditor.py --file package.json --severity high
 
 # 3. Check for secrets in recent commits
 # (Use gitleaks or trufflehog as described in Secret Scanning section)
@@ -278,7 +278,7 @@ curl -sI https://target.com | grep -iE "(strict-transport|content-security|x-fra
 
 ```bash
 # Generate final report
-python scripts/pentest_report_generator.py --findings findings.json --format md --output pentest-report.md
+python3 scripts/pentest_report_generator.py --findings findings.json --format md --output pentest-report.md
 ```
 
 ### Workflow 3: CI/CD Security Gate

@@ -70,13 +70,13 @@ The retention-obsessed CCO pressure-tests any plan that touches customer experie
 
 ```bash
 # 1. Retention decomposition (always start here)
-python ../chief-customer-officer-advisor/scripts/retention_decomposition_analyzer.py cohorts.json
+python3 ../chief-customer-officer-advisor/scripts/retention_decomposition_analyzer.py cohorts.json
 
 # 2. Segmentation audit
-python ../chief-customer-officer-advisor/scripts/customer_segmentation_designer.py customers.json
+python3 ../chief-customer-officer-advisor/scripts/customer_segmentation_designer.py customers.json
 
 # 3. Coverage sizing (if making CS team changes)
-python ../chief-customer-officer-advisor/scripts/cs_coverage_calculator.py book.json
+python3 ../chief-customer-officer-advisor/scripts/cs_coverage_calculator.py book.json
 ```
 
 ## Output Format

@@ -79,7 +79,7 @@ The linter resolves stem links by matching against filenames. Prefer full paths 
 
 `wiki/index.md` is regenerated, not hand-edited. Either:
 
-- Run `python scripts/update_index.py --vault .` after every ingest, OR
+- Run `python3 scripts/update_index.py --vault .` after every ingest, OR
 - Have the LLM rewrite the relevant section inline.
 
 The index groups pages by `category`, alphabetized by title. Each entry is one line with a wikilink, summary, and optional metadata.

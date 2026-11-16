@@ -8,7 +8,7 @@ Keep the wiki healthy as it grows. Surface problems for the user to review.
 
 ## Pass 1 — mechanical checks (script)
 
-Run `python scripts/lint_wiki.py --vault .` to get a report on:
+Run `python3 scripts/lint_wiki.py --vault .` to get a report on:
 
 - **Orphans** — pages with zero inbound `[[wikilinks]]`
 - **Broken links** — wikilinks pointing to non-existent pages
@@ -17,7 +17,7 @@ Run `python scripts/lint_wiki.py --vault .` to get a report on:
 - **Duplicate titles** — two or more pages sharing the same title
 - **Log gap** — no log entry in the last 14 days (tune via `--log-gap-days`)
 
-Run `python scripts/graph_analyzer.py --vault .` for structural stats:
+Run `python3 scripts/graph_analyzer.py --vault .` for structural stats:
 
 - Hubs (inbound/outbound) — likely well-placed
 - Sinks — pages that don't link out; may need cross-referencing

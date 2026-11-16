@@ -36,7 +36,7 @@ This skill is **NOT a legal opinion.** It produces evidence shaped to support FR
 pip install "openagentontology[pq]"
 
 # 1. Build + validate an action manifest (stdlib only, no crypto, no network)
-python scripts/build_action_manifest.py --agent my-deploy-agent --operation deploy \
+python3 scripts/build_action_manifest.py --agent my-deploy-agent --operation deploy \
     --target prod/api --policy "EU AI Act Art 12" --out action.json
 
 # 2. Mint the receipt over it (Ed25519 + post-quantum legs)

@@ -31,20 +31,9 @@ python3 scripts/commit_linter.py --from-ref origin/main --to-ref HEAD --strict -
 
 ## Installation
 
-### Pi
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/changelog-generator` from a clone of that repo, or copy this directory into
+`~/.agents/skills/changelog-generator` to have it available in every project. The collection README lists the
+other routes.
 
-```bash
-cp -R engineering/changelog-generator ~/.agents/skills/changelog-generator
-```
-
-### OpenAI Codex
-
-```bash
-cp -R engineering/changelog-generator ~/.codex/skills/changelog-generator
-```
-
-### OpenClaw
-
-```bash
-cp -R engineering/changelog-generator ~/.openclaw/skills/changelog-generator
-```

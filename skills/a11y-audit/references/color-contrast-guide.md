@@ -6,7 +6,7 @@ The `contrast_checker.py` script validates color pairs against WCAG 2.2 contrast
 
 ```bash
 # Check a single color pair
-python scripts/contrast_checker.py --fg "#777777" --bg "#ffffff"
+python3 scripts/contrast_checker.py --fg "#777777" --bg "#ffffff"
 
 # Output:
 # Foreground: #777777 | Background: #ffffff
@@ -17,10 +17,10 @@ python scripts/contrast_checker.py --fg "#777777" --bg "#ffffff"
 # Suggested alternative: #767676 (4.54:1 - passes AA)
 
 # Scan a CSS file for all color pairs
-python scripts/contrast_checker.py --file src/styles/globals.css
+python3 scripts/contrast_checker.py --file src/styles/globals.css
 
 # Scan Tailwind classes in components
-python scripts/contrast_checker.py --tailwind src/components/
+python3 scripts/contrast_checker.py --tailwind src/components/
 ```
 
 ## Common Contrast Fixes

@@ -449,7 +449,7 @@ immediately    Yes─┴─No
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
-| [management_review_tracker.py](scripts/management_review_tracker.py) | Track review inputs, actions, metrics | `python management_review_tracker.py --help` |
+| [management_review_tracker.py](scripts/management_review_tracker.py) | Track review inputs, actions, metrics | `python3 management_review_tracker.py --help` |
 
 **Management Review Tracker Features:**
 - Track input collection status from process owners

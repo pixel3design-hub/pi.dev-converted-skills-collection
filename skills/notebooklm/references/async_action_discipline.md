@@ -133,10 +133,10 @@ The 2-minute dividing line is empirically the right boundary. Below it, wait. Ab
 `scripts/async_action_classifier.py` returns the wait-or-notify verdict per action:
 
 ```bash
-python async_action_classifier.py --action audio_overview
+python3 async_action_classifier.py --action audio_overview
 # Returns: FIRE_AND_NOTIFY (estimated 5-10 min)
 
-python async_action_classifier.py --action add_source_url
+python3 async_action_classifier.py --action add_source_url
 # Returns: WAIT (estimated 5-15s, timeout 60s)
 ```
 

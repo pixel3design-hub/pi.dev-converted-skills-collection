@@ -28,7 +28,7 @@ scenario planning, war room, what-if analysis, risk modeling, cascading effects,
 ## Quick Start
 
 ```bash
-python scripts/scenario_modeler.py   # Interactive scenario builder with cascade modeling
+python3 scripts/scenario_modeler.py   # Interactive scenario builder with cascade modeling
 ```
 
 Or describe the scenario in natural language:

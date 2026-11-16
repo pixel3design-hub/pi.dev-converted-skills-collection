@@ -39,16 +39,16 @@ VPE, VP of Engineering, VP Engineering, engineering operations, delivery through
 
 ```bash
 # Decision A: DORA 4 metrics + bottleneck identification
-python scripts/delivery_throughput_analyzer.py                          # embedded sprint sample
-python scripts/delivery_throughput_analyzer.py path/to/sprint_metrics.json
+python3 scripts/delivery_throughput_analyzer.py                          # embedded sprint sample
+python3 scripts/delivery_throughput_analyzer.py path/to/sprint_metrics.json
 
 # Decision B: Hiring funnel health + pipeline gap
-python scripts/eng_hiring_funnel_calculator.py                          # embedded 3-quarter sample
-python scripts/eng_hiring_funnel_calculator.py path/to/funnel.json
+python3 scripts/eng_hiring_funnel_calculator.py                          # embedded 3-quarter sample
+python3 scripts/eng_hiring_funnel_calculator.py path/to/funnel.json
 
 # Decision C: Team structure recommendation + manager-trigger
-python scripts/eng_team_structure_designer.py                           # embedded 25-engineer sample
-python scripts/eng_team_structure_designer.py path/to/team.json
+python3 scripts/eng_team_structure_designer.py                           # embedded 25-engineer sample
+python3 scripts/eng_team_structure_designer.py path/to/team.json
 ```
 
 ## Key Questions (ask these first)
@@ -160,7 +160,7 @@ See `references/production_discipline.md` for the full operating model.
 
 ```bash
 # 1. Pull sprint metrics: deployment frequency, lead time, MTTR, change failure rate
-python ../../skills/vpe-advisor/scripts/delivery_throughput_analyzer.py sprint_metrics.json
+python3 ../../skills/vpe-advisor/scripts/delivery_throughput_analyzer.py sprint_metrics.json
 # 2. Review DORA verdict per metric
 # 3. Identify top bottleneck (longest wait stage)
 # 4. Cross-check with cs-cto-advisor on architectural causes
@@ -173,7 +173,7 @@ python ../../skills/vpe-advisor/scripts/delivery_throughput_analyzer.py sprint_m
 
 ```bash
 # 1. Pull funnel data from ATS for last 90 days
-python ../../skills/vpe-advisor/scripts/eng_hiring_funnel_calculator.py funnel.json
+python3 ../../skills/vpe-advisor/scripts/eng_hiring_funnel_calculator.py funnel.json
 # 2. Identify weakest conversion stage
 # 3. Compute pipeline volume needed for next quarter's hiring target
 # 4. Cross-check with cs-chro-advisor on comp/leveling competitiveness
@@ -186,7 +186,7 @@ python ../../skills/vpe-advisor/scripts/eng_hiring_funnel_calculator.py funnel.j
 
 ```bash
 # 1. Build team.json: headcount, work streams, manager count, IC distribution
-python ../../skills/vpe-advisor/scripts/eng_team_structure_designer.py team.json
+python3 ../../skills/vpe-advisor/scripts/eng_team_structure_designer.py team.json
 # 2. Check manager-trigger thresholds (5-7 IC rule)
 # 3. Identify squad sizes outside 5-9 range
 # 4. Cross-check with cs-cto-advisor on Conway's Law alignment

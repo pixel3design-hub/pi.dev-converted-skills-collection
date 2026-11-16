@@ -40,16 +40,16 @@ ISO 42001, ISO/IEC 42001:2023, AI Management System, AIMS, AI governance, AI ris
 
 ```bash
 # Decision A: AIMS gap analysis against Clauses 4-10
-python scripts/aims_gap_analyzer.py                           # embedded sample (mid-stage AI SaaS)
-python scripts/aims_gap_analyzer.py path/to/aims_evidence.json
+python3 scripts/aims_gap_analyzer.py                           # embedded sample (mid-stage AI SaaS)
+python3 scripts/aims_gap_analyzer.py path/to/aims_evidence.json
 
 # Decision B: AI risk register + Annex A control mapping
-python scripts/ai_risk_register_builder.py                    # embedded 7-risk sample
-python scripts/ai_risk_register_builder.py path/to/risks.json
+python3 scripts/ai_risk_register_builder.py                    # embedded 7-risk sample
+python3 scripts/ai_risk_register_builder.py path/to/risks.json
 
 # Decision C: Clause 9.2 internal audit 12-month plan
-python scripts/aims_audit_scheduler.py                        # embedded 4-domain sample
-python scripts/aims_audit_scheduler.py path/to/scope.json
+python3 scripts/aims_audit_scheduler.py                        # embedded 4-domain sample
+python3 scripts/aims_audit_scheduler.py path/to/scope.json
 ```
 
 ## Key Questions (ask these first)
@@ -127,7 +127,7 @@ See `references/aims_implementation_guide.md` for the maturity model and rollout
 
 ```bash
 # 1. Inventory current AIMS evidence (policies, procedures, records)
-python scripts/aims_gap_analyzer.py aims_evidence.json
+python3 scripts/aims_gap_analyzer.py aims_evidence.json
 # 2. Review gap matrix; group by clause
 # 3. For each gap, identify owner + due date (target: close before stage 1)
 # 4. Cross-check against ISO 27001 / 13485 existing artifacts — many can be reused
@@ -141,7 +141,7 @@ python scripts/aims_gap_analyzer.py aims_evidence.json
 ```bash
 # 1. Run ISO 23894 risk identification across AI lifecycle (data, model, deployment, decommission)
 # 2. Capture each risk with: source, event, consequence, likelihood, impact
-python scripts/ai_risk_register_builder.py risks.json
+python3 scripts/ai_risk_register_builder.py risks.json
 # 3. For each high/critical risk, confirm ≥ 1 Annex A control is selected as treatment
 # 4. Document residual risk acceptance with management signoff
 # 5. Cross-check with cs-caio-advisor on executive risk acceptance for "tolerate" decisions
@@ -153,7 +153,7 @@ python scripts/ai_risk_register_builder.py risks.json
 
 ```bash
 # 1. Pull last year's audit findings and certification cycle status (year 1/2/3)
-python scripts/aims_audit_scheduler.py audit_scope.json
+python3 scripts/aims_audit_scheduler.py audit_scope.json
 # 2. Confirm auditor independence per assignment
 # 3. Confirm coverage hits every clause and every applicable Annex A control over rolling 3 years
 # 4. Submit plan for management review approval (Clause 9.3 input)

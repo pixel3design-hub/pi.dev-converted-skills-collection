@@ -43,14 +43,14 @@ that it never forgets *on purpose*.
 
 ```bash
 # 1 - Price it first. Never quote a quality number without a cost number.
-python scripts/memory_cost_profiler.py --print-sample-spec > workload.json
-python scripts/memory_cost_profiler.py --spec workload.json
+python3 scripts/memory_cost_profiler.py --print-sample-spec > workload.json
+python3 scripts/memory_cost_profiler.py --spec workload.json
 # 2 - Pick which cost to pay. No "best" verdict; on a tie it asks, exit 2.
-python scripts/memory_architecture_picker.py --constraints workload.json
+python3 scripts/memory_architecture_picker.py --constraints workload.json
 # 3 - Audit what the store actually holds (skip if greenfield).
-python scripts/memory_density_auditor.py --dir ~/.pi/agent/memory
+python3 scripts/memory_density_auditor.py --dir ~/.pi/agent/memory
 # 4 - Gate on forgetting. Exit 4 is a stop, not a suggestion.
-python scripts/forgetting_policy_linter.py --policy design.json
+python3 scripts/forgetting_policy_linter.py --policy design.json
 # 5 - No command. Prove each pass by hand before scheduling it.
 ```
 

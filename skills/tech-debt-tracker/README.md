@@ -25,13 +25,13 @@ Scans codebases to automatically detect technical debt signals using AST parsing
 **Usage:**
 ```bash
 # Basic scan
-python scripts/debt_scanner.py /path/to/codebase
+python3 scripts/debt_scanner.py /path/to/codebase
 
 # With custom config and output
-python scripts/debt_scanner.py /path/to/codebase --config config.json --output report.json
+python3 scripts/debt_scanner.py /path/to/codebase --config config.json --output report.json
 
 # Different output formats
-python scripts/debt_scanner.py /path/to/codebase --format both
+python3 scripts/debt_scanner.py /path/to/codebase --format both
 ```
 
 ### 2. Debt Prioritizer (`debt_prioritizer.py`)
@@ -48,13 +48,13 @@ Takes debt inventory and creates prioritized backlog using proven prioritization
 **Usage:**
 ```bash
 # Basic prioritization
-python scripts/debt_prioritizer.py debt_inventory.json
+python3 scripts/debt_prioritizer.py debt_inventory.json
 
 # Custom framework and team size
-python scripts/debt_prioritizer.py inventory.json --framework wsjf --team-size 8
+python3 scripts/debt_prioritizer.py inventory.json --framework wsjf --team-size 8
 
 # Sprint capacity planning
-python scripts/debt_prioritizer.py inventory.json --sprint-capacity 80 --output backlog.json
+python3 scripts/debt_prioritizer.py inventory.json --sprint-capacity 80 --output backlog.json
 ```
 
 ### 3. Debt Dashboard (`debt_dashboard.py`)
@@ -71,13 +71,13 @@ Analyzes historical debt data to provide trend analysis, health scoring, and exe
 **Usage:**
 ```bash
 # Single directory of scans
-python scripts/debt_dashboard.py --input-dir ./debt_scans/
+python3 scripts/debt_dashboard.py --input-dir ./debt_scans/
 
 # Multiple specific files
-python scripts/debt_dashboard.py scan1.json scan2.json scan3.json
+python3 scripts/debt_dashboard.py scan1.json scan2.json scan3.json
 
 # Custom analysis period
-python scripts/debt_dashboard.py data.json --period quarterly --team-size 6
+python3 scripts/debt_dashboard.py data.json --period quarterly --team-size 6
 ```
 
 ## Quick Start
@@ -86,30 +86,30 @@ python scripts/debt_dashboard.py data.json --period quarterly --team-size 6
 
 ```bash
 # Scan your project
-python scripts/debt_scanner.py ~/my-project --output initial_scan.json
+python3 scripts/debt_scanner.py ~/my-project --output initial_scan.json
 
 # Review the results
-python scripts/debt_scanner.py ~/my-project --format text
+python3 scripts/debt_scanner.py ~/my-project --format text
 ```
 
 ### 2. Prioritize Your Debt
 
 ```bash
 # Create prioritized backlog
-python scripts/debt_prioritizer.py initial_scan.json --output backlog.json
+python3 scripts/debt_prioritizer.py initial_scan.json --output backlog.json
 
 # View sprint recommendations
-python scripts/debt_prioritizer.py initial_scan.json --format text
+python3 scripts/debt_prioritizer.py initial_scan.json --format text
 ```
 
 ### 3. Track Over Time
 
 ```bash
 # After multiple scans, analyze trends
-python scripts/debt_dashboard.py scan1.json scan2.json scan3.json --output dashboard.json
+python3 scripts/debt_dashboard.py scan1.json scan2.json scan3.json --output dashboard.json
 
 # Generate executive report
-python scripts/debt_dashboard.py --input-dir ./scans/ --format text
+python3 scripts/debt_dashboard.py --input-dir ./scans/ --format text
 ```
 
 ## Configuration
@@ -137,7 +137,7 @@ Adjust tools for your team size and sprint capacity:
 
 ```bash
 # 8-person team with 2-week sprints
-python scripts/debt_prioritizer.py inventory.json --team-size 8 --sprint-capacity 160
+python3 scripts/debt_prioritizer.py inventory.json --team-size 8 --sprint-capacity 160
 ```
 
 ## Sample Data
@@ -152,13 +152,13 @@ Try the tools on sample data:
 
 ```bash
 # Test scanner
-python scripts/debt_scanner.py assets/sample_codebase
+python3 scripts/debt_scanner.py assets/sample_codebase
 
 # Test prioritizer  
-python scripts/debt_prioritizer.py assets/sample_debt_inventory.json
+python3 scripts/debt_prioritizer.py assets/sample_debt_inventory.json
 
 # Test dashboard
-python scripts/debt_dashboard.py assets/historical_debt_*.json
+python3 scripts/debt_dashboard.py assets/historical_debt_*.json
 ```
 
 ## Understanding the Output
@@ -195,7 +195,7 @@ Add debt scanning to your CI pipeline:
 
 ```bash
 # In your CI script
-python scripts/debt_scanner.py . --output ci_scan.json
+python3 scripts/debt_scanner.py . --output ci_scan.json
 # Compare with baseline, fail build if critical issues found
 ```
 
@@ -212,7 +212,7 @@ Use scanner output to focus code reviews:
 
 ```bash
 # Scan PR branch
-python scripts/debt_scanner.py . --output pr_scan.json
+python3 scripts/debt_scanner.py . --output pr_scan.json
 
 # Compare with main branch baseline
 # Focus review on areas with new debt
@@ -267,8 +267,8 @@ Set up automated debt reporting:
 ```bash
 #!/bin/bash
 # Daily debt monitoring script
-python scripts/debt_scanner.py . --output daily_scan.json
-python scripts/debt_dashboard.py daily_scan.json --output daily_report.json
+python3 scripts/debt_scanner.py . --output daily_scan.json
+python3 scripts/debt_dashboard.py daily_scan.json --output daily_report.json
 # Send report to stakeholders
 ```
 

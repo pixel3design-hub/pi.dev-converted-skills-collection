@@ -49,7 +49,7 @@ Assemble the brief with `scripts/brief_builder.py` — it normalizes the four lo
 one paragraph and tells you if anything critical is still missing before you spend five subagents:
 
 ```bash
-python scripts/brief_builder.py \
+python3 scripts/brief_builder.py \
   --idea "AI that drafts grant applications for small nonprofits from a 10-min intake call" \
   --who "1-3 person nonprofits with no grant writer" \
   --money "$99/mo SaaS" --edge "I ran a nonprofit for 8 years" \
@@ -89,7 +89,7 @@ synthesizer so the call is reproducible weighting, not vibes — then name the r
 reviewers and resolve it in prose:
 
 ```bash
-python scripts/verdict_synthesizer.py \
+python3 scripts/verdict_synthesizer.py \
   --critic 4 --champion 8 --analyst 7 --investigator 5 --customer 6
 ```
 
@@ -103,7 +103,7 @@ the user can actually ship this fast given the edge they described. Then design 
 from the riskiest assumption the panel surfaced:
 
 ```bash
-python scripts/cheapest_test_designer.py --risk price --price 99
+python3 scripts/cheapest_test_designer.py --risk price --price 99
 ```
 
 Output the verdict in this exact shape:

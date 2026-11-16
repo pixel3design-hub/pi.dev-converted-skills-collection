@@ -118,7 +118,7 @@ comparison:
 Compare technologies with customizable weighted criteria.
 
 ```bash
-python scripts/stack_comparator.py --help
+python3 scripts/stack_comparator.py --help
 ```
 
 ### tco_calculator.py
@@ -126,7 +126,7 @@ python scripts/stack_comparator.py --help
 Calculate total cost of ownership over multi-year projections.
 
 ```bash
-python scripts/tco_calculator.py --input assets/sample_input_tco.json
+python3 scripts/tco_calculator.py --input assets/sample_input_tco.json
 ```
 
 ### ecosystem_analyzer.py
@@ -134,7 +134,7 @@ python scripts/tco_calculator.py --input assets/sample_input_tco.json
 Analyze ecosystem health from GitHub, npm, and community metrics.
 
 ```bash
-python scripts/ecosystem_analyzer.py --technology react
+python3 scripts/ecosystem_analyzer.py --technology react
 ```
 
 ### security_assessor.py
@@ -142,7 +142,7 @@ python scripts/ecosystem_analyzer.py --technology react
 Evaluate security posture and compliance readiness.
 
 ```bash
-python scripts/security_assessor.py --technology express --compliance soc2,gdpr
+python3 scripts/security_assessor.py --technology express --compliance soc2,gdpr
 ```
 
 ### migration_analyzer.py
@@ -150,7 +150,7 @@ python scripts/security_assessor.py --technology express --compliance soc2,gdpr
 Estimate migration complexity, effort, and risks.
 
 ```bash
-python scripts/migration_analyzer.py --from angular-1.x --to react
+python3 scripts/migration_analyzer.py --from angular-1.x --to react
 ```
 
 ---

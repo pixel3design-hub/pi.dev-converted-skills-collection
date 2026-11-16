@@ -11,9 +11,9 @@ The full skill spec is [`SKILL.md`](./SKILL.md). This README is a quick referenc
 ### Quick install check
 
 ```bash
-python scripts/pr_analyzer.py --help
-python scripts/code_quality_checker.py --help
-python scripts/review_report_generator.py --help
+python3 scripts/pr_analyzer.py --help
+python3 scripts/code_quality_checker.py --help
+python3 scripts/review_report_generator.py --help
 ```
 
 All three scripts are stdlib-only — no `pip install` required.
@@ -22,7 +22,7 @@ All three scripts are stdlib-only — no `pip install` required.
 
 ```bash
 # From inside the repo you want to analyze:
-python /path/to/skills/code-reviewer/scripts/pr_analyzer.py . --base main --head HEAD
+python3 /path/to/skills/code-reviewer/scripts/pr_analyzer.py . --base main --head HEAD
 ```
 
 Outputs: complexity score (1-10), risk categorization (critical / high / medium / low), prioritized review order, commit-message validation.
@@ -30,13 +30,13 @@ Outputs: complexity score (1-10), risk categorization (critical / high / medium 
 ### Example 2 — score a directory's code quality
 
 ```bash
-python scripts/code_quality_checker.py /path/to/code
+python3 scripts/code_quality_checker.py /path/to/code
 
 # Filter by language
-python scripts/code_quality_checker.py /path/to/code --language csharp
+python3 scripts/code_quality_checker.py /path/to/code --language csharp
 
 # Machine-readable
-python scripts/code_quality_checker.py /path/to/code --json
+python3 scripts/code_quality_checker.py /path/to/code --json
 ```
 
 Outputs: quality score (0-100), letter grade, detected code smells, SOLID violations.
@@ -44,7 +44,7 @@ Outputs: quality score (0-100), letter grade, detected code smells, SOLID violat
 ### Example 3 — combine into a review report
 
 ```bash
-python scripts/review_report_generator.py /path/to/repo --format markdown --output review.md
+python3 scripts/review_report_generator.py /path/to/repo --format markdown --output review.md
 ```
 
 Outputs: review verdict (approve / request changes / block), score, prioritized action items.
@@ -66,7 +66,7 @@ Outputs: review verdict (approve / request changes / block), score, prioritized 
 Use them as a regression-detection harness:
 
 ```bash
-python scripts/code_quality_checker.py assets/sample_java_smells.java --json > /tmp/check.json
+python3 scripts/code_quality_checker.py assets/sample_java_smells.java --json > /tmp/check.json
 diff /tmp/check.json expected_outputs/sample_java_smells_quality.json
 # silence means the detector still behaves as documented
 ```

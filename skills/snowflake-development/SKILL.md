@@ -19,13 +19,13 @@ Snowflake SQL, data pipelines, Cortex AI, and Snowpark Python development. Cover
 
 ```bash
 # Generate a MERGE upsert template
-python scripts/snowflake_query_helper.py merge --target customers --source staging_customers --key customer_id --columns name,email,updated_at
+python3 scripts/snowflake_query_helper.py merge --target customers --source staging_customers --key customer_id --columns name,email,updated_at
 
 # Generate a Dynamic Table template
-python scripts/snowflake_query_helper.py dynamic-table --name cleaned_events --warehouse transform_wh --lag "5 minutes"
+python3 scripts/snowflake_query_helper.py dynamic-table --name cleaned_events --warehouse transform_wh --lag "5 minutes"
 
 # Generate RBAC grant statements
-python scripts/snowflake_query_helper.py grant --role analyst_role --database analytics --schemas public,staging --privileges SELECT,USAGE
+python3 scripts/snowflake_query_helper.py grant --role analyst_role --database analytics --schemas public,staging --privileges SELECT,USAGE
 ```
 
 ---

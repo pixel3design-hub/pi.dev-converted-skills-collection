@@ -35,7 +35,7 @@ Collect application specifications:
 Run the architecture designer to get pattern recommendations:
 
 ```bash
-python scripts/architecture_designer.py --input requirements.json
+python3 scripts/architecture_designer.py --input requirements.json
 ```
 
 **Example output:**
@@ -66,7 +66,7 @@ Create infrastructure-as-code for the selected pattern:
 
 ```bash
 # Serverless stack (CloudFormation)
-python scripts/serverless_stack.py --app-name my-app --region us-east-1
+python3 scripts/serverless_stack.py --app-name my-app --region us-east-1
 ```
 
 **Example CloudFormation YAML output (core serverless resources):**
@@ -144,7 +144,7 @@ const db = new rds.ServerlessCluster(this, 'AppDb', {
 Analyze estimated costs and optimization opportunities:
 
 ```bash
-python scripts/cost_optimizer.py --resources current_setup.json --monthly-spend 2000
+python3 scripts/cost_optimizer.py --resources current_setup.json --monthly-spend 2000
 ```
 
 **Example output:**
@@ -230,7 +230,7 @@ aws cloudwatch put-metric-alarm --alarm-name high-errors ...
 Generates architecture patterns based on requirements.
 
 ```bash
-python scripts/architecture_designer.py --input requirements.json --output design.json
+python3 scripts/architecture_designer.py --input requirements.json --output design.json
 ```
 
 **Input:** JSON with app type, scale, budget, compliance needs
@@ -241,7 +241,7 @@ python scripts/architecture_designer.py --input requirements.json --output desig
 Creates serverless CloudFormation templates.
 
 ```bash
-python scripts/serverless_stack.py --app-name my-app --region us-east-1
+python3 scripts/serverless_stack.py --app-name my-app --region us-east-1
 ```
 
 **Output:** Production-ready CloudFormation YAML with:
@@ -256,7 +256,7 @@ python scripts/serverless_stack.py --app-name my-app --region us-east-1
 Analyzes costs and recommends optimizations.
 
 ```bash
-python scripts/cost_optimizer.py --resources inventory.json --monthly-spend 5000
+python3 scripts/cost_optimizer.py --resources inventory.json --monthly-spend 5000
 ```
 
 **Output:** Recommendations for:

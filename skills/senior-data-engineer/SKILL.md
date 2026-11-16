@@ -67,20 +67,20 @@ Activate this skill when you see:
 
 ```bash
 # Generate pipeline orchestration config
-python scripts/pipeline_orchestrator.py generate \
+python3 scripts/pipeline_orchestrator.py generate \
   --type airflow \
   --source postgres \
   --destination snowflake \
   --schedule "0 5 * * *"
 
 # Validate data quality
-python scripts/data_quality_validator.py validate \
+python3 scripts/data_quality_validator.py validate \
   --input data/sales.parquet \
   --schema schemas/sales.json \
   --checks freshness,completeness,uniqueness
 
 # Optimize ETL performance
-python scripts/etl_performance_optimizer.py analyze \
+python3 scripts/etl_performance_optimizer.py analyze \
   --query queries/daily_aggregation.sql \
   --engine spark \
   --recommend

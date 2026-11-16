@@ -11,7 +11,7 @@ The detailed flow the LLM follows when the user runs `/wiki-ingest <path>` or di
 
 ### 1. Prepare the brief
 
-Run `python scripts/ingest_source.py --vault . --source <path> --json` to get:
+Run `python3 scripts/ingest_source.py --vault . --source <path> --json` to get:
 - title guess
 - word count
 - preview (first 1200 chars)
@@ -66,12 +66,12 @@ If the source meaningfully shifts a `synthesis/` page's thesis, revise the "Thes
 ### 8. Update `index.md`
 
 Either:
-- Run `python scripts/update_index.py --vault .` to regenerate the entire index from frontmatter, OR
+- Run `python3 scripts/update_index.py --vault .` to regenerate the entire index from frontmatter, OR
 - Edit the relevant category sections inline (faster for small ingests).
 
 ### 9. Append to `log.md`
 
-Run `python scripts/append_log.py --vault . --op ingest --title "<title>" --detail "<detail>"`.
+Run `python3 scripts/append_log.py --vault . --op ingest --title "<title>" --detail "<detail>"`.
 
 The detail line should list which pages were touched:
 
@@ -92,6 +92,6 @@ Summary the user sees in chat:
 
 ## After-ingest tips
 
-- **Big ingest?** Run `python scripts/lint_wiki.py --vault .` to check for new orphans or broken links.
-- **Graph check?** Run `python scripts/graph_analyzer.py --vault .` to see if the new page is well-connected.
+- **Big ingest?** Run `python3 scripts/lint_wiki.py --vault .` to check for new orphans or broken links.
+- **Graph check?** Run `python3 scripts/graph_analyzer.py --vault .` to see if the new page is well-connected.
 - **Open Obsidian graph view** — the user should see the new page attached to the existing cluster.

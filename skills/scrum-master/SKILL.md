@@ -43,10 +43,10 @@ Runs rolling averages, linear-regression trend detection, and Monte Carlo simula
 
 ```bash
 # Text report
-python velocity_analyzer.py sprint_data.json --format text
+python3 velocity_analyzer.py sprint_data.json --format text
 
 # JSON output for downstream processing
-python velocity_analyzer.py sprint_data.json --format json > analysis.json
+python3 velocity_analyzer.py sprint_data.json --format json > analysis.json
 ```
 
 **Outputs**: velocity trend (improving/stable/declining), coefficient of variation, 6-sprint Monte Carlo forecast at 50 / 70 / 85 / 95% confidence intervals, anomaly flags with root-cause suggestions.
@@ -69,7 +69,7 @@ Scores team health across 6 weighted dimensions, producing an overall 0–100 gr
 | Velocity Predictability | 10% | CV <20% |
 
 ```bash
-python sprint_health_scorer.py sprint_data.json --format text
+python3 sprint_health_scorer.py sprint_data.json --format text
 ```
 
 **Outputs**: overall health score + grade, per-dimension scores with recommendations, sprint-over-sprint trend, intervention priority matrix.
@@ -83,7 +83,7 @@ python sprint_health_scorer.py sprint_data.json --format text
 Tracks action-item completion, recurring themes, sentiment trends, and team maturity progression.
 
 ```bash
-python retrospective_analyzer.py sprint_data.json --format text
+python3 retrospective_analyzer.py sprint_data.json --format text
 ```
 
 **Outputs**: action-item completion rate by priority/owner, recurring-theme persistence scores, team maturity level (forming/storming/norming/performing), improvement-velocity trend.
@@ -128,7 +128,7 @@ Jira and similar tools can export sprint data; map exported fields to this schem
 
 ### Sprint Planning
 
-1. Run velocity analysis: `python velocity_analyzer.py sprint_data.json --format text`
+1. Run velocity analysis: `python3 velocity_analyzer.py sprint_data.json --format text`
 2. Use the 70% confidence interval as the recommended commitment ceiling for the sprint backlog.
 3. Review the health scorer's Commitment Reliability and Scope Stability scores to calibrate negotiation with the Product Owner.
 4. If Monte Carlo output shows high volatility (CV >20%), surface this to stakeholders with range estimates rather than single-point forecasts.
@@ -149,8 +149,8 @@ Jira and similar tools can export sprint data; map exported fields to this schem
 
 1. Run all three scripts before the session:
    ```bash
-   python sprint_health_scorer.py sprint_data.json --format text > health.txt
-   python retrospective_analyzer.py sprint_data.json --format text > retro.txt
+   python3 sprint_health_scorer.py sprint_data.json --format text > health.txt
+   python3 retrospective_analyzer.py sprint_data.json --format text > retro.txt
    ```
 2. Open with the health score and top-flagged dimensions to focus discussion.
 3. Use the retrospective analyzer's action-item completion rate to determine how many new action items the team can realistically absorb (target: ≤3 if completion rate <60%).
@@ -164,8 +164,8 @@ Jira and similar tools can export sprint data; map exported fields to this schem
 ### Assessment
 
 ```bash
-python sprint_health_scorer.py team_data.json > health_assessment.txt
-python retrospective_analyzer.py team_data.json > retro_insights.txt
+python3 sprint_health_scorer.py team_data.json > health_assessment.txt
+python3 retrospective_analyzer.py team_data.json > retro_insights.txt
 ```
 
 - Map retrospective analyzer maturity output to the appropriate development stage.

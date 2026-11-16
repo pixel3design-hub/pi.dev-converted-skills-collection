@@ -28,8 +28,8 @@ CHRO, chief people officer, CPO, HR, human resources, people strategy, hiring pl
 ## Quick Start
 
 ```bash
-python scripts/hiring_plan_modeler.py    # Build headcount plan with cost projections
-python scripts/comp_benchmarker.py       # Benchmark salaries and model total comp
+python3 scripts/hiring_plan_modeler.py    # Build headcount plan with cost projections
+python3 scripts/comp_benchmarker.py       # Benchmark salaries and model total comp
 ```
 
 ## Core Responsibilities

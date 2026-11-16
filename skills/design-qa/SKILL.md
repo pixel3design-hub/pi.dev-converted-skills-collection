@@ -30,12 +30,12 @@ ring someone removed. Each script catches one class of these before a user does.
 
 ```bash
 # 1 - Source: is anything unfinished in the code?
-python scripts/finish_lint.py src/ --output json > lint.json
+python3 scripts/finish_lint.py src/ --output json > lint.json
 # 2 - States: does every surface have loading, empty, error, busy, focus...?
-python scripts/state_matrix_checker.py --matrix states.csv --evidence-root .
+python3 scripts/state_matrix_checker.py --matrix states.csv --evidence-root .
 # 3 - Rendered: what did the browser actually show? (capture 320 px and desktop)
 node assets/capture_snapshot.mjs http://localhost:3000/invoices --width 320 --out s320.json
-python scripts/rendered_audit.py --snapshot s320.json --waivers waivers.csv
+python3 scripts/rendered_audit.py --snapshot s320.json --waivers waivers.csv
 ```
 
 **Step 1** blocks on inert handlers, dead links, placeholder copy and focus

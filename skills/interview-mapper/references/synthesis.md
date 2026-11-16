@@ -31,7 +31,7 @@ Group nuggets by semantic themes, assign each a `cluster`. Rules:
 - A cluster is not "a theme in general" but a specific regularity.
 
 ## S6.5 — Accounting for reliability (script, not by eye)
-`python scripts/score_insights.py nuggets.json --k 3`
+`python3 scripts/score_insights.py nuggets.json --k 3`
 Computes per cluster: distinct interviews, triangulation (≥k different interviews with a verified quote), frequency×criticality, tension, status:
 - **insight** — triangulated (≥k sources) → can be called a pattern.
 - **watchlist** — rare but critical (severity≥4) OR cross-role tension → don't bury.

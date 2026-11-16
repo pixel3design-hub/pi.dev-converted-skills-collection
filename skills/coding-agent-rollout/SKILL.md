@@ -28,14 +28,14 @@ effective policy from a single file. This skill makes it readable, then checks i
 
 ```bash
 # 1 - Guardrails: lint shared, local and managed settings together.
-python scripts/settings_linter.py --repo . --managed /etc/claude-code/managed-settings.json
+python3 scripts/settings_linter.py --repo . --managed /etc/claude-code/managed-settings.json
 # 2 - Inventory: every MCP server, plugin and marketplace, against your approved list.
-python scripts/mcp_plugin_inventory.py --repo . --allowlist approved.json
+python3 scripts/mcp_plugin_inventory.py --repo . --allowlist approved.json
 # 3 - Instructions: what AGENTS.md actually loads, layer by layer.
-python scripts/claude_md_layering_audit.py --repo .
+python3 scripts/claude_md_layering_audit.py --repo .
 # 4 - Adoption: each member runs this locally and shares only the JSON counts.
-python scripts/adoption_tracker.py --member alice --output json > alice.json
-python scripts/adoption_tracker.py --merge *.json --seats 12 --weeks-since-launch 6
+python3 scripts/adoption_tracker.py --member alice --output json > alice.json
+python3 scripts/adoption_tracker.py --merge *.json --seats 12 --weeks-since-launch 6
 ```
 
 Start from [`assets/managed-settings.example.json`](assets/managed-settings.example.json):

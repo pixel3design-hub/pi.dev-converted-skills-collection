@@ -32,12 +32,12 @@ packages but not what the product depends on.
 
 ```bash
 # 1 - Scope: which products, which class, which route, which CSIRT?
-python scripts/cra_scope_classifier.py --inventory assets/inventory.example.csv
+python3 scripts/cra_scope_classifier.py --inventory assets/inventory.example.csv
 # 2 - Report: is any Article 14 report due or overdue right now?
-python scripts/art14_report_clock.py --events assets/events.example.csv
+python3 scripts/art14_report_clock.py --events assets/events.example.csv
 # 3 - Conformity: can we sign the EU declaration of conformity?
-python scripts/annex_i_gap_check.py --assessment assets/assessment.example.csv
-python scripts/sbom_check.py --sbom assets/sbom.example.cdx.json
+python3 scripts/annex_i_gap_check.py --assessment assets/assessment.example.csv
+python3 scripts/sbom_check.py --sbom assets/sbom.example.cdx.json
 ```
 
 Run step 2 first whenever a vulnerability or incident is live: it is the only

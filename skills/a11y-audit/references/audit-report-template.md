@@ -3,7 +3,7 @@
 The scanner generates a stakeholder-ready report when run with the `--report` flag:
 
 ```bash
-python scripts/a11y_scanner.py /path/to/project --report --output audit-report.md
+python3 scripts/a11y_scanner.py /path/to/project --report --output audit-report.md
 ```
 
 ## Generated Report Structure

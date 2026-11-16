@@ -40,16 +40,16 @@ EU AI Act, EU AI Regulation, Regulation 2024/1689, AI Act, AI regulation Europe,
 
 ```bash
 # Decision A: Classify an AI system per the Act
-python scripts/ai_system_risk_classifier.py                       # embedded 5-system sample
-python scripts/ai_system_risk_classifier.py path/to/systems.json
+python3 scripts/ai_system_risk_classifier.py                       # embedded 5-system sample
+python3 scripts/ai_system_risk_classifier.py path/to/systems.json
 
 # Decision B: Conformity assessment plan for a high-risk system
-python scripts/conformity_assessment_planner.py                   # embedded high-risk sample
-python scripts/conformity_assessment_planner.py path/to/system.json
+python3 scripts/conformity_assessment_planner.py                   # embedded high-risk sample
+python3 scripts/conformity_assessment_planner.py path/to/system.json
 
 # Decision C: Obligation tracker per organizational role
-python scripts/ai_act_obligation_tracker.py                       # embedded sample (provider + deployer)
-python scripts/ai_act_obligation_tracker.py path/to/roles.json
+python3 scripts/ai_act_obligation_tracker.py                       # embedded sample (provider + deployer)
+python3 scripts/ai_act_obligation_tracker.py path/to/roles.json
 ```
 
 ## Key Questions (ask these first)
@@ -128,11 +128,11 @@ See `references/gpai_obligations.md` for the separate GPAI Articles 51–55 trac
 ```bash
 # 1. Document system characteristics: purpose, users, data, autonomy, deployment context
 # 2. Run classifier
-python scripts/ai_system_risk_classifier.py systems.json
+python3 scripts/ai_system_risk_classifier.py systems.json
 # 3. If high-risk: run planner
-python scripts/conformity_assessment_planner.py system.json
+python3 scripts/conformity_assessment_planner.py system.json
 # 4. Identify org roles played (provider / deployer / both)
-python scripts/ai_act_obligation_tracker.py roles.json
+python3 scripts/ai_act_obligation_tracker.py roles.json
 # 5. Cross-check with GDPR DPIA (gdpr-dsgvo-expert) if personal data
 # 6. Cross-check with ISO 42001 AIMS evidence (compliance-team-iso42001)
 # 7. Output: classification memo + conformity plan + obligation list
@@ -143,7 +143,7 @@ python scripts/ai_act_obligation_tracker.py roles.json
 
 ```bash
 # 1. Run conformity assessment planner to get the checklist
-python scripts/conformity_assessment_planner.py system.json
+python3 scripts/conformity_assessment_planner.py system.json
 # 2. Assemble: system description, architecture, training data, validation, risk management
 # 3. Reference ISO 42001 evidence where it satisfies Annex IV items
 # 4. Reference ISO 27001 evidence for security controls

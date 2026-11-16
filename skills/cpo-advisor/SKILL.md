@@ -29,13 +29,13 @@ CPO, chief product officer, product strategy, product vision, product-market fit
 
 ### Score Your Product-Market Fit
 ```bash
-python scripts/pmf_scorer.py
+python3 scripts/pmf_scorer.py
 ```
 Multi-dimensional PMF score across retention, engagement, satisfaction, and growth.
 
 ### Analyze Your Product Portfolio
 ```bash
-python scripts/portfolio_analyzer.py
+python3 scripts/portfolio_analyzer.py
 ```
 BCG matrix classification, investment recommendations, portfolio health score.
 

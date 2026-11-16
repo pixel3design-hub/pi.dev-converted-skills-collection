@@ -46,27 +46,27 @@ The skill processes text files and provides statistics and transformations in bo
 
 ### Basic Text Analysis
 ```bash
-python text_processor.py analyze document.txt
-python text_processor.py analyze document.txt --output results.json
+python3 text_processor.py analyze document.txt
+python3 text_processor.py analyze document.txt --output results.json
 ```
 
 ### Text Transformation
 ```bash
-python text_processor.py transform document.txt --mode uppercase
-python text_processor.py transform document.txt --mode title --output transformed.txt
+python3 text_processor.py transform document.txt --mode uppercase
+python3 text_processor.py transform document.txt --mode title --output transformed.txt
 ```
 
 ### Batch Processing
 ```bash
-python text_processor.py batch text_files/ --output results/
-python text_processor.py batch text_files/ --format json --output batch_results.json
+python3 text_processor.py batch text_files/ --output results/
+python3 text_processor.py batch text_files/ --format json --output batch_results.json
 ```
 
 ## Examples
 
 ### Example 1: Basic Word Count
 ```bash
-$ python text_processor.py analyze sample.txt
+$ python3 text_processor.py analyze sample.txt
 === TEXT ANALYSIS RESULTS ===
 File: sample.txt
 Total words: 150
@@ -78,7 +78,7 @@ Most frequent word: "the" (8 occurrences)
 
 ### Example 2: JSON Output
 ```bash
-$ python text_processor.py analyze sample.txt --format json
+$ python3 text_processor.py analyze sample.txt --format json
 {
   "file": "sample.txt",
   "statistics": {
@@ -96,7 +96,7 @@ $ python text_processor.py analyze sample.txt --format json
 
 ### Example 3: Text Transformation
 ```bash
-$ python text_processor.py transform sample.txt --mode title
+$ python3 text_processor.py transform sample.txt --mode title
 Original: "hello world from the text processor"
 Transformed: "Hello World From The Text Processor"
 ```
@@ -111,7 +111,7 @@ This skill requires only Python 3.7 or later with the standard library. No exter
 
 ```bash
 cd scripts/
-python text_processor.py --help
+python3 text_processor.py --help
 ```
 
 ## Configuration

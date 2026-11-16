@@ -359,7 +359,7 @@ Stage 4: Task Completion
 
 ```bash
 # Generate JSON for integration
-python scripts/persona_generator.py json > persona_power_user.json
+python3 scripts/persona_generator.py json > persona_power_user.json
 
 # Use with other tools
 cat persona_power_user.json | jq '.design_implications'

@@ -19,13 +19,13 @@ Test automation, coverage analysis, and quality assurance patterns for React and
 
 ```bash
 # Generate Jest test stubs for React components
-python scripts/test_suite_generator.py src/components/ --output __tests__/
+python3 scripts/test_suite_generator.py src/components/ --output __tests__/
 
 # Analyze test coverage from Jest/Istanbul reports
-python scripts/coverage_analyzer.py coverage/coverage-final.json --threshold 80
+python3 scripts/coverage_analyzer.py coverage/coverage-final.json --threshold 80
 
 # Scaffold Playwright E2E tests for Next.js routes
-python scripts/e2e_test_scaffolder.py src/app/ --output e2e/
+python3 scripts/e2e_test_scaffolder.py src/app/ --output e2e/
 ```
 
 ---
@@ -42,13 +42,13 @@ Scans React/TypeScript components and generates Jest + React Testing Library tes
 **Usage:**
 ```bash
 # Basic usage - scan components and generate tests
-python scripts/test_suite_generator.py src/components/ --output __tests__/
+python3 scripts/test_suite_generator.py src/components/ --output __tests__/
 
 # Include accessibility tests
-python scripts/test_suite_generator.py src/ --output __tests__/ --include-a11y
+python3 scripts/test_suite_generator.py src/ --output __tests__/ --include-a11y
 
 # Generate with custom template
-python scripts/test_suite_generator.py src/ --template custom-template.tsx
+python3 scripts/test_suite_generator.py src/ --template custom-template.tsx
 ```
 
 **Supported Patterns:**
@@ -69,13 +69,13 @@ Parses Jest/Istanbul coverage reports and identifies gaps, uncovered branches, a
 **Usage:**
 ```bash
 # Analyze coverage report
-python scripts/coverage_analyzer.py coverage/coverage-final.json
+python3 scripts/coverage_analyzer.py coverage/coverage-final.json
 
 # Enforce threshold (exit 1 if below)
-python scripts/coverage_analyzer.py coverage/ --threshold 80 --strict
+python3 scripts/coverage_analyzer.py coverage/ --threshold 80 --strict
 
 # Generate HTML report
-python scripts/coverage_analyzer.py coverage/ --format html --output report.html
+python3 scripts/coverage_analyzer.py coverage/ --format html --output report.html
 ```
 
 ---
@@ -90,13 +90,13 @@ Scans Next.js pages/app directory and generates Playwright test files with commo
 **Usage:**
 ```bash
 # Scaffold E2E tests for Next.js App Router
-python scripts/e2e_test_scaffolder.py src/app/ --output e2e/
+python3 scripts/e2e_test_scaffolder.py src/app/ --output e2e/
 
 # Include Page Object Model classes
-python scripts/e2e_test_scaffolder.py src/app/ --output e2e/ --include-pom
+python3 scripts/e2e_test_scaffolder.py src/app/ --output e2e/ --include-pom
 
 # Generate for specific routes
-python scripts/e2e_test_scaffolder.py src/app/ --routes "/login,/dashboard,/checkout"
+python3 scripts/e2e_test_scaffolder.py src/app/ --routes "/login,/dashboard,/checkout"
 ```
 
 ---
@@ -109,12 +109,12 @@ Use when setting up tests for new or existing React components.
 
 **Step 1: Scan project for untested components**
 ```bash
-python scripts/test_suite_generator.py src/components/ --scan-only
+python3 scripts/test_suite_generator.py src/components/ --scan-only
 ```
 
 **Step 2: Generate test stubs**
 ```bash
-python scripts/test_suite_generator.py src/components/ --output __tests__/
+python3 scripts/test_suite_generator.py src/components/ --output __tests__/
 ```
 
 **Step 3: Review and customize generated tests**
@@ -143,7 +143,7 @@ describe('Button', () => {
 **Step 4: Run tests and check coverage**
 ```bash
 npm test -- --coverage
-python scripts/coverage_analyzer.py coverage/coverage-final.json
+python3 scripts/coverage_analyzer.py coverage/coverage-final.json
 ```
 
 ---
@@ -159,23 +159,23 @@ npm test -- --coverage --coverageReporters=json
 
 **Step 2: Analyze coverage gaps**
 ```bash
-python scripts/coverage_analyzer.py coverage/coverage-final.json --threshold 80
+python3 scripts/coverage_analyzer.py coverage/coverage-final.json --threshold 80
 ```
 
 **Step 3: Identify critical paths**
 ```bash
-python scripts/coverage_analyzer.py coverage/ --critical-paths
+python3 scripts/coverage_analyzer.py coverage/ --critical-paths
 ```
 
 **Step 4: Generate missing test stubs**
 ```bash
-python scripts/test_suite_generator.py src/ --uncovered-only --output __tests__/
+python3 scripts/test_suite_generator.py src/ --uncovered-only --output __tests__/
 ```
 
 **Step 5: Verify improvement**
 ```bash
 npm test -- --coverage
-python scripts/coverage_analyzer.py coverage/ --compare previous-coverage.json
+python3 scripts/coverage_analyzer.py coverage/ --compare previous-coverage.json
 ```
 
 ---
@@ -191,7 +191,7 @@ npm init playwright@latest
 
 **Step 2: Scaffold E2E tests from routes**
 ```bash
-python scripts/e2e_test_scaffolder.py src/app/ --output e2e/
+python3 scripts/e2e_test_scaffolder.py src/app/ --output e2e/
 ```
 
 **Step 3: Configure authentication fixtures**
@@ -333,5 +333,5 @@ npx playwright codegen             # Generate tests
 
 # Coverage
 npm test -- --coverage --coverageReporters=lcov,json
-python scripts/coverage_analyzer.py coverage/coverage-final.json
+python3 scripts/coverage_analyzer.py coverage/coverage-final.json
 ```

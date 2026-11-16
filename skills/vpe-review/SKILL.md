@@ -67,13 +67,13 @@ The throughput-first VPE pressure-tests any plan touching eng operations. Six qu
 
 ```bash
 # 1. Delivery throughput
-python ../vpe-advisor/scripts/delivery_throughput_analyzer.py sprint_metrics.json
+python3 ../vpe-advisor/scripts/delivery_throughput_analyzer.py sprint_metrics.json
 
 # 2. Hiring funnel
-python ../vpe-advisor/scripts/eng_hiring_funnel_calculator.py funnel.json
+python3 ../vpe-advisor/scripts/eng_hiring_funnel_calculator.py funnel.json
 
 # 3. Team structure
-python ../vpe-advisor/scripts/eng_team_structure_designer.py team.json
+python3 ../vpe-advisor/scripts/eng_team_structure_designer.py team.json
 ```
 
 ## Output Format

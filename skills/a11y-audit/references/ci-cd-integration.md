@@ -27,7 +27,7 @@ jobs:
 
       - name: Run A11y Scanner
         run: |
-          python scripts/a11y_scanner.py ./src --json > a11y-results.json
+          python3 scripts/a11y_scanner.py ./src --json > a11y-results.json
 
       - name: Check for Critical Issues
         run: |
@@ -59,7 +59,7 @@ jobs:
           message: |
             ## Accessibility Audit Failed
             Critical WCAG 2.2 violations were found. See the uploaded artifact for details.
-            Run `python scripts/a11y_scanner.py ./src` locally to view and fix issues.
+            Run `python3 scripts/a11y_scanner.py ./src` locally to view and fix issues.
 ```
 
 ## GitLab CI
@@ -70,7 +70,7 @@ a11y-audit:
   stage: test
   image: python:3.11-slim
   script:
-    - python scripts/a11y_scanner.py ./src --json > a11y-results.json
+    - python3 scripts/a11y_scanner.py ./src --json > a11y-results.json
     - python -c "
       import json, sys;
       data = json.load(open('a11y-results.json'));
@@ -116,7 +116,7 @@ STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(tsx
 if [ -n "$STAGED_FILES" ]; then
   echo "Running accessibility audit on staged files..."
   for file in $STAGED_FILES; do
-    python scripts/a11y_scanner.py "$file" --severity critical --quiet
+    python3 scripts/a11y_scanner.py "$file" --severity critical --quiet
     if [ $? -ne 0 ]; then
       echo "A11y audit FAILED for $file. Fix critical issues before committing."
       exit 1

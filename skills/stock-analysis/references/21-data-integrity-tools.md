@@ -11,9 +11,9 @@ Run this after you have gathered data and before you compute anything on it.
 **Workflow.** As you collect figures, record each one as a datapoint with its provenance rather than pasting bare numbers into a working file. Then run the gate:
 
 ```
-python scripts/verify_data.py --template          # prints the intake schema to fill
-python scripts/verify_data.py my-intake.json      # runs the checks
-python scripts/verify_data.py my-intake.json --json
+python3 scripts/verify_data.py --template          # prints the intake schema to fill
+python3 scripts/verify_data.py my-intake.json      # runs the checks
+python3 scripts/verify_data.py my-intake.json --json
 ```
 
 Each datapoint carries: `metric`, `value`, `period`, `basis` (consolidated/standalone), `unit`, `source`, and optionally an `alt` list of the same figure from a second source. The file header carries `as_of`, the reporting basis, currency/units, and `latest_reported_period` with its publication date.
@@ -39,9 +39,9 @@ The verified intake also feeds cleanly into `scripts/ratios.py`, so the same str
 Run this on the finished markdown report, just before you deliver it.
 
 ```
-python scripts/lint_report.py report.md
-python scripts/lint_report.py report.md --json
-python scripts/lint_report.py report.md --strict     # promotes warnings to errors
+python3 scripts/lint_report.py report.md
+python3 scripts/lint_report.py report.md --json
+python3 scripts/lint_report.py report.md --strict     # promotes warnings to errors
 ```
 
 **What it checks:**

@@ -176,16 +176,16 @@ Two rules: **change weights before you see the scores, not after** (post-hoc wei
 `scripts/score.py` does the arithmetic. Standard library only.
 
 ```
-python scripts/score.py --example > input.json     # starter input, edit it
-python scripts/score.py input.json                 # readable scorecard
-python scripts/score.py input.json --json          # same numbers, machine-readable
-python scripts/score.py --list-sectors             # the 21 sector keys
-python scripts/score.py --explain                  # the method
-python scripts/score.py --explain gates            # every gate, with evidence required
-python scripts/score.py --explain roce_pct --sector fmcg-consumer
-python scripts/score.py input.json --preset deep_value --weight risk=0.10
-python scripts/score.py --example-segments > seg.json   # multi-segment starter file
-python scripts/score.py seg.json --segment-detail        # per-segment + blended group score
+python3 scripts/score.py --example > input.json     # starter input, edit it
+python3 scripts/score.py input.json                 # readable scorecard
+python3 scripts/score.py input.json --json          # same numbers, machine-readable
+python3 scripts/score.py --list-sectors             # the 21 sector keys
+python3 scripts/score.py --explain                  # the method
+python3 scripts/score.py --explain gates            # every gate, with evidence required
+python3 scripts/score.py --explain roce_pct --sector fmcg-consumer
+python3 scripts/score.py input.json --preset deep_value --weight risk=0.10
+python3 scripts/score.py --example-segments > seg.json   # multi-segment starter file
+python3 scripts/score.py seg.json --segment-detail        # per-segment + blended group score
 ```
 
 Input is one JSON object: `sector`, `metrics`, optional `flags`, optional `overrides`. A metric value can be a bare number or an object carrying the workings:
@@ -225,7 +225,7 @@ A single sector key is wrong for a company that is 55% EPC, 30% IT services and 
 }
 ```
 
-`python scripts/score.py --example-segments` prints a complete, runnable three-segment example (industrial + IT + lending). Each segment is scored against **its own sector's** metric set, bands and category weights by the ordinary scoring machinery; only the finished composites are blended. Raw metrics are never blended across segments — an NBFC's NIM and an EPC contractor's order book are not commensurable quantities, and averaging them would be arithmetic without meaning.
+`python3 scripts/score.py --example-segments` prints a complete, runnable three-segment example (industrial + IT + lending). Each segment is scored against **its own sector's** metric set, bands and category weights by the ordinary scoring machinery; only the finished composites are blended. Raw metrics are never blended across segments — an NBFC's NIM and an EPC contractor's order book are not commensurable quantities, and averaging them would be arithmetic without meaning.
 
 **Weighting.** `--weight-basis {ebit,capital_employed,revenue,explicit}`, default `ebit`, overriding `weight_basis` in the input. EBIT is the default because profit mix, not revenue mix, is what the owner owns: a trading segment can be 60% of revenue and 5% of profit. `explicit` reads a `weight` field per segment and normalises it to 1.0.
 

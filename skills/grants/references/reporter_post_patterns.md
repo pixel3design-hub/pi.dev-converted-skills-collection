@@ -73,7 +73,7 @@ NIH fiscal year runs **Oct 1 → Sep 30**. Current FY = year of next Sep 30.
 Use `scripts/fiscal_year_calculator.py`:
 
 ```bash
-python ../scripts/fiscal_year_calculator.py
+python3 ../scripts/fiscal_year_calculator.py
 # Output:
 # Current calendar year: 2026
 # Current fiscal year:   2026 (Oct 1 2025 - Sep 30 2026)

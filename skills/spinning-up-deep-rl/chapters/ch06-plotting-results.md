@@ -37,7 +37,7 @@ comparison is one command.
 
 ## Code Examples
 ```bash
-python -m spinup.run plot [path/to/output_directory ...] [--legend [LEGEND ...]] \
+python3 -m spinup.run plot [path/to/output_directory ...] [--legend [LEGEND ...]] \
     [--xaxis XAXIS] [--value [VALUE ...]] [--count] [--smooth S] \
     [--select [SEL ...]] [--exclude [EXC ...]]
 ```
@@ -55,7 +55,7 @@ data/
 ```
 
 ```bash
-python spinup/utils/plot.py data/bench_algo
+python3 spinup/utils/plot.py data/bench_algo
 ```
 
 ## Anti-patterns

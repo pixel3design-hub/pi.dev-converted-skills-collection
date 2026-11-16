@@ -19,5 +19,5 @@ figure from these files into a real analysis.**
 | `forensic-analysis-example.md` | Forensic | A forensic read of the `evals/fixtures/synthetic-ar-excerpt.md` extracts (fictional Kesar Agro): the F0–F5 runbook, the accruals and proof-of-cash tests, the CARO and related-party evidence, and a "can these accounts bear weight?" verdict that stops short of valuation on purpose. |
 
 Both were checked with the bundled gates: the standard example passes
-`python scripts/lint_report.py`, and its valuation section is the verbatim output
-of `python scripts/valuation.py` on the same inputs.
+`python3 scripts/lint_report.py`, and its valuation section is the verbatim output
+of `python3 scripts/valuation.py` on the same inputs.

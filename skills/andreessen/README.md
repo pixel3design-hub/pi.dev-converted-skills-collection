@@ -18,15 +18,15 @@ no disclaimers, explicit confidence levels, no capitulation) preserved verbatim 
 
 ```bash
 # Should I build this? (market weighted 0.55; sub-4 market is a hard kill gate)
-python scripts/market_first_evaluator.py --size 8 --growth 7 --timing 9 --pull 8 --team 6 --product 5
+python3 scripts/market_first_evaluator.py --size 8 --growth 7 --timing 9 --pull 8 --team 6 --product 5
 
 # Are we at product/market fit? (Sean Ellis 40% gate + 4 qualitative signals)
-python scripts/pmf_signal_scorer.py --ellis-pct 45 --retention 8 --organic 7 --demand 8 --frequency 7
+python3 scripts/pmf_signal_scorer.py --ellis-pct 45 --retention 8 --organic 7 --demand 8 --frequency 7
 
 # Daily 3x5 card + Anti-Todo
-python scripts/anti_todo_card.py --new --must-do "Call 5 churned users" "Ship retention dashboard" "Cut onboarding to 3 steps"
-python scripts/anti_todo_card.py --did "Unblocked the data pipeline"
-python scripts/anti_todo_card.py --summary
+python3 scripts/anti_todo_card.py --new --must-do "Call 5 churned users" "Ship retention dashboard" "Cut onboarding to 3 steps"
+python3 scripts/anti_todo_card.py --did "Unblocked the data pipeline"
+python3 scripts/anti_todo_card.py --summary
 
 # Every script supports --sample and --output-format json
 ```

@@ -135,7 +135,7 @@ REFERRAL or do not sign at all.
 Save as `partner.json`, then run:
 
 ```
-python scripts/partner_tier_classifier.py --input partner.json --profile saas --output markdown
+python3 scripts/partner_tier_classifier.py --input partner.json --profile saas --output markdown
 ```
 
 Then proceed to `joint_gtm_planner.py` and `revshare_modeler.py` only if the assigned

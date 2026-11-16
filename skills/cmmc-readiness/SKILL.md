@@ -29,11 +29,11 @@ script catches one of these before the assessor does.
 
 ```bash
 # 1 - Scope: what is in the assessment, and what must the SSP say about it?
-python scripts/scope_classifier.py --inventory assets/inventory.example.csv
+python3 scripts/scope_classifier.py --inventory assets/inventory.example.csv
 # 2 - Score: what is the SPRS score, and can we reach Conditional or Final status?
-python scripts/sprs_score.py --assessment assets/assessment.example.csv --output json > score.json
+python3 scripts/sprs_score.py --assessment assets/assessment.example.csv --output json > score.json
 # 3 - Closeout: is the POA&M complete, deferrable, and on time?
-python scripts/poam_closeout.py --score score.json --poam assets/poam.example.csv \
+python3 scripts/poam_closeout.py --score score.json --poam assets/poam.example.csv \
   --conditional-date 2026-06-15 --as-of 2026-11-01
 ```
 

@@ -406,7 +406,7 @@ Nonconforming Product Identified
 
 | Tool | Purpose | Usage |
 |------|---------|-------|
-| [qms_audit_checklist.py](scripts/qms_audit_checklist.py) | Generate audit checklists by clause or process | `python qms_audit_checklist.py --help` |
+| [qms_audit_checklist.py](scripts/qms_audit_checklist.py) | Generate audit checklists by clause or process | `python3 qms_audit_checklist.py --help` |
 
 **Audit Checklist Generator Features:**
 - Generate clause-specific checklists (e.g., `--clause 7.3`)

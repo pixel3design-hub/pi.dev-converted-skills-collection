@@ -42,7 +42,7 @@ Single Reporting Platform (SRP) form before your first report.
 | Security update details | |
 | Users informed at, channel, machine-readable? | |
 
-Run `python scripts/art14_report_clock.py --events <log.csv>` after every update to the log.
+Run `python3 scripts/art14_report_clock.py --events <log.csv>` after every update to the log.
 
 ## 4. After closure
 

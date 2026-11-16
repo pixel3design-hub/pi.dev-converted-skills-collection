@@ -29,13 +29,13 @@ catches one class of these before the auditor does.
 
 ```bash
 # 1 - Diff: who has access that the HR roster says they should not?
-python scripts/access_diff.py --roster hr_roster.csv --accounts accounts.csv \
+python3 scripts/access_diff.py --roster hr_roster.csv --accounts accounts.csv \
   --inactive-days 90 --privileged-review-days 90 --as-of 2026-10-31
 # 2 - Campaign: did the review cover everything, and did the revokes happen?
-python scripts/access_review_campaign.py --decisions campaign.csv --population accounts.csv \
+python3 scripts/access_review_campaign.py --decisions campaign.csv --population accounts.csv \
   --remediation-days 10 --close-date 2026-10-20
 # 3 - Map: which controls do the exceptions break, and what evidence do you keep?
-python scripts/control_evidence_mapper.py --diff diff.json --campaign campaign.json --framework soc2,iso27001
+python3 scripts/control_evidence_mapper.py --diff diff.json --campaign campaign.json --framework soc2,iso27001
 ```
 
 **Step 1** joins each account to the roster on employee ID, then email. A

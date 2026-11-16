@@ -188,7 +188,7 @@ See `references/platform-benchmarks.md` for complete benchmark data.
 ### Calculate Metrics
 
 ```bash
-python scripts/calculate_metrics.py assets/sample_input.json
+python3 scripts/calculate_metrics.py assets/sample_input.json
 ```
 
 Calculates engagement rate, CTR, reach rate for each post and campaign totals.
@@ -196,7 +196,7 @@ Calculates engagement rate, CTR, reach rate for each post and campaign totals.
 ### Analyze Performance
 
 ```bash
-python scripts/analyze_performance.py assets/sample_input.json
+python3 scripts/analyze_performance.py assets/sample_input.json
 ```
 
 Generates full performance analysis with ROI, benchmarks, and recommendations.

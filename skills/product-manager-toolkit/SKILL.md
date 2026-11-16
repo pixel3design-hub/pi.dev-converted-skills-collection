@@ -36,15 +36,15 @@ Essential tools and frameworks for modern product management, from discovery to 
 ### For Feature Prioritization
 ```bash
 # Create sample data file
-python scripts/rice_prioritizer.py sample
+python3 scripts/rice_prioritizer.py sample
 
 # Run prioritization with team capacity
-python scripts/rice_prioritizer.py sample_features.csv --capacity 15
+python3 scripts/rice_prioritizer.py sample_features.csv --capacity 15
 ```
 
 ### For Interview Analysis
 ```bash
-python scripts/customer_interview_analyzer.py interview_transcript.txt
+python3 scripts/customer_interview_analyzer.py interview_transcript.txt
 ```
 
 ### For PRD Creation
@@ -72,7 +72,7 @@ Gather → Score → Analyze → Plan → Validate → Execute
 #### Step 2: Score with RICE
 ```bash
 # Input: CSV with features
-python scripts/rice_prioritizer.py features.csv --capacity 20
+python3 scripts/rice_prioritizer.py features.csv --capacity 20
 ```
 
 See `references/frameworks.md` for RICE formula and scoring guidelines.
@@ -128,7 +128,7 @@ Plan → Recruit → Interview → Analyze → Synthesize → Validate
 
 #### Step 4: Analyze Insights
 ```bash
-python scripts/customer_interview_analyzer.py transcript.txt
+python3 scripts/customer_interview_analyzer.py transcript.txt
 ```
 
 Extracts:
@@ -225,19 +225,19 @@ Dark Mode,8000,medium,high,s,Dark theme option
 **Commands:**
 ```bash
 # Create sample data
-python scripts/rice_prioritizer.py sample
+python3 scripts/rice_prioritizer.py sample
 
 # Run with default capacity (10 person-months)
-python scripts/rice_prioritizer.py features.csv
+python3 scripts/rice_prioritizer.py features.csv
 
 # Custom capacity
-python scripts/rice_prioritizer.py features.csv --capacity 20
+python3 scripts/rice_prioritizer.py features.csv --capacity 20
 
 # JSON output for integration
-python scripts/rice_prioritizer.py features.csv --output json
+python3 scripts/rice_prioritizer.py features.csv --output json
 
 # CSV output for spreadsheets
-python scripts/rice_prioritizer.py features.csv --output csv
+python3 scripts/rice_prioritizer.py features.csv --output csv
 ```
 
 ---
@@ -257,10 +257,10 @@ NLP-based interview analysis for extracting actionable insights.
 **Commands:**
 ```bash
 # Analyze interview transcript
-python scripts/customer_interview_analyzer.py interview.txt
+python3 scripts/customer_interview_analyzer.py interview.txt
 
 # JSON output for aggregation
-python scripts/customer_interview_analyzer.py interview.txt json
+python3 scripts/customer_interview_analyzer.py interview.txt json
 ```
 
 ---
@@ -284,10 +284,10 @@ Compatible tools and platforms:
 **JSON export enables integration with most tools:**
 ```bash
 # Export for Jira import
-python scripts/rice_prioritizer.py features.csv --output json > priorities.json
+python3 scripts/rice_prioritizer.py features.csv --output json > priorities.json
 
 # Export for dashboard
-python scripts/customer_interview_analyzer.py interview.txt json > insights.json
+python3 scripts/customer_interview_analyzer.py interview.txt json > insights.json
 ```
 
 ---
@@ -337,17 +337,17 @@ python scripts/customer_interview_analyzer.py interview.txt json > insights.json
 
 ```bash
 # Prioritization
-python scripts/rice_prioritizer.py features.csv --capacity 15
+python3 scripts/rice_prioritizer.py features.csv --capacity 15
 
 # Interview Analysis
-python scripts/customer_interview_analyzer.py interview.txt
+python3 scripts/customer_interview_analyzer.py interview.txt
 
 # Generate sample data
-python scripts/rice_prioritizer.py sample
+python3 scripts/rice_prioritizer.py sample
 
 # JSON outputs
-python scripts/rice_prioritizer.py features.csv --output json
-python scripts/customer_interview_analyzer.py interview.txt json
+python3 scripts/rice_prioritizer.py features.csv --output json
+python3 scripts/customer_interview_analyzer.py interview.txt json
 ```
 
 ---

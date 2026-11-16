@@ -34,13 +34,13 @@ Architecture design and analysis tools for making informed technical decisions.
 
 ```bash
 # Generate architecture diagram from project
-python scripts/architecture_diagram_generator.py ./my-project --format mermaid
+python3 scripts/architecture_diagram_generator.py ./my-project --format mermaid
 
 # Analyze dependencies for issues
-python scripts/dependency_analyzer.py ./my-project --output json
+python3 scripts/dependency_analyzer.py ./my-project --output json
 
 # Get architecture assessment
-python scripts/project_architect.py ./my-project --verbose
+python3 scripts/project_architect.py ./my-project --verbose
 ```
 
 ---
@@ -64,16 +64,16 @@ Generates architecture diagrams from project structure in multiple formats.
 **Usage:**
 ```bash
 # Mermaid format (default)
-python scripts/architecture_diagram_generator.py ./project --format mermaid --type component
+python3 scripts/architecture_diagram_generator.py ./project --format mermaid --type component
 
 # PlantUML format
-python scripts/architecture_diagram_generator.py ./project --format plantuml --type layer
+python3 scripts/architecture_diagram_generator.py ./project --format plantuml --type layer
 
 # ASCII format (terminal-friendly)
-python scripts/architecture_diagram_generator.py ./project --format ascii
+python3 scripts/architecture_diagram_generator.py ./project --format ascii
 
 # Save to file
-python scripts/architecture_diagram_generator.py ./project -o architecture.md
+python3 scripts/architecture_diagram_generator.py ./project -o architecture.md
 ```
 
 **Example output (Mermaid):**
@@ -111,16 +111,16 @@ Analyzes project dependencies for coupling, circular dependencies, and outdated 
 **Usage:**
 ```bash
 # Human-readable report
-python scripts/dependency_analyzer.py ./project
+python3 scripts/dependency_analyzer.py ./project
 
 # JSON output for CI/CD integration
-python scripts/dependency_analyzer.py ./project --output json
+python3 scripts/dependency_analyzer.py ./project --output json
 
 # Check only for circular dependencies
-python scripts/dependency_analyzer.py ./project --check circular
+python3 scripts/dependency_analyzer.py ./project --check circular
 
 # Verbose mode with recommendations
-python scripts/dependency_analyzer.py ./project --verbose
+python3 scripts/dependency_analyzer.py ./project --verbose
 ```
 
 **Example output:**
@@ -159,16 +159,16 @@ Analyzes project structure and detects architectural patterns, code smells, and 
 **Usage:**
 ```bash
 # Full assessment
-python scripts/project_architect.py ./project
+python3 scripts/project_architect.py ./project
 
 # Verbose with detailed recommendations
-python scripts/project_architect.py ./project --verbose
+python3 scripts/project_architect.py ./project --verbose
 
 # JSON output
-python scripts/project_architect.py ./project --output json
+python3 scripts/project_architect.py ./project --output json
 
 # Check specific aspect
-python scripts/project_architect.py ./project --check layers
+python3 scripts/project_architect.py ./project --check layers
 ```
 
 **Example output:**
@@ -325,19 +325,19 @@ Load these files for detailed information:
 
 ```bash
 # Architecture visualization
-python scripts/architecture_diagram_generator.py . --format mermaid
-python scripts/architecture_diagram_generator.py . --format plantuml
-python scripts/architecture_diagram_generator.py . --format ascii
+python3 scripts/architecture_diagram_generator.py . --format mermaid
+python3 scripts/architecture_diagram_generator.py . --format plantuml
+python3 scripts/architecture_diagram_generator.py . --format ascii
 
 # Dependency analysis
-python scripts/dependency_analyzer.py . --verbose
-python scripts/dependency_analyzer.py . --check circular
-python scripts/dependency_analyzer.py . --output json
+python3 scripts/dependency_analyzer.py . --verbose
+python3 scripts/dependency_analyzer.py . --check circular
+python3 scripts/dependency_analyzer.py . --output json
 
 # Architecture assessment
-python scripts/project_architect.py . --verbose
-python scripts/project_architect.py . --check layers
-python scripts/project_architect.py . --output json
+python3 scripts/project_architect.py . --verbose
+python3 scripts/project_architect.py . --check layers
+python3 scripts/project_architect.py . --output json
 ```
 
 ---

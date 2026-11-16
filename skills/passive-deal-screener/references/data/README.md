@@ -44,7 +44,7 @@ output; a fabricated number is a defect.
    its own `LAST_UPDATED`.
 6. Update the hardcoded copies in `scripts/benchmark_comparator.py`
    (`COMPARATORS`, `TREASURY`, `LAST_UPDATED`) and its `_self_check` anchors,
-   then run `python scripts/benchmark_comparator.py --self-check`. Its drift
+   then run `python3 scripts/benchmark_comparator.py --self-check`. Its drift
    guard fails if any constant disagrees with `05`.
 
 Annual refresh is the minimum cadence; refresh sooner if a rate regime shifts

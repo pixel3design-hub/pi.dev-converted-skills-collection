@@ -31,20 +31,9 @@ python3 scripts/mcp_validator.py --input generated/tool_manifest.json --strict -
 
 ## Installation
 
-### Pi
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/mcp-server-builder` from a clone of that repo, or copy this directory into
+`~/.agents/skills/mcp-server-builder` to have it available in every project. The collection README lists the
+other routes.
 
-```bash
-cp -R engineering/mcp-server-builder ~/.agents/skills/mcp-server-builder
-```
-
-### OpenAI Codex
-
-```bash
-cp -R engineering/mcp-server-builder ~/.codex/skills/mcp-server-builder
-```
-
-### OpenClaw
-
-```bash
-cp -R engineering/mcp-server-builder ~/.openclaw/skills/mcp-server-builder
-```

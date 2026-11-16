@@ -68,16 +68,16 @@ The ISO 42001 AIMS specialist pressure-tests any AI Management System work. Six 
 
 ```bash
 # 1. AIMS gap analysis
-python ../iso42001-specialist/scripts/aims_gap_analyzer.py evidence.json
+python3 ../iso42001-specialist/scripts/aims_gap_analyzer.py evidence.json
 
 # 2. AI risk register
-python ../iso42001-specialist/scripts/ai_risk_register_builder.py risks.json
+python3 ../iso42001-specialist/scripts/ai_risk_register_builder.py risks.json
 
 # 3. Internal audit plan
-python ../iso42001-specialist/scripts/aims_audit_scheduler.py audit_scope.json
+python3 ../iso42001-specialist/scripts/aims_audit_scheduler.py audit_scope.json
 
 # 4. Cross-framework reuse map (via compliance-os)
-python ../../skills/compliance-os/scripts/cross_framework_mapper.py program.json
+python3 ../../skills/compliance-os/scripts/cross_framework_mapper.py program.json
 ```
 
 ## Output Format

@@ -33,7 +33,7 @@ Map answers → topology:
 When the user gives a one-liner ("I want to review my PRs") or skips the topology questions, **do not interrogate them in a loop.** Infer, propose, and explain. Run:
 
 ```bash
-python scripts/workflow_intake.py --task "review my open PRs for bugs" \
+python3 scripts/workflow_intake.py --task "review my open PRs for bugs" \
   --units unknown --stages unknown --needs-all unknown --structured unknown
 ```
 

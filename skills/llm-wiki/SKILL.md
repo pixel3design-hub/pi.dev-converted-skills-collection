@@ -68,7 +68,7 @@ vault/
 
 ```bash
 # 1. Initialize a vault (in Obsidian's vault directory)
-python scripts/init_vault.py --path ~/vaults/research --topic "LLM interpretability"
+python3 scripts/init_vault.py --path ~/vaults/research --topic "LLM interpretability"
 
 # 2. Drop a source into raw/, then ingest
 /wiki-ingest ~/vaults/research/raw/anthropic-monosemanticity.pdf
@@ -103,7 +103,7 @@ python scripts/init_vault.py --path ~/vaults/research --topic "LLM interpretabil
 
 ## Python tools (`scripts/`)
 
-All tools are **standard library only** (no pip installs). Run with `python scripts/<tool>.py --help`.
+All tools are **standard library only** (no pip installs). Run with `python3 scripts/<tool>.py --help`.
 
 | Script | Purpose |
 |---|---|

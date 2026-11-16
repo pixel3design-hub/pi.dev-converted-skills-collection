@@ -36,7 +36,7 @@ Collect application specifications:
 Run the architecture designer to get pattern recommendations:
 
 ```bash
-python scripts/architecture_designer.py \
+python3 scripts/architecture_designer.py \
   --app-type web_app \
   --users 10000 \
   --requirements '{"budget_monthly_usd": 500, "compliance": ["SOC2"]}'
@@ -70,7 +70,7 @@ Create infrastructure-as-code for the selected pattern:
 
 ```bash
 # Web app stack (Bicep)
-python scripts/bicep_generator.py --arch-type web-app --output main.bicep
+python3 scripts/bicep_generator.py --arch-type web-app --output main.bicep
 ```
 
 **Example Bicep output (core web app resources):**
@@ -154,7 +154,7 @@ resource sqlDatabase 'Microsoft.Sql/servers/databases@2023-05-01-preview' = {
 Analyze estimated costs and optimization opportunities:
 
 ```bash
-python scripts/cost_optimizer.py \
+python3 scripts/cost_optimizer.py \
   --config current_resources.json \
   --json
 ```
@@ -280,7 +280,7 @@ Validate security posture before production:
 Generates architecture pattern recommendations based on requirements.
 
 ```bash
-python scripts/architecture_designer.py \
+python3 scripts/architecture_designer.py \
   --app-type web_app \
   --users 50000 \
   --requirements '{"budget_monthly_usd": 1000, "compliance": ["HIPAA"]}' \
@@ -295,7 +295,7 @@ python scripts/architecture_designer.py \
 Analyzes Azure resource configurations for cost savings.
 
 ```bash
-python scripts/cost_optimizer.py --config resources.json --json
+python3 scripts/cost_optimizer.py --config resources.json --json
 ```
 
 **Input:** JSON file with current Azure resource inventory
@@ -311,7 +311,7 @@ python scripts/cost_optimizer.py --config resources.json --json
 Generates Bicep template scaffolds from architecture type.
 
 ```bash
-python scripts/bicep_generator.py --arch-type microservices --output main.bicep
+python3 scripts/bicep_generator.py --arch-type microservices --output main.bicep
 ```
 
 **Output:** Production-ready Bicep templates with:

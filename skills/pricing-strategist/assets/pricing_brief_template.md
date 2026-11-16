@@ -81,7 +81,7 @@ What pricing outcomes would be a *failure* even if NRR looks fine?
 Copy this into a file (e.g., `brief.json`) and fill in. Then run:
 
 ```bash
-python scripts/pricing_model_picker.py --input brief.json --profile saas --output markdown
+python3 scripts/pricing_model_picker.py --input brief.json --profile saas --output markdown
 ```
 
 ```json

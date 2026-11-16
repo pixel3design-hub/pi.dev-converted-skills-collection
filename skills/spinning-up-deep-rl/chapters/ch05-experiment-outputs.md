@@ -48,7 +48,7 @@ ever meant to be read by hand.
 
 ## Code Examples
 ```bash
-python -m spinup.run test_policy path/to/output_directory
+python3 -m spinup.run test_policy path/to/output_directory
 ```
 
 When the environment failed to pickle and `test_policy` raises `AssertionError: Environment

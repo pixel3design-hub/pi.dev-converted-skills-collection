@@ -56,7 +56,7 @@ The interviewer must stay neutral; cell A2 (interest compatibility) is high-stak
 human review before use in negotiations — see `templates/conflict-mediation.md`.
 
 ## Check the route with the script
-`python scripts/route.py --goal org --respondent employee --output insights --n 6 [--baseline yes]`
+`python3 scripts/route.py --goal org --respondent employee --output insights --n 6 [--baseline yes]`
 → returns the lens, output, applicable pipeline steps and warnings (including "n<k → watchlist only").
 
 ## Principle

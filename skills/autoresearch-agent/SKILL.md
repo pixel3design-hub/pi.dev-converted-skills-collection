@@ -60,7 +60,7 @@ Run the setup script. The user decides where experiments live:
 
 **Project-level** (inside repo, git-tracked, shareable with team):
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain engineering \
   --name api-speed \
   --target src/api/search.py \
@@ -72,11 +72,11 @@ python scripts/setup_experiment.py \
 
 **User-level** (personal, in `~/.autoresearch/`):
 ```bash
-python scripts/setup_experiment.py \
+python3 scripts/setup_experiment.py \
   --domain marketing \
   --name medium-ctr \
   --target content/titles.md \
-  --eval "python evaluate.py" \
+  --eval "python3 evaluate.py" \
   --metric ctr_score \
   --direction higher \
   --evaluator llm_judge_content \
@@ -142,7 +142,7 @@ You are the loop. The scripts handle setup and evaluation — you handle the cre
 2. Decide ONE change to the target file. One variable per experiment.
 3. Edit the target file
 4. Commit: `git add {target} && git commit -m "experiment: {description}"`
-5. Evaluate: `python scripts/run_experiment.py --experiment {domain}/{name} --single`
+5. Evaluate: `python3 scripts/run_experiment.py --experiment {domain}/{name} --single`
 6. Read the output — it prints KEEP, DISCARD, or CRASH with the metric value
 7. Go to step 1
 
@@ -157,10 +157,10 @@ You are the loop. The scripts handle setup and evaluation — you handle the cre
 
 ```bash
 # Single iteration (the agent calls this repeatedly)
-python scripts/run_experiment.py --experiment engineering/api-speed --single
+python3 scripts/run_experiment.py --experiment engineering/api-speed --single
 
 # Dry run (test setup before starting)
-python scripts/run_experiment.py --experiment engineering/api-speed --dry-run
+python3 scripts/run_experiment.py --experiment engineering/api-speed --dry-run
 ```
 
 ### Strategy Escalation
@@ -240,18 +240,18 @@ print(f"my_metric: {parse_score(result.stdout)}")
 
 ```bash
 # Single experiment
-python scripts/log_results.py --experiment engineering/api-speed
+python3 scripts/log_results.py --experiment engineering/api-speed
 
 # All experiments in a domain
-python scripts/log_results.py --domain engineering
+python3 scripts/log_results.py --domain engineering
 
 # Cross-experiment dashboard
-python scripts/log_results.py --dashboard
+python3 scripts/log_results.py --dashboard
 
 # Export formats
-python scripts/log_results.py --experiment engineering/api-speed --format csv --output results.csv
-python scripts/log_results.py --experiment engineering/api-speed --format markdown --output results.md
-python scripts/log_results.py --dashboard --format markdown --output dashboard.md
+python3 scripts/log_results.py --experiment engineering/api-speed --format csv --output results.csv
+python3 scripts/log_results.py --experiment engineering/api-speed --format markdown --output results.md
+python3 scripts/log_results.py --dashboard --format markdown --output dashboard.md
 ```
 
 ### Dashboard Output

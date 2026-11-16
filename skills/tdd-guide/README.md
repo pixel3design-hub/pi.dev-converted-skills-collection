@@ -61,50 +61,11 @@ The TDD Guide skill transforms how engineering teams implement Test Driven Devel
 
 ## Installation
 
-### Pi (Desktop)
-
-1. **Download the skill folder**:
-   ```bash
-   # Option A: Clone from repository
-   git clone https://github.com/your-org/tdd-guide-skill.git
-
-   # Option B: Download ZIP and extract
-   ```
-
-2. **Install to Pi skills directory**:
-   ```bash
-   # Project-level (recommended for team projects)
-   cp -r tdd-guide /path/to/your/project/.agents/skills/
-
-   # User-level (available for all projects)
-   cp -r tdd-guide ~/.agents/skills/
-   ```
-
-3. **Verify installation**:
-   ```bash
-   ls ~/.agents/skills/tdd-guide/
-   # Should show: SKILL.md, *.py files, samples
-   ```
-
-### Pi Apps (Browser)
-
-1. Use the `skill-creator` skill to import the ZIP file
-2. Or manually upload files through the skills interface
-
-### Pi API
-
-```python
-# Upload skill via API
-import anthropic
-
-client = anthropic.Anthropic(api_key="your-api-key")
-
-# Create skill with files
-skill = client.skills.create(
-    name="tdd-guide",
-    files=["tdd-guide/SKILL.md", "tdd-guide/*.py"]
-)
-```
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/tdd-guide` from a clone of that repo, or copy this directory into
+`~/.agents/skills/tdd-guide` to have it available in every project. The collection README lists the
+other routes.
 
 ## Quick Start
 
@@ -619,7 +580,7 @@ We welcome contributions! To contribute:
 2. Create a feature branch (`git checkout -b feature/improvement`)
 3. Make your changes
 4. Add tests for new functionality
-5. Run validation: `python -m pytest tests/`
+5. Run validation: `python3 -m pytest tests/`
 6. Commit changes (`git commit -m "Add: feature description"`)
 7. Push to branch (`git push origin feature/improvement`)
 8. Open a Pull Request

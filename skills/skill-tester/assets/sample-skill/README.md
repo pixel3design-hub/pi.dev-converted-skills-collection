@@ -6,16 +6,16 @@ A basic text processing skill that demonstrates BASIC tier requirements for the 
 
 ```bash
 # Analyze a text file
-python scripts/text_processor.py analyze sample.txt
+python3 scripts/text_processor.py analyze sample.txt
 
 # Get JSON output
-python scripts/text_processor.py analyze sample.txt --format json
+python3 scripts/text_processor.py analyze sample.txt --format json
 
 # Transform text to uppercase  
-python scripts/text_processor.py transform sample.txt --mode upper
+python3 scripts/text_processor.py transform sample.txt --mode upper
 
 # Process multiple files
-python scripts/text_processor.py batch text_files/ --verbose
+python3 scripts/text_processor.py batch text_files/ --verbose
 ```
 
 ## Features

@@ -52,13 +52,13 @@ Add a fifth: **Define abort criteria up front.** A chaos experiment with no abor
 SKILL=engineering/chaos-engineering/skills/chaos-engineering
 
 # 1. Design an experiment
-python "$SKILL/scripts/experiment_designer.py" --target "checkout-svc" --hypothesis "p99 latency stays <500ms" --attack latency --duration-min 15
+python3 "$SKILL/scripts/experiment_designer.py" --target "checkout-svc" --hypothesis "p99 latency stays <500ms" --attack latency --duration-min 15
 
 # 2. Calculate blast radius
-python "$SKILL/scripts/blast_radius_calculator.py" --traffic-share 0.05 --user-pop 1000000 --duration-min 15
+python3 "$SKILL/scripts/blast_radius_calculator.py" --traffic-share 0.05 --user-pop 1000000 --duration-min 15
 
 # 3. Generate postmortem after the experiment
-python "$SKILL/scripts/experiment_postmortem.py" --plan experiment.json --result-log results.txt
+python3 "$SKILL/scripts/experiment_postmortem.py" --plan experiment.json --result-log results.txt
 ```
 
 ## The 3 Python tools
@@ -70,7 +70,7 @@ All stdlib-only. Run with `--help`.
 Generates a structured experiment plan from inputs. Enforces the required sections (hypothesis, steady-state metric, blast radius, abort criteria, rollback).
 
 ```bash
-python scripts/experiment_designer.py \
+python3 scripts/experiment_designer.py \
   --target "checkout-svc" \
   --hypothesis "p99 latency stays <500ms when payment-svc is slow" \
   --attack latency \
@@ -87,7 +87,7 @@ Outputs a markdown plan with: hypothesis, steady-state, attack, magnitude, durat
 Computes the blast radius of a planned experiment. Given traffic share + user population + duration, calculates expected affected users, expected error budget burn, and a risk score.
 
 ```bash
-python scripts/blast_radius_calculator.py \
+python3 scripts/blast_radius_calculator.py \
   --traffic-share 0.05 \
   --user-pop 1000000 \
   --duration-min 15 \
@@ -108,7 +108,7 @@ GREEN = <1% error budget; YELLOW = 1-10%; RED = >10%.
 Produces a structured postmortem from an experiment plan + results. Catches the common postmortem failure modes: no learning recorded, no follow-up actions, blame-laden language.
 
 ```bash
-python scripts/experiment_postmortem.py --plan experiment.json --result-log results.txt
+python3 scripts/experiment_postmortem.py --plan experiment.json --result-log results.txt
 ```
 
 Outputs markdown with: summary, hypothesis (was it confirmed/refuted?), what we learned, what surprised us, follow-up actions with owners, and link to next experiment.

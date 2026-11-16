@@ -141,8 +141,8 @@ ORDER BY t.name, c.column_id;
 Use `scripts/schema_explorer.py` to produce markdown or JSON documentation:
 
 ```bash
-python scripts/schema_explorer.py --dialect postgres --tables all --format md
-python scripts/schema_explorer.py --dialect mysql --tables users,orders --format json --json
+python3 scripts/schema_explorer.py --dialect postgres --tables all --format md
+python3 scripts/schema_explorer.py --dialect mysql --tables users,orders --format json --json
 ```
 
 ---
@@ -193,8 +193,8 @@ python scripts/schema_explorer.py --dialect mysql --tables users,orders --format
 ### Static Analysis Tool
 
 ```bash
-python scripts/query_optimizer.py --query "SELECT * FROM orders WHERE status = 'pending'" --dialect postgres
-python scripts/query_optimizer.py --query queries.sql --dialect mysql --json
+python3 scripts/query_optimizer.py --query "SELECT * FROM orders WHERE status = 'pending'" --dialect postgres
+python3 scripts/query_optimizer.py --query queries.sql --dialect mysql --json
 ```
 
 > See references/optimization_guide.md for EXPLAIN plan reading, index types, and connection pooling.
@@ -260,8 +260,8 @@ Every migration must have a reversible down script. For irreversible changes:
 ### Migration Generator Tool
 
 ```bash
-python scripts/migration_generator.py --change "add email_verified boolean to users" --dialect postgres --format sql
-python scripts/migration_generator.py --change "rename column name to full_name in customers" --dialect mysql --format alembic --json
+python3 scripts/migration_generator.py --change "add email_verified boolean to users" --dialect postgres --format sql
+python3 scripts/migration_generator.py --change "rename column name to full_name in customers" --dialect mysql --format alembic --json
 ```
 
 ---

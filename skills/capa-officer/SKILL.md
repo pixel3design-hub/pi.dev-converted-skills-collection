@@ -368,16 +368,16 @@ Monthly CAPA status report includes:
 
 ```bash
 # Generate CAPA status report
-python scripts/capa_tracker.py --capas capas.json
+python3 scripts/capa_tracker.py --capas capas.json
 
 # Interactive mode for manual entry
-python scripts/capa_tracker.py --interactive
+python3 scripts/capa_tracker.py --interactive
 
 # JSON output for integration
-python scripts/capa_tracker.py --capas capas.json --output json
+python3 scripts/capa_tracker.py --capas capas.json --output json
 
 # Generate sample data file
-python scripts/capa_tracker.py --sample > sample_capas.json
+python3 scripts/capa_tracker.py --sample > sample_capas.json
 ```
 
 Calculates and reports:

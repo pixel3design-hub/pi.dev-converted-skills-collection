@@ -173,51 +173,11 @@ This skill includes 8 powerful Python modules:
 
 ## Installation
 
-### For Pi (Desktop/CLI)
-
-#### Project-Level Installation
-```bash
-# Copy skill folder to project
-cp -r app-store-optimization /path/to/your/project/.agents/skills/
-
-# Claude will auto-load the skill when working in this project
-```
-
-#### User-Level Installation (Available in All Projects)
-```bash
-# Copy skill folder to user-level skills
-cp -r app-store-optimization ~/.agents/skills/
-
-# Claude will load this skill in all your projects
-```
-
-### For Pi Apps (Browser)
-
-1. Use the `skill-creator` skill to import the skill
-2. Or manually import via Pi Apps interface
-
-### Verification
-
-To verify installation:
-```bash
-# Check if skill folder exists
-ls ~/.agents/skills/app-store-optimization/
-
-# You should see:
-# SKILL.md
-# keyword_analyzer.py
-# metadata_optimizer.py
-# competitor_analyzer.py
-# aso_scorer.py
-# ab_test_planner.py
-# localization_helper.py
-# review_analyzer.py
-# launch_checklist.py
-# sample_input.json
-# expected_output.json
-# HOW_TO_USE.md
-# README.md
-```
+This copy ships in
+[pi.dev-converted-skills-collection](https://github.com/pixel3design-hub/pi.dev-converted-skills-collection).
+Install it with `pi --skill ./skills/app-store-optimization` from a clone of that repo, or copy this directory into
+`~/.agents/skills/app-store-optimization` to have it available in every project. The collection README lists the
+other routes.
 
 ## Usage Examples
 

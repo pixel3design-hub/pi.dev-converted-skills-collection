@@ -29,14 +29,14 @@ commit is one logical change, builds on its own, holds no secrets and says why.
 
 ```bash
 # 1 - Plan: which commits, in which order, staged how?
-python scripts/commit_planner.py                 # working tree vs HEAD, untracked included
+python3 scripts/commit_planner.py                 # working tree vs HEAD, untracked included
 # 2 - For each group: stage exactly its files, then gate what is staged
 git add -- <files of group N>                     # or git add -p for MIXED_FORMATTING files
-python scripts/secret_gate.py                     # blocks before the commit exists
+python3 scripts/secret_gate.py                     # blocks before the commit exists
 # 3 - Write the message, lint it, commit
-python scripts/message_linter.py -m "<message>" --staged && git commit -m "<message>"
+python3 scripts/message_linter.py -m "<message>" --staged && git commit -m "<message>"
 # 4 - Before push: the whole series, and proof every commit builds
-python scripts/message_linter.py --range @{upstream}..HEAD
+python3 scripts/message_linter.py --range @{upstream}..HEAD
 git rebase -x "<test command>" @{upstream}
 ```
 

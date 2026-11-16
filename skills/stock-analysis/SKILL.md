@@ -149,7 +149,7 @@ So establish explicitly, and state in the report:
 
 Record the answer as one line: *"Most recent period incorporated: Q1 FY27, published 11-Jul-2026; checked for events to 22-Jul-2026."* A reader cannot judge staleness you have not disclosed.
 
-**Then verify the data before you compute on it.** Assemble what you gathered into an intake file and run `python scripts/verify_data.py <intake>.json` (see `references/21-data-integrity-tools.md`). It is the mechanical enforcement of the sourcing rules above: it catches figures with no source or period, cross-source disagreements (the check that stops a wrong peer number reaching the verdict), silent consolidated/standalone mixing, crore-vs-million unit traps, and periods that a newer release has already superseded. Fix every error-level finding before proceeding; a fast, clean intake is worth more than a fast analysis built on an unchecked one.
+**Then verify the data before you compute on it.** Assemble what you gathered into an intake file and run `python3 scripts/verify_data.py <intake>.json` (see `references/21-data-integrity-tools.md`). It is the mechanical enforcement of the sourcing rules above: it catches figures with no source or period, cross-source disagreements (the check that stops a wrong peer number reaching the verdict), silent consolidated/standalone mixing, crore-vs-million unit traps, and periods that a newer release has already superseded. Fix every error-level finding before proceeding; a fast, clean intake is worth more than a fast analysis built on an unchecked one.
 
 ### Stage 2 — Classify sector and situation
 
@@ -210,7 +210,7 @@ The point is that the verdict can move. A challenge pass that only ever adds cav
 
 ### Stage 10 — Lint before delivering
 
-Run `python scripts/lint_report.py <report>.md` (see `references/21-data-integrity-tools.md`). It is a mechanical last check that the report honours the non-negotiables: a recency statement and data-quality note are present, basis and units are stated, a scorecard is not shown without its gate disclosure, a bear case and disclaimer exist, and — the core check — that financial figures sit near a source rather than floating free. Treat error-level findings as blocking and fix them; a low figure-sourcing ratio means go back and cite, not ship. The linter is a floor, not a substitute for judgement.
+Run `python3 scripts/lint_report.py <report>.md` (see `references/21-data-integrity-tools.md`). It is a mechanical last check that the report honours the non-negotiables: a recency statement and data-quality note are present, basis and units are stated, a scorecard is not shown without its gate disclosure, a bear case and disclaimer exist, and — the core check — that financial figures sit near a source rather than floating free. Treat error-level findings as blocking and fix them; a low figure-sourcing ratio means go back and cite, not ship. The linter is a floor, not a substitute for judgement.
 
 Save the report as a markdown file named `<TICKER>-analysis-<YYYY-MM-DD>.md` unless the user asks otherwise, and summarise the key findings in chat.
 
@@ -253,12 +253,12 @@ If none fits cleanly, use `references/02-core-factors.md` with the generic ratio
 
 Run these rather than recomputing by hand; they remove arithmetic slips and keep results consistent between analyses.
 
-- `scripts/ratios.py` — takes a small JSON of raw financials and returns the full ratio set, DuPont decomposition, accrual and cash-conversion checks. `python scripts/ratios.py --help`
-- `scripts/score.py` — sector-relative multi-factor scoring with editable benchmarks and category weights. `python scripts/score.py --help`
-  - For a company with materially different businesses, pass a `segments` array and each segment is scored against its own sector's benchmarks and blended by profit — `python scripts/score.py --example-segments` prints a runnable example. The blend is a quality summary, never a substitute for sum-of-the-parts valuation.
-- `scripts/valuation.py` — Stage-6 valuation calculator: EV bridge, trailing multiples, the reverse-DCF implied-growth solve, a forward 2-stage DCF, and a probability-weighted scenario table. Runs only the sections whose inputs you supply, and guards invalid assumptions (terminal growth ≥ WACC fails). `python scripts/valuation.py --template` / `--example`
-- `scripts/verify_data.py` — data-intake gate. Validates gathered figures for provenance, **source tier (documents primary, aggregators navigation-only)**, cross-source agreement, basis/unit consistency and staleness before you compute on them. Run it at Stage 1. `python scripts/verify_data.py --template`
-- `scripts/lint_report.py` — finished-report QA. Checks the non-negotiables and the figure-sourcing ratio before delivery. Run it at Stage 10. `python scripts/lint_report.py --help`
+- `scripts/ratios.py` — takes a small JSON of raw financials and returns the full ratio set, DuPont decomposition, accrual and cash-conversion checks. `python3 scripts/ratios.py --help`
+- `scripts/score.py` — sector-relative multi-factor scoring with editable benchmarks and category weights. `python3 scripts/score.py --help`
+  - For a company with materially different businesses, pass a `segments` array and each segment is scored against its own sector's benchmarks and blended by profit — `python3 scripts/score.py --example-segments` prints a runnable example. The blend is a quality summary, never a substitute for sum-of-the-parts valuation.
+- `scripts/valuation.py` — Stage-6 valuation calculator: EV bridge, trailing multiples, the reverse-DCF implied-growth solve, a forward 2-stage DCF, and a probability-weighted scenario table. Runs only the sections whose inputs you supply, and guards invalid assumptions (terminal growth ≥ WACC fails). `python3 scripts/valuation.py --template` / `--example`
+- `scripts/verify_data.py` — data-intake gate. Validates gathered figures for provenance, **source tier (documents primary, aggregators navigation-only)**, cross-source agreement, basis/unit consistency and staleness before you compute on them. Run it at Stage 1. `python3 scripts/verify_data.py --template`
+- `scripts/lint_report.py` — finished-report QA. Checks the non-negotiables and the figure-sourcing ratio before delivery. Run it at Stage 10. `python3 scripts/lint_report.py --help`
 
 Both are plain Python with no third-party dependencies. Sector benchmark tables live in `scripts/benchmarks.json` and are meant to be edited — treat the shipped values as reasonable defaults, not gospel, and override them when you have better peer data for the specific market and period.
 

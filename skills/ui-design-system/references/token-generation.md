@@ -302,13 +302,13 @@ $typography-fontSize-lg: 20px;
 
 ```bash
 # Default (modern style, JSON output)
-python scripts/design_token_generator.py "#0066CC"
+python3 scripts/design_token_generator.py "#0066CC"
 
 # Classic style, CSS output
-python scripts/design_token_generator.py "#8B4513" classic css
+python3 scripts/design_token_generator.py "#8B4513" classic css
 
 # Playful style, summary view
-python scripts/design_token_generator.py "#FF6B6B" playful summary
+python3 scripts/design_token_generator.py "#FF6B6B" playful summary
 ```
 
 ### Style Differences

@@ -37,16 +37,16 @@ CDO, chief data officer, AI training data, consent provenance, training rights, 
 
 ```bash
 # Audit data sources for AI training eligibility
-python scripts/ai_training_data_audit.py                              # uses embedded sample
-python scripts/ai_training_data_audit.py path/to/sources.json
+python3 scripts/ai_training_data_audit.py                              # uses embedded sample
+python3 scripts/ai_training_data_audit.py path/to/sources.json
 
 # Pick data architecture + build-vs-buy + sequencing
-python scripts/data_product_strategy_picker.py                        # uses embedded Series A SaaS
-python scripts/data_product_strategy_picker.py path/to/profile.json
+python3 scripts/data_product_strategy_picker.py                        # uses embedded Series A SaaS
+python3 scripts/data_product_strategy_picker.py path/to/profile.json
 
 # Value the customer data corpus + productization viability
-python scripts/data_asset_valuator.py                                 # uses embedded B2B sample
-python scripts/data_asset_valuator.py path/to/corpus.json
+python3 scripts/data_asset_valuator.py                                 # uses embedded B2B sample
+python3 scripts/data_asset_valuator.py path/to/corpus.json
 ```
 
 ## Key Questions (ask these first)
@@ -140,7 +140,7 @@ See `references/data_team_org_evolution.md`.
 ```bash
 # 1. Build sources.json with one entry per data source
 # 2. Run the audit
-python scripts/ai_training_data_audit.py sources.json
+python3 scripts/ai_training_data_audit.py sources.json
 # 3. For each MITIGATE: assign owner + remediation
 # 4. For each NO-GO: document the kill reason for the legal log
 # 5. Cross-check with cs-general-counsel-advisor on top-3 mitigation items
@@ -151,7 +151,7 @@ python scripts/ai_training_data_audit.py sources.json
 **Goal:** Pick warehouse / lakehouse / mesh and the build-vs-buy split for the next 12 months.
 
 ```bash
-python scripts/data_product_strategy_picker.py profile.json
+python3 scripts/data_product_strategy_picker.py profile.json
 # Cross-check with cs-cto-advisor on engineering capacity
 # Cross-check with cs-cfo-advisor on 3-year TCO
 # Log via /skill:decide; consider /skill:freeze 90 if signing a multi-year SaaS contract

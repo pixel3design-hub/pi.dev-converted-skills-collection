@@ -190,7 +190,7 @@ After the four (or compressed) sections are delivered:
 
 | Script | Role |
 |---|---|
-| `scripts/workspace_inventory.py` | Glob+Grep helper for Section 3. `python workspace_inventory.py --root . --keywords "k1,k2"` returns matches by keyword + folder structure. |
+| `scripts/workspace_inventory.py` | Glob+Grep helper for Section 3. `python3 workspace_inventory.py --root . --keywords "k1,k2"` returns matches by keyword + folder structure. |
 | `scripts/dump_classifier.py` | Regex-classifies each dump line into `task` / `decision` / `question` / `idea` / `project-component`. Heuristic — override with judgment. |
 | `scripts/complexity_estimator.py` | Counts items, detects clustering signal, recommends `format=full` or `format=compressed`. |
 
